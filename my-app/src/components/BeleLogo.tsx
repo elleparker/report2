@@ -115,21 +115,21 @@ export default function BeleLogo({ size = 'md', animated = true, className = '' 
             
             {/* Inner geometric pattern */}
             <g transform="translate(50,50)">
-              {/* Central diamond */}
+              {/* Central recycling symbol */}
               <polygon
-                points="-15,0 0,-15 15,0 0,15"
+                points="-12,-8 -4,-15 8,-8 12,0 4,15 -8,8 -12,0"
                 fill="url(#logoGradient)"
                 className="opacity-90"
               />
               
-              {/* Side triangles */}
-              <polygon
-                points="-25,-8 -15,0 -25,8"
+              {/* Recycling arrows */}
+              <path
+                d="M-20,-10 L-10,-15 L-10,-5 Z"
                 fill="url(#logoGradientAlt)"
                 className="opacity-70"
               />
-              <polygon
-                points="25,-8 15,0 25,8"
+              <path
+                d="M20,10 L10,15 L10,5 Z"
                 fill="url(#logoGradientAlt)"
                 className="opacity-70"
               />
@@ -162,10 +162,10 @@ export default function BeleLogo({ size = 'md', animated = true, className = '' 
         className="flex flex-col"
       >
         <div className={`font-bold gradient-text ${textSizeClasses[size]}`}>
-          Bele<span className="text-white">.ai</span>
+          Zbeleh<span className="text-white">.ai</span>
         </div>
         {size === 'lg' || size === 'xl' ? (
-          <div className="text-xs text-gray-400 font-medium">Market Intelligence</div>
+          <div className="text-xs text-gray-400 font-medium">Waste Management Solutions</div>
         ) : null}
       </motion.div>
     </div>

@@ -13,48 +13,41 @@ interface NavigationItem {
 
 const navigationItems: NavigationItem[] = [
   {
-    id: 'executive-summary',
-    title: 'Executive Summary',
+    id: 'introduction',
+    title: 'Investment Opportunity',
     icon: <FileText className="w-4 h-4" />,
   },
   {
-    id: 'market-analysis',
-    title: 'Market Analysis',
-    icon: <TrendingUp className="w-4 h-4" />,
-    children: [
-      { id: 'market-size', title: 'Market Size & Growth', icon: <BarChart3 className="w-4 h-4" /> },
-      { id: 'competitive-landscape', title: 'Competitive Landscape', icon: <Target className="w-4 h-4" /> },
-      { id: 'market-trends', title: 'Market Trends', icon: <TrendingUp className="w-4 h-4" /> },
-    ],
-  },
-  {
-    id: 'target-audience',
-    title: 'Target Audience',
+    id: 'b2c-model',
+    title: 'B2C Consumer Model',
     icon: <Users className="w-4 h-4" />,
     children: [
-      { id: 'demographics', title: 'Demographics', icon: <Users className="w-4 h-4" /> },
-      { id: 'user-personas', title: 'User Personas', icon: <Users className="w-4 h-4" /> },
-      { id: 'behavior-analysis', title: 'Behavior Analysis', icon: <BarChart3 className="w-4 h-4" /> },
+      { id: 'b2c-competitive', title: 'Competitive Arena', icon: <Target className="w-4 h-4" /> },
+      { id: 'b2c-proposition', title: 'Value Proposition', icon: <TrendingUp className="w-4 h-4" /> },
+      { id: 'b2c-monetization', title: 'Monetization Strategy', icon: <DollarSign className="w-4 h-4" /> },
+      { id: 'b2c-partnerships', title: 'Strategic Partnerships', icon: <Globe className="w-4 h-4" /> },
     ],
   },
   {
-    id: 'financial-projections',
+    id: 'b2b-model',
+    title: 'B2B Enterprise Model',
+    icon: <BarChart3 className="w-4 h-4" />,
+    children: [
+      { id: 'b2b-competitive', title: 'Competitive Analysis', icon: <Target className="w-4 h-4" /> },
+      { id: 'b2b-proposition', title: 'Value Proposition', icon: <TrendingUp className="w-4 h-4" /> },
+      { id: 'b2b-monetization', title: 'Revenue Models', icon: <DollarSign className="w-4 h-4" /> },
+      { id: 'b2b-partnerships', title: 'Partnership Strategy', icon: <Globe className="w-4 h-4" /> },
+    ],
+  },
+  {
+    id: 'financial-overview',
     title: 'Financial Projections',
     icon: <DollarSign className="w-4 h-4" />,
-    children: [
-      { id: 'revenue-model', title: 'Revenue Model', icon: <DollarSign className="w-4 h-4" /> },
-      { id: 'cost-analysis', title: 'Cost Analysis', icon: <BarChart3 className="w-4 h-4" /> },
-      { id: 'roi-projections', title: 'ROI Projections', icon: <TrendingUp className="w-4 h-4" /> },
-    ],
   },
   {
-    id: 'global-expansion',
-    title: 'Global Expansion',
-    icon: <Globe className="w-4 h-4" />,
-    children: [
-      { id: 'market-entry', title: 'Market Entry Strategy', icon: <Target className="w-4 h-4" /> },
-      { id: 'regional-analysis', title: 'Regional Analysis', icon: <Globe className="w-4 h-4" /> },
-    ],
+    id: 'conclusion',
+    title: 'Investment Thesis',
+    icon: <Target className="w-4 h-4" />,
   },
 ];
 
@@ -103,13 +96,13 @@ export default function Navigation({ activeSection, onSectionChange }: Navigatio
     >
       <button
         onClick={() => handleItemClick(item.id, !!item.children)}
-        className={`w-full flex items-center justify-between p-3 rounded-lg transition-all duration-300 group ${
+        className={`w-full flex items-center justify-between p-2.5 rounded-lg transition-all duration-300 group ${
           activeSection === item.id
             ? 'bg-gradient-to-r from-yellow-400/20 to-yellow-500/10 border border-yellow-400/30 text-yellow-400'
             : 'hover:bg-white/5 hover:border-white/10 border border-transparent text-gray-300'
-        } ${level > 0 ? 'ml-4 text-sm' : ''}`}
+        } ${level > 0 ? 'ml-3 text-sm' : ''}`}
       >
-        <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-2">
           <div className={`transition-colors duration-300 ${
             activeSection === item.id ? 'text-yellow-400' : 'text-gray-400 group-hover:text-yellow-400'
           }`}>
@@ -148,36 +141,89 @@ export default function Navigation({ activeSection, onSectionChange }: Navigatio
 
   return (
     <>
-      {/* Mobile Menu Button */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="fixed top-4 left-4 z-50 lg:hidden glass-nav p-3 rounded-lg"
+      {/* Sticky Glass Navigation Island */}
+      <motion.nav
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ${
+          isScrolled 
+            ? 'glass-nav shadow-2xl scale-95' 
+            : 'glass-nav shadow-xl'
+        }`}
       >
-        {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-      </button>
+        <div className="flex items-center gap-4 p-4">
+          {/* Logo Section */}
+          <div className="flex items-center gap-3 pr-4 border-r border-yellow-400/30">
+            <div className="w-8 h-8 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-500 flex items-center justify-center">
+              <span className="text-black font-bold text-sm">Z</span>
+            </div>
+            <span className="hidden md:block text-sm font-semibold gradient-text">Zbeleh.ai</span>
+          </div>
 
-      {/* Desktop Navigation */}
-      <motion.aside
-        initial={{ x: -100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        className={`fixed left-0 top-0 h-full w-72 z-40 hidden lg:block ${
-          isScrolled ? 'glass-nav' : 'glass-nav'
-        } p-4 overflow-y-auto border-r border-yellow-400/20`}
-      >
-        <div className="mb-4">
-          <h2 className="text-lg font-bold gradient-text mb-1">Bele.ai Market Research</h2>
-          <p className="text-xs text-gray-400">Navigation Menu</p>
+          {/* Desktop Navigation Items */}
+          <div className="hidden lg:flex items-center gap-1">
+            {navigationItems.map(item => (
+              <div key={item.id} className="relative group">
+                <button
+                  onClick={() => handleItemClick(item.id, !!item.children)}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-300 ${
+                    activeSection === item.id
+                      ? 'bg-gradient-to-r from-yellow-400/20 to-yellow-500/10 text-yellow-400 shadow-lg'
+                      : 'hover:bg-white/10 text-gray-300 hover:text-yellow-400'
+                  }`}
+                >
+                  <div className="w-4 h-4">{item.icon}</div>
+                  <span className="text-sm font-medium whitespace-nowrap">{item.title}</span>
+                  {item.children && (
+                    <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${
+                      expandedItems.includes(item.id) ? 'rotate-180' : ''
+                    }`} />
+                  )}
+                </button>
+                
+                {/* Dropdown for items with children */}
+                <AnimatePresence>
+                  {item.children && expandedItems.includes(item.id) && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-0 mt-2 glass-nav rounded-lg p-2 min-w-48 shadow-xl border border-yellow-400/20"
+                    >
+                      {item.children.map(child => (
+                        <button
+                          key={child.id}
+                          onClick={() => handleItemClick(child.id, false)}
+                          className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300 ${
+                            activeSection === child.id
+                              ? 'bg-gradient-to-r from-yellow-400/20 to-yellow-500/10 text-yellow-400'
+                              : 'hover:bg-white/10 text-gray-300 hover:text-yellow-400'
+                          }`}
+                        >
+                          <div className="w-3 h-3">{child.icon}</div>
+                          <span className="text-sm">{child.title}</span>
+                        </button>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ))}
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden p-2 rounded-lg hover:bg-white/10 transition-colors duration-300"
+          >
+            {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
         </div>
-        
-        <nav className="space-y-1">
-          {navigationItems.map(item => (
-            <NavItem key={item.id} item={item} />
-          ))}
-        </nav>
-      </motion.aside>
+      </motion.nav>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Navigation Dropdown */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -190,24 +236,19 @@ export default function Navigation({ activeSection, onSectionChange }: Navigatio
               className="absolute inset-0 bg-black/50 backdrop-blur-sm"
               onClick={() => setIsOpen(false)}
             />
-            <motion.aside
-              initial={{ x: -320 }}
-              animate={{ x: 0 }}
-              exit={{ x: -320 }}
-              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="absolute left-0 top-0 h-full w-80 glass-nav p-6 overflow-y-auto"
+            <motion.div
+              initial={{ opacity: 0, y: -50, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -50, scale: 0.95 }}
+              transition={{ duration: 0.3 }}
+              className="absolute top-20 left-4 right-4 glass-nav rounded-lg p-4 max-h-[70vh] overflow-y-auto"
             >
-              <div className="mb-6">
-                <h2 className="text-xl font-bold gradient-text mb-2">Bele.ai Market Research</h2>
-                <p className="text-sm text-gray-400">Navigation Menu</p>
-              </div>
-              
-              <nav className="space-y-1">
+              <div className="space-y-2">
                 {navigationItems.map(item => (
                   <NavItem key={item.id} item={item} />
                 ))}
-              </nav>
-            </motion.aside>
+              </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

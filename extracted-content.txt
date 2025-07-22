@@ -1,0 +1,1043 @@
+
+
+ 
+Zbeleh.ai Strategic Investment Report: A 
+Pragmatic, Technology-Driven Solution for 
+Lebanon's Waste Crisis 
+ 
+Introduction: Framing the Investment Opportunity – 
+From National Crisis to Profitable Enterprise 
+ 
+To address the inherent skepticism of any seasoned Lebanese investor, who is intimately familiar 
+with a history of failed top-down initiatives and emergency plans (
+1
+), the Zbeleh.ai proposition is 
+framed not as an idealistic panacea but as a pragmatic, market-driven response to a chronic and 
+costly national failure. Lebanon's waste management sector is not merely a public service issue; it is 
+a profound economic, environmental, and public health catastrophe (
+2
+). The country generates over 
+2 million tons of solid waste annually, with over 80% being mismanaged through open dumping and 
+burning, at an exorbitant cost of approximately $154.50 per ton—significantly higher than regional 
+peers (
+1
+). This systemic collapse, exacerbated by political paralysis and economic turmoil, has left a 
+vacuum where the state should be (
+5
+). 
+This report posits that this very vacuum creates a significant and untapped economic opportunity. 
+The core thesis is that the fragmentation and decentralization of Lebanon's waste sector, where 
+management is relegated to the municipality level at best and is often an informal, private concern 
+(
+6
+), makes it uniquely suited for a flexible, technology-enabled, and non-monolithic solution like 
+Zbeleh.ai. The objective is not to replace the state, but to create the intelligent infrastructure for the 
+de facto system that already exists. Zbeleh.ai is designed to organize the chaos, inject efficiency, 
+and create value where there is currently only cost and contamination. 
+The dual-track strategy, comprising a B2C Consumer Model and a B2B Enterprise Model, is 
+presented not as a choice but as a synergistic approach that mitigates risk and creates a powerful, 
+defensible ecosystem (
+6
+). The B2C model builds a grassroots network and tackles the problem from 
+the bottom up, empowering citizens and the informal sector. Simultaneously, the B2B model 
+provides a top-down solution for municipalities and large enterprises, addressing their critical need 
+for cost control and operational efficiency. Together, they form a comprehensive, data-driven 
+platform poised to become the central nervous system of Lebanon's future waste economy. 
+ 
+Part I: The Zbeleh.ai B2C Consumer Model: Organizing 
+Chaos, Creating Value 
+ 
+Section 1.1: The B2C Competitive Arena – Mapping a Fragmented 
+Ecosystem 
+ 
+
+The B2C waste collection landscape in Lebanon is not a traditional market with clear incumbents but 
+a fragmented ecosystem of digital pioneers, entrenched informal networks, and non-governmental 
+organizations (NGOs). Understanding this complex interplay is fundamental to positioning Zbeleh.ai 
+for success. 
+ 
+Analysis of Direct Digital Competitors 
+ 
+The most direct competitors are other mobile application-based services that have attempted to 
+solve the collection puzzle. 
+• Live Love Recycle (LLR): As the most significant direct competitor, LLR has demonstrated 
+both the potential and the pitfalls of this model. Launched in the wake of the 2015 waste crisis, 
+LLR operates as an NGO-driven, on-demand collection service using an app, initially with a 
+fleet of e-bikes and later expanding to trucks (
+4
+). Its operational footprint has grown to include 
+Beirut, Metn, Tripoli, and other areas, serving over 25,000 subscribers and collecting 
+thousands of tons of waste since its inception (
+7
+). However, its operational model is its primary 
+vulnerability. LLR is heavily dependent on external grants from entities like the World Food 
+Programme (WFP) and the German government (BMZ), as well as crowdfunding campaigns 
+(
+8
+). This reliance on philanthropy makes it inherently unsustainable and difficult to scale 
+aggressively without a constant infusion of aid. Their reported plan to introduce a small fee of 
+LBP 3,000 per pickup underscores a struggle for financial viability (
+9
+). Zbeleh.ai is positioned 
+as the for-profit evolution of the LLR model—offering a more robust, scalable, and reliable 
+service built on sound business principles, not precarious donor funding. 
+• Nadeera: This startup presents a direct feature overlap with its AI-powered mobile app for 
+identifying recyclables (
+10
+). However, its operational model appears to differ significantly. 
+Nadeera focuses on partnerships with municipalities and guiding users to designated drop-off 
+points, explaining 
+what and where to recycle (
+10
+). This is a valuable educational tool but does not solve the core 
+logistical problem of getting waste out of the home. Zbeleh.ai's value proposition is superior as 
+it provides an end-to-end solution. While Nadeera’s AI tells a user 
+if an item is recyclable, Zbeleh.ai’s AI will not only identify the material but also facilitate its 
+immediate collection and create economic value through its integrated marketplace. 
+ 
+Analysis of Informal & Indirect Competitors 
+ 
+These are not traditional competitors but existing market players whose inefficiencies represent 
+Zbeleh.ai's core opportunity. 
+• The Informal Sector (Kabaris & Muallims): This is the bedrock of Lebanon's current 
+recycling system and should be viewed as Zbeleh.ai's primary target user base and supply 
+chain, not its competition. This sector is a complex, deeply entrenched network of street-level 
+waste pickers (kabaris), often comprising migrant workers or underprivileged youth, who 
+collect recyclables from bins and sell them to local scrapyard masters (muallims) (
+11
+). These 
+individuals are micro-entrepreneurs providing essential labor for Lebanon's surprisingly 
+successful scrap metal export industry (
+12
+). They operate within a chaotic, inefficient, and often 
+exploitative system. Zbeleh.ai's platform is designed to empower them, not replace them. The 
+app will serve as a powerful tool to increase their daily earnings through AI-optimized routes, 
+direct access to a wider pool of households, and transparent pricing suggestions, transforming 
+them from marginalized "scavengers" into dignified "logistics partners." 
+
+• Peer-to-Peer Marketplaces (OLX, Facebook Groups): These platforms are the default 
+solution for disposing of bulky waste like old furniture or electronics (
+6
+, p. 6). However, they are 
+fraught with problems: transactions are inefficient, pricing is opaque and subject to haggling, 
+and there are no mechanisms for trust, safety, or quality control. Zbeleh.ai offers a specialized, 
+trusted, and efficient alternative. The platform professionalizes these one-off transactions by 
+providing standardized job requests, AI-driven price suggestions based on item analysis, and 
+a two-way rating system to build a community of trusted users and collectors. 
+ 
+Role of Legacy NGOs & Potential Allies 
+ 
+The NGO landscape is populated by organizations focused on awareness and sorting, creating a 
+clear opportunity for partnership. 
+• Recycle Lebanon / EcoSouk: This organization is a philosophical ally. Its focus is on 
+systemic change, promoting a zero-waste lifestyle, and offering sustainable alternatives 
+through its innovative retail hub, EcoSouk (
+13
+). They are not a competitor in the logistics space 
+but a powerful potential partner for co-branded awareness campaigns and community 
+outreach. 
+• Arcenciel: As a major, established NGO with its own comprehensive collection and treatment 
+programs, Arcenciel is a key player in the recycling value chain (
+10
+). The fact that LLR provides 
+its collected recyclables to Arcenciel for free highlights Arcenciel's role as a major off-taker (
+9
+). 
+Zbeleh.ai can establish a formal partnership with Arcenciel, directing a verified, pre-sorted 
+stream of materials from its collection network to Arcenciel's facilities, thereby improving their 
+operational efficiency. 
+The NGO sector is primarily concerned with the "software" of waste management—awareness and 
+behavior change. Zbeleh.ai provides the critical "hardware" and "operating system"—the efficient 
+logistics and marketplace to connect sorted waste with recyclers. This complementary relationship 
+forms the basis for collaboration, not conflict. 
+ 
+Initiative/Comp
+any 
+Core 
+Model 
+Target 
+Audience 
+Key 
+Tech/Meth
+od 
+Monetizatio
+n 
+Geograph
+ic 
+Footprint 
+Estimated 
+Scale/Use
+rs 
+Key Weakness 
+(Zbeleh.ai's 
+Opportunity) 
+Live Love 
+Recycle 
+NGO-led, 
+on-
+demand 
+collection 
+Househol
+ds 
+Mobile 
+App, E-
+bikes, 
+Trucks 
+Grants, 
+Crowdfundi
+ng, 
+Donations 
+9
+ 
+Beirut, 
+Metn, 
+Tripoli, 
+etc. 
+7
+ 
+25,000+ 
+subscriber
+s 
+7
+ 
+Unsustainable 
+funding model; 
+struggles with 
+scalability and 
+financial 
+stability. 
+Nadeera App-
+based 
+sorting 
+guide 
+Househol
+ds 
+Mobile App 
+with AI for 
+identificatio
+n 
+Unclear; 
+likely B2B 
+partnerships 
+Not 
+specified 
+Not 
+specified 
+Focuses on 
+identification/dr
+op-off, not 
+collection 
+logistics; 
+doesn't solve 
+the "last mile" 
+problem. 
+Informal 
+Sector 
+Manual 
+collection 
+& sale 
+Househol
+ds 
+(indirectly
+), 
+Carts, 
+manual 
+sorting 
+Sale of 
+materials to 
+middlemen 
+12
+ 
+Nationwid
+e 
+Thousand
+s of 
+collectors 
+14
+ 
+Highly 
+inefficient, 
+exploitative, 
+lacks 
+
+Scrapyard
+s 
+technology and 
+scale; perfect 
+target for 
+empowerment. 
+OLX / 
+Facebook 
+P2P 
+online 
+marketpla
+ce 
+Individual
+s 
+Web/Mobil
+e platforms 
+Free listings Nationwid
+e 
+Millions of 
+users 
+(general) 
+No 
+specialization, 
+no trust 
+mechanism, 
+inefficient for 
+waste, no price 
+transparency. 
+ 
+Section 1.2: Fortifying the B2C Proposition – A Blueprint for Adoption 
+and Loyalty 
+ 
+Building a successful B2C platform in Lebanon's uniquely challenging environment requires more 
+than just good technology; it demands a sophisticated strategy for adoption, brand-building, and 
+differentiation that is deeply attuned to local realities. 
+ 
+High-Level SWOT Analysis for the B2C Model 
+ 
+ 
+• Strengths: The model is asset-light, making it highly scalable with minimal capital expenditure 
+compared to traditional waste management (
+6
+, p. 4). It directly addresses a daily frustration 
+point for citizens, creating a strong pull factor. By formalizing and empowering the existing 
+informal workforce, it has a positive social impact. 
+• Weaknesses: The platform is subject to the classic "chicken-and-egg" problem of 
+marketplaces: it needs a critical mass of both users and collectors to be viable (
+6
+, p. 4). 
+Success is dependent on widespread smartphone penetration and a degree of technological 
+literacy among both user groups. There is also a risk of resistance from established scrapyard 
+middlemen ( 
+muallims) who may see the platform as a threat to their control over the supply chain. 
+• Opportunities: The target market is massive, chaotic, and completely underserved by 
+technology (
+6
+, p. 12). There is a growing, albeit nascent, environmental consciousness among 
+the public. In a market plagued by a deep trust deficit following decades of public and private 
+sector failures (
+1
+), a brand that can verifiably deliver on its promises has an immense 
+opportunity to build powerful loyalty. The platform will also generate unique and highly 
+valuable data on consumption patterns. 
+• Threats: The emergence of a better-funded direct competitor remains a possibility. Further 
+economic collapse could depress household spending on any non-essential service, even a 
+low-cost one. Unpredictable regulatory shifts, such as a sudden ban on certain types of 
+collection activities, could disrupt operations. 
+ 
+The Adoption & Growth Engine 
+ 
+
+A meticulously planned launch is crucial to overcome the initial hurdle of achieving marketplace 
+liquidity. 
+• Hyper-local Launch Strategy: The go-to-market strategy will be surgical. All initial efforts will 
+be concentrated on a single, dense, and demographically mixed neighborhood in Beirut, such 
+as Achrafieh or Hamra. This approach, mirroring the playbook outlined in the initial deck (
+6
+, p. 
+14), allows for the rapid achievement of marketplace density—a sufficient number of active 
+users and collectors within a small geographic area to ensure prompt service and a positive 
+feedback loop. This proves the model on a small scale before investing in wider expansion. 
+• Onboarding the Collectors (Kabaris): This is the most critical success factor. The platform's 
+supply side cannot be an afterthought; it must be actively cultivated. A dedicated onboarding 
+program will be implemented, focusing on demonstrating clear value to the collectors: 
+1. Financial Incentive: The core of the pitch to collectors will be a data-backed 
+demonstration. Using simulations, the onboarding team will show how the app's AI-
+optimized routing can increase their daily take-home pay by 20-30% by reducing time 
+spent searching for pickups and minimizing travel distance between jobs. 
+2. Tools & Legitimacy: To enhance their social acceptance and professionalize their 
+work, collectors will be provided with Zbeleh.ai branded vests. Partnerships with 
+microfinance institutions or NGOs will be explored to offer them access to better 
+equipment, such as improved carts or trolleys. 
+3. Simplicity and Accessibility: The collector-facing side of the application will be 
+designed with extreme simplicity in mind, using intuitive, icon-based navigation that 
+requires minimal literacy. It will be optimized to function reliably even in areas with poor 
+mobile connectivity. 
+• Viral User Acquisition: To drive demand, the strategy will leverage community dynamics and 
+gamification: 
+o Gamification: Launching "Clean Your Street" or "Neighborhood Recycling League" 
+challenges where residents on a street or in a building compete to recycle the most. The 
+winning group receives a tangible, sponsored prize—such as the planting of new trees 
+on their street, a new public bench, or a community barbecue—generating positive 
+press and organic word-of-mouth. 
+o Dual-Sided Referral Program: A powerful growth hack will be a referral program that 
+rewards users not only for referring new household users (e.g., with pickup credits) but 
+also for referring new collectors. When a referred collector completes a certain number 
+of jobs, the referring user receives a more substantial reward (e.g., cash or a larger 
+credit), incentivizing the community to help build the platform's supply side. 
+ 
+Building an Unbreakable Brand in a "Trust Vacuum" 
+ 
+The Lebanese public is profoundly cynical, especially regarding services like waste management, 
+which have been plagued by corruption, broken promises, and inefficiency for decades (
+1
+). Trust is 
+the most valuable and scarcest currency. While competitors like LLR gained initial traction through 
+their grassroots, non-profit appeal (
+7
+), Zbeleh.ai, as a for-profit entity, must build trust through a 
+different mechanism: 
+radical, verifiable transparency. 
+The app's killer feature in this regard will be a "Trace Your Trash" function. After a pickup is 
+completed, the user will receive a notification and be able to see on a map that their specific bag of 
+recyclables was successfully delivered to a partner facility, for instance, "Recycling Plant X" or 
+"Scrapyard Y." This closes the feedback loop and counters the common suspicion that sorted 
+recyclables are just dumped with regular trash. It makes the abstract act of recycling tangible, 
+
+verifiable, and rewarding, building a level of trust that no competitor can easily replicate. This 
+feature, combined with community-level engagement—sponsoring local school environmental clubs, 
+partnering with mukhtars, and maintaining a presence in neighborhood social media groups—will 
+position Zbeleh.ai not as a faceless tech company, but as a reliable community partner. 
+ 
+The AI Differentiator in Practice (Beyond the Buzzword) 
+ 
+A skeptical Lebanese investor will rightly see "AI image recognition" as a potential gimmick (
+6
+, p. 10). 
+The value of the AI must be demonstrated in practical, monetary terms. The informal market already 
+knows what plastic is; their challenge lies in inefficient logistics and opaque pricing. Zbeleh.ai's AI 
+provides the solution. 
+The AI is engineered to be a dynamic pricing and logistics engine. 
+• Dynamic Valuation: The computer vision model will be trained to go beyond simple 
+identification. It won't just recognize a "plastic bottle"; it will be fine-tuned to classify it as "PET, 
+Grade A" or "HDPE, Grade B." The platform will then cross-reference this classification with a 
+real-time price list aggregated from partner recycling plants and major scrapyards. This 
+instantly provides both the user and the collector with an estimated market value for the 
+materials, transforming the app from a simple booking tool into a transparent commodity 
+trading platform. 
+• Predictive Hotspot Mapping: By analyzing aggregated user request data, pickup patterns, 
+and even external data like public holidays or events, the AI's logistics engine will predict 
+"trash hotspots"—areas where recyclable waste is likely to accumulate. It can then proactively 
+push notifications to nearby collectors, suggesting they service these areas. This shifts the 
+model from purely reactive (waiting for a request) to proactively efficient, maximizing the 
+collector's earning potential per hour and ensuring cleaner neighborhoods. 
+ 
+Section 1.3: B2C Monetization – Architecting Diverse and Resilient 
+Revenue Streams 
+ 
+A sustainable B2C model requires a multi-layered monetization strategy that captures value from 
+different user segments and services, ensuring resilience in a volatile economic climate. 
+ 
+Primary Revenue Models 
+ 
+The primary models focus on direct transactional revenue from the core collection service. 
+• Tiered Commission on Valuable Materials: For pickups of materials with established market 
+value (e.g., aluminum, copper, e-waste, certain plastics), the platform will take a commission 
+of 15-20% on the final transaction value paid to the collector (
+6
+, p. 13). This is a classic 
+marketplace model where Zbeleh.ai only earns when it successfully facilitates a valuable 
+transaction. 
+• Fixed Convenience Fee (Pay-per-Pickup): Many recyclables, such as glass or mixed paper, 
+have low or even negative value in Lebanon, making a commission model unviable. To ensure 
+these materials are still collected, a small, fixed convenience fee (e.g., the equivalent of $1-2) 
+will be charged to the user for the pickup service. This model, which LLR considered adopting 
+(
+9
+), ensures the operational costs for the collector are covered and the platform remains 
+sustainable across all material types. 
+
+• Premium Subscriptions for SMEs: Small and medium-sized enterprises—such as 
+restaurants, offices, and retail shops—have regular and predictable waste streams. Zbeleh.ai 
+will offer a monthly subscription service for these businesses, providing scheduled pickups, 
+dedicated support, and basic data reports on their recycling impact (
+6
+, p. 13). Subscription tiers 
+can be based on the volume and frequency of collections, offering SMEs a hassle-free, 
+budgetable solution for their waste management needs. 
+ 
+Secondary & Tertiary Revenue Models (The AI Payoff) 
+ 
+These models leverage the unique data and engagement capabilities of the platform to create high-
+margin revenue streams. 
+• Data Monetization: The platform will generate an unprecedented dataset on hyper-local 
+consumption and disposal patterns. This aggregated and fully anonymized data is a highly 
+valuable asset. It can be sold to market research firms, urban planners, and, most lucratively, 
+to Fast-Moving Consumer Goods (FMCG) companies. A report detailing that "In the Hamra 
+district, Brand X's plastic water bottles constitute 15% of all collected plastic waste, while 
+Brand Y's constitute 5%" provides invaluable, actionable intelligence for marketing, packaging 
+design, and corporate strategy. 
+• Sponsored Recycling Challenges: This model creates a direct B2B revenue stream through 
+the B2C platform. Zbeleh.ai will partner with major brands (e.g., PepsiCo, Nestlé, Unilever) to 
+create and host in-app recycling challenges. For example, a campaign could offer users 
+rewards for recycling a certain number of a partner brand's products within a month. The 
+brand pays Zbeleh.ai a fee to run the campaign and provide the prizes, gaining a powerful 
+marketing tool that associates their brand with positive environmental action while driving user 
+engagement on the app. 
+• B2B2C for Corporate ESG: Zbeleh.ai will package its B2C service and sell it to large 
+corporations as an employee benefit and a turnkey CSR initiative. The corporation pays a bulk 
+subscription fee to subsidize or provide free at-home recycling pickups for its employees. In 
+return, the company receives an aggregated, anonymized report on the collective 
+environmental impact of its workforce (e.g., "Our employees collectively diverted 5 tons of 
+plastic from landfills this year"), which can be used in their official ESG and sustainability 
+reporting. 
+ 
+B2C Revenue Projection Scenarios 
+ 
+To make the revenue potential tangible for an investor, the following table models financial 
+projections based on conservative, moderate, and aggressive user adoption scenarios, building 
+upon the initial claim of a $1.5M+ annual revenue opportunity (
+6
+, p. 12). 
+Metric Year 1 (Pilot - 1 
+Neighborhood) 
+Year 2 (Beirut-
+wide) 
+Year 3 (Major 
+Cities) 
+Active Households 2,000 25,000 75,000 
+Active SMEs (Subscribers) 50 500 1,500 
+Avg. Transactions/Month 3,000 37,500 112,500 
+Avg. Transaction 
+Value/Fee 
+$3 $3.50 $3.50 
+Commission/Fee Revenue $108,000 $1,575,000 $4,725,000 
+
+SME Subscription 
+Revenue 
+$18,000 $180,000 $540,000 
+Data/Sponsorship 
+Revenue 
+$10,000 $150,000 $500,000 
+Total Annual Revenue $136,000 $1,905,000 $5,765,000 
+Assumptions: Avg. 1.5 pickups/month/household; Avg. SME subscription of $30/month; 
+Commission/Fee rate of 15% of total transaction value. 
+ 
+Section 1.4: The B2C Partnership Nexus – Beyond the Obvious 
+ 
+To accelerate growth, reduce acquisition costs, and embed Zbeleh.ai into the economic fabric of 
+Lebanon, a strategic partnership strategy is essential. This strategy must look beyond obvious 
+players like municipalities and recycling plants. 
+ 
+Retail & FMCG Sector 
+ 
+ 
+• Partnership: The most strategic partnership lies in collaborating with major supermarket 
+chains (e.g., Spinneys, Carrefour, TSC) and leading FMCG brands to create and manage 
+"take-back" and Extended Producer Responsibility (EPR) programs. 
+• Mechanism: When a user scans a product barcode from a partner brand within the Zbeleh.ai 
+app, it could unlock a "free" or "subsidized" pickup for that packaging. This service would be 
+funded by the brand as part of its CSR or marketing budget. This model aligns with emerging 
+global trends in producer responsibility, provides a powerful new revenue stream for Zbeleh.ai, 
+and offers immense value to consumers, directly incentivizing them to recycle specific 
+products. 
+ 
+Real Estate & Property Management 
+ 
+ 
+• Partnership: Zbeleh.ai will be positioned as a premium amenity for high-end residential 
+compounds, commercial office buildings, and new real estate developments. 
+• Mechanism: The building's management or homeowners' association subscribes to a 
+building-wide plan. This provides residents with seamless, integrated, and potentially free 
+recycling services. In return, the building can market itself as a "Zbeleh.ai Certified Green 
+Building," a tangible differentiator that can help attract environmentally conscious tenants and 
+potentially justify higher rental or sale prices. 
+ 
+Telecom Operators (Alfa, Touch) 
+ 
+ 
+
+• Partnership: Leverage the massive user base and marketing channels of Lebanon's two main 
+telecom operators for co-branding, loyalty program integration, or even app pre-installation on 
+new devices. 
+• Mechanism: A simple integration could allow telecom users to redeem their loyalty points for 
+Zbeleh.ai pickup credits. Conversely, Zbeleh.ai could reward its most consistent recyclers with 
+free mobile data, sponsored by the telecom partner. This creates a low-cost, high-visibility 
+user acquisition channel and adds value to the telecom operator's loyalty program. 
+ 
+Universities & Schools 
+ 
+ 
+• Partnership: The engagement with academic institutions must evolve beyond simple 
+awareness campaigns. Zbeleh.ai will forge deep partnerships with the environmental science, 
+computer science, and business faculties of leading universities like the American University 
+of Beirut (AUB), the Lebanese American University (LAU), and Université Saint-Joseph (USJ). 
+• Mechanism: Zbeleh.ai will offer curated, anonymized datasets to students and researchers 
+for academic projects on urban studies, consumer behavior, or waste management. The 
+company can co-host hackathons and case competitions, challenging students to develop new 
+AI features or business models for the platform. This strategy builds immense brand credibility 
+within the academic and youth communities, provides a source of low-cost R&D, and 
+establishes a direct pipeline for recruiting top-tier local talent. 
+ 
+Part II: The Zbeleh.ai B2B Enterprise Model: The 
+Irrefutable Case for Efficiency and Control 
+ 
+Section 2.1: The B2B Competitive Arena – Challenging Incumbents and 
+Foreign Giants 
+ 
+The B2B landscape is dominated by a few large, traditional contractors and the long shadow of past 
+failures. Zbeleh.ai's entry must be positioned as a paradigm shift from brute-force operations to data-
+driven intelligence. 
+ 
+Analysis of Incumbent Contractors 
+ 
+ 
+• Ramco: As the current primary contractor for major service areas like Beirut and Metn & 
+Keserwan, Ramco is the most visible incumbent (
+16
+). Their model is traditional, focusing on 
+large-scale collection and street sweeping with a modern, European-made fleet of vehicles (
+16
+). 
+Their primary weakness, however, is that their model is purely operational, not data-driven. 
+They represent a "brute force" solution to waste collection. They are susceptible to the same 
+systemic vulnerabilities as their predecessors: cripplingly high and volatile operational costs, 
+particularly for fuel, and a fundamental lack of data-driven efficiency and transparency (
+19
+). This 
+
+makes them highly vulnerable to a technology partner like Zbeleh.ai that can demonstrably 
+and significantly lower those costs. 
+• Sukleen/Averda Legacy: The ghost of Sukleen, now part of the international Averda group 
+(
+20
+), looms large over the entire sector. Their two-decade tenure was marred by public 
+accusations of maintaining a monopoly, charging inflated costs (reportedly up to $140/ton), 
+opacity, and leveraging political patronage (
+1
+). This history has created a deep-seated and 
+lasting public and official distrust of any single, large private entity aiming to control waste 
+management. Zbeleh.ai must strategically distance itself from this legacy. The core message 
+is clear: Zbeleh.ai is not another collection contractor seeking a monopoly. It is a technology 
+provider that offers an intelligence layer to make 
+any collection operation—whether it's a municipality's own fleet or a third-party contractor like 
+Ramco—more efficient, transparent, and accountable. The pitch is one of empowerment and 
+control, a direct antidote to the legacy of opacity. 
+ 
+Benchmarking Against Global Precedents 
+ 
+International success stories validate the technical and financial viability of the Zbeleh.ai model and 
+provide powerful benchmarks for investors. 
+• Compology (US): This is the most direct and compelling global precedent. Compology uses 
+bin-mounted cameras and AI-powered software to monitor fullness, location, and content, 
+which in turn enables dynamic route optimization (
+23
+). Their value proposition is proven and 
+quantifiable: they have demonstrated the ability to reduce client collection costs by up to 40% 
+and slash contamination rates in recycling streams by as much as 80% (
+24
+). Their business 
+model, which involves partnerships with waste haulers, Fortune 100 companies, and 
+government entities, is precisely what Zbeleh.ai aims to replicate. The pitch to investors will 
+frame Zbeleh.ai as "Compology, adapted for Lebanon"—emphasizing greater affordability 
+through local partnerships for hardware, enhanced durability for the local environment, and a 
+feature set tailored to the specific pain points of Lebanese municipalities, such as fuel costs 
+and public pressure. 
+• Junker (Italy): The Junker app's business model provides strong validation for Zbeleh.ai's 
+proposed B2B2C integration. Junker's revenue comes from municipalities paying a 
+subscription fee to have their specific, localized recycling rules and collection point information 
+integrated into the consumer-facing app (
+25
+). This proves that municipalities are willing to pay 
+for a digital tool that facilitates better citizen engagement and improves sorting-at-source, a 
+key component of the integrated Zbeleh.ai vision. 
+ 
+Local Engineering & IoT Firms 
+ 
+Currently, there are no known local Lebanese firms offering a comprehensive, integrated smart 
+waste management platform. The local tech landscape consists of potential partners, not 
+competitors. Firms specializing in hardware assembly, IoT device installation, and field maintenance 
+can be integrated into Zbeleh.ai's supply chain. This presents a significant advantage, allowing 
+Zbeleh.ai to be framed not as a foreign tech importer but as a catalyst for growth and job creation 
+within Lebanon's local tech and engineering sectors. 
+ 
+Section 2.2: Fortifying the B2B Proposition – The Case for Political and 
+Financial Survival 
+
+ 
+To secure contracts with Lebanese municipalities and large enterprises, the proposition must 
+transcend environmental benefits and speak directly to their most pressing concerns: financial 
+survival, operational control, and political viability. 
+ 
+High-Level SWOT Analysis for the B2B Model 
+ 
+ 
+• Strengths: The solution addresses a massive, high-cost, and non-discretionary pain point for 
+every municipality. The Return on Investment (ROI) is clear, quantifiable, and rapid. The SaaS 
+model creates predictable, long-term recurring revenue. The entire proposition is aligned with 
+national legislation (Law 80/2018 on Integrated Solid Waste Management) and the strategic 
+goals of international donors like the World Bank and USAID (
+27
+). 
+• Weaknesses: The model requires significant initial capital expenditure for hardware 
+manufacturing and deployment (
+6
+, p. 4). Sales cycles with government entities are notoriously 
+long, bureaucratic, and susceptible to political interference (
+29
+). The physical hardware 
+(sensors) is vulnerable to vandalism, theft, and harsh environmental conditions (
+6
+, p. 34). 
+• Opportunities: There is a significant first-mover advantage, with no direct local competitor 
+offering a similar integrated solution (
+6
+, p. 33). The platform has the potential to become the 
+de-facto national standard for waste data and management. There are clear pathways to 
+secure non-dilutive funding through international grants targeted at environmental and 
+municipal reform (
+30
+). The model is highly replicable and scalable to other cities in the MENA 
+region facing similar challenges. 
+• Threats: Pervasive political instability could derail municipal decision-making and budget 
+allocation indefinitely. The arrival of a heavily subsidized international competitor could disrupt 
+the market. A failure in the initial pilot programs to deliver the promised, undeniable ROI would 
+be a major setback. 
+ 
+The Unmistakable ROI: The Core Pitch 
+ 
+Municipal leaders in Lebanon are not primarily motivated by technological innovation or 
+environmental stewardship. Their decisions are driven by two overwhelming factors: extreme 
+financial pressure and intense political pressure from their constituents (
+5
+). The single largest, most 
+volatile, and politically sensitive line item in their waste management budget is the cost of fuel for 
+collection trucks (
+19
+). Therefore, the pitch to any municipality or large enterprise must lead with the 
+most compelling and immediate financial benefit. 
+The opening statement will be direct and powerful: "Our platform can reduce your fleet's fuel 
+consumption and associated maintenance costs by up to 40%, with a payback period of less 
+than 12 months." This pitch leverages the 40% efficiency gain benchmark set by global leaders like 
+Compology (
+24
+) and frames the Zbeleh.ai system not as an expense, but as a self-funding investment 
+in fiscal survival. The conversation starts with cost-cutting and budget relief; the significant 
+environmental and public health benefits are then presented as powerful co-benefits that enhance 
+the value proposition. 
+ 
+The AI Differentiator as a Governance Tool 
+ 
+
+The AI-powered dashboard is far more than an operational tool for route optimization; it is a 
+sophisticated platform for governance, compliance, and public relations. 
+• Automated Contamination Alerts: The sensor's integrated camera will use a computer 
+vision model (similar to academic projects like ContamiNet 
+6
+, p. 33) to detect significant 
+contamination in recycling bins (e.g., a bag of organic waste in a plastics bin). It can 
+automatically flag the contamination event, log the location, and alert the municipal authorities. 
+This allows them to identify problem hotspots for targeted awareness campaigns or even 
+implement a system of warnings and fines, which both improves the quality (and thus, the 
+value) of their collected recyclables and creates a potential new revenue stream. 
+• Predictive Analytics for Urban Planning: The platform's real-time data on waste generation 
+rates—broken down by district, street, and even building type—provides an unprecedented 
+level of insight for municipal planning. This data is critical for compliance with the mandates of 
+Law 80/2018 (
+28
+) and for providing the detailed reporting required by international funding 
+bodies like the World Bank and UNDP (
+27
+). 
+• "The Mayor's Dashboard": A key deliverable will be a simplified, public-facing version of the 
+dashboard that can be embedded on the municipality's official website. This dashboard will 
+display key performance indicators in real-time for all citizens to see: "This month, our 
+community saved X liters of fuel, conducted Y fewer truck trips, and prevented Z bins from 
+overflowing." This transforms the platform from a back-office system into a powerful tool for 
+transparency and building political capital, allowing elected officials to demonstrably prove 
+their effectiveness to their constituents. 
+ 
+Overcoming Inertia and Risk 
+ 
+ 
+• De-risking through Piloting: The go-to-market strategy will mitigate the risk of municipal 
+inertia by targeting one or two progressive municipalities for a heavily subsidized or entirely 
+free 6-month pilot program (
+6
+, p. 30). The ideal pilot partners would be municipalities already 
+engaged with or receiving funding from international bodies (e.g., through the USAID 
+DAWERR program 
+31
+), as they are more likely to be open to innovation and have reporting 
+requirements that our platform can meet. The sole objective of the pilot is to generate an 
+undeniable, locally-validated case study that proves the ROI claims. 
+• Leveraging International Funding Channels: Zbeleh.ai will be actively positioned to align 
+with the objectives of major international aid programs, such as USAID's DAWERR project (
+33
+) 
+and World Bank environmental grants (
+30
+). The platform can be pitched to these organizations 
+as the perfect technology backbone to ensure their funds are deployed efficiently and with 
+measurable, verifiable impact. The goal is to have Zbeleh.ai become a preferred or even 
+required technology vendor for municipalities seeking to access these funds. 
+• Hardware Resilience and Security: The pitch must proactively address the valid concern of 
+hardware vandalism and theft (
+6
+, p. 34). The sensors will be designed in Lebanon for Lebanon: 
+extremely robust, weather-proof, and as discreet as possible. They will be equipped with 
+tamper alerts that notify the central platform if a unit is being interfered with. Furthermore, the 
+SaaS business model will include a comprehensive maintenance and replacement plan, 
+ensuring the municipality is not left with broken hardware. 
+ 
+Section 2.3: B2B Monetization – Structuring for Long-Term, Scalable 
+Contracts 
+ 
+
+The B2B monetization strategy is designed to be flexible, offering multiple entry points for clients 
+with varying budgetary constraints and creating a foundation for long-term, scalable recurring 
+revenue. 
+ 
+The Core SaaS Model 
+ 
+The primary revenue stream is a tiered monthly Software-as-a-Service (SaaS) subscription fee, 
+charged on a per-sensor basis (
+6
+, p. 29). This model ensures predictable revenue and aligns the cost 
+with the scale of the client's operation. 
+• Tier 1 (Basic Monitoring): Provides real-time fill-level data from ultrasonic sensors and basic 
+overflow alerts. This is the entry-level package for cost-sensitive clients. 
+• Tier 2 (Professional Optimization): Includes all Tier 1 features plus the AI-powered route 
+optimization engine and access to a standard analytics dashboard showing historical data and 
+basic efficiency metrics. 
+• Tier 3 (Enterprise Intelligence): The premium offering. It includes all Tier 2 features plus the 
+AI-powered camera vision for contamination detection, predictive analytics for forecasting 
+waste generation, API access for integration with existing municipal systems (e.g., ERP, 
+billing), and the customizable public-facing "Mayor's Dashboard." 
+ 
+Innovative & Hybrid Models (The Partnership Approach) 
+ 
+Recognizing the severe financial constraints facing many Lebanese municipalities (
+5
+), Zbeleh.ai will 
+offer innovative models that lower upfront risk and align financial incentives. 
+• Gain-Share Model: This is a powerful de-risking tool for hesitant clients. Zbeleh.ai charges a 
+significantly lower fixed monthly SaaS fee in exchange for a pre-agreed percentage (e.g., 30-
+50%) of the documented monthly cost savings generated by the system. Savings on fuel, 
+vehicle maintenance, and overtime pay would be tracked by the platform, and the "gain" would 
+be shared. This model means Zbeleh.ai only profits significantly when the client profits 
+significantly. 
+• Recyclables Revenue Share: For municipalities that use the full suite of Zbeleh.ai tools 
+(including the citizen engagement app) to improve sorting-at-source, the platform can track the 
+improved quality and quantity of collected recyclables. Zbeleh.ai can then take a percentage of 
+the additional revenue the municipality generates from selling these higher-value materials to 
+recycling facilities. 
+• Platform White-Labeling: This creates a highly scalable, indirect sales channel. Zbeleh.ai 
+can license its entire technology stack to large, private waste contractors (a more forward-
+thinking version of Ramco or even Averda for their regional operations). These contractors can 
+then offer the smart waste solution to their own municipal and corporate clients under their 
+own brand, paying Zbeleh.ai a licensing fee per end-user or sensor. 
+ 
+Value-Added Services 
+ 
+ 
+• ESG & Compliance-as-a-Service: Large corporate clients (malls, hospitals, industrial plants, 
+hotel chains) are increasingly under pressure to report on their environmental, social, and 
+governance (ESG) performance. Zbeleh.ai will offer a premium consulting service that uses 
+
+the rich data from the platform to generate automated, audit-ready ESG and sustainability 
+reports, saving clients significant time and consulting fees. 
+• The National Waste Intelligence Grid: The ultimate long-term vision is to aggregate all 
+anonymized data from B2C and B2B operations into a national waste intelligence grid (
+6
+, p. 
+37). This unique and invaluable dataset would be offered on a subscription basis to key 
+national and international stakeholders, including the Ministry of Environment, the World Bank, 
+UNDP, university research centers, and large private sector players seeking macro-level 
+insights into the Lebanese economy. 
+ 
+Section 2.4: The B2B Partnership Nexus – An Ecosystem of Credibility 
+and Scale 
+ 
+Strategic partnerships are crucial for navigating the complexities of the B2B market in Lebanon, 
+accelerating sales cycles, and building an ecosystem of credibility. 
+ 
+International Development & Funding Agencies (World Bank, UNDP, USAID) 
+ 
+ 
+• Partnership: Position Zbeleh.ai as a "Monitoring, Evaluation, and Learning (MEL)" Partner. 
+• Mechanism: International agencies invest millions in waste management projects across 
+Lebanon but often struggle to accurately measure their real-world impact and ensure funds 
+are used efficiently (
+30
+). The Zbeleh.ai platform provides the perfect solution: a real-time, data-
+driven tool for tracking every aspect of a waste management intervention, from collection 
+efficiency to recycling rates. By embedding the Zbeleh.ai platform into their grant requirements 
+as a mandatory MEL component, these agencies can ensure accountability and data-driven 
+results, while Zbeleh.ai gains unparalleled access to pre-qualified municipal clients and a de-
+risked sales cycle. 
+ 
+Financial Institutions (Byblos Bank, Bank Audi, Fransabank, etc.) 
+ 
+ 
+• Partnership: Create dedicated "Green Infrastructure" financing packages for municipalities 
+and large enterprises. 
+• Mechanism: Lebanese banks are actively seeking credible CSR initiatives and green 
+financing opportunities to bolster their portfolios and public image (
+37
+). Zbeleh.ai will partner 
+with these banks to offer favorable, low-interest loans specifically designed to cover the 
+upfront hardware and installation costs of its system. The loan repayment schedule can be 
+structured to be paid directly from the operational savings our system generates, effectively 
+making the project self-funding from the client's perspective and creating a win-win-win 
+scenario for the client, the bank, and Zbeleh.ai. 
+ 
+Insurance Companies (e.g., Medgulf, Allianz SNA, Bankers) 
+ 
+ 
+
+• Partnership: Develop a "Certified Green Risk" program that translates sustainable practices 
+into financial benefits. 
+• Mechanism: Improper waste management poses significant liabilities, including fire hazards 
+from overflowing bins, public health risks, and environmental contamination. Zbeleh.ai can 
+work with insurers to demonstrate that a business or municipality using its platform has a 
+measurably lower risk profile. This data-backed risk reduction could qualify clients for lower 
+insurance premiums, creating another powerful and unique financial incentive for them to 
+adopt the Zbeleh.ai system. 
+ 
+Local Manufacturing & Engineering Sector 
+ 
+ 
+• Partnership: Establish a local supply chain for hardware assembly, installation, and 
+maintenance. 
+• Mechanism: Instead of importing fully assembled and costly sensor units, Zbeleh.ai will 
+partner with a reputable local electronics or light manufacturing firm. This partner will handle 
+the final assembly of sensor components, quality assurance testing, and deployment. This 
+strategy significantly lowers hardware costs, reduces import dependencies, creates skilled 
+local jobs (a major selling point in any pitch to Lebanese officials), and ensures a rapid, on-
+the-ground response network for maintenance and support. 
+ 
+Conclusion: The Winning Formula – A Synthesized, 
+Dual-Track Vision for a Cleaner Lebanon 
+ 
+The analysis of the Lebanese waste sector and the strategic fortification of the Zbeleh.ai concept 
+reveal a clear path to creating a winning investment formula. The key element, which elevates this 
+venture from a mere product to a defensible ecosystem, is the profound synergy between the B2C 
+and B2B models. Zbeleh.ai is not two separate business ideas operating in parallel; it is one 
+integrated, intelligent ecosystem designed to attack Lebanon's waste crisis from both the top-down 
+and the bottom-up. 
+This integrated vision directly addresses the final critical question: have we missed anything? The 
+missing link was the articulation of this powerful flywheel effect. 
+• The B2B Enterprise Platform provides municipalities with the tools for operational efficiency 
+and cost control, giving them the financial breathing room and data-driven governance they 
+desperately need. 
+• This, in turn, allows them to sponsor or subsidize the B2C Consumer App for their residents, 
+creating a direct channel for citizen engagement, promoting sorting-at-source, and fulfilling the 
+public service mandate of a cleaner environment. 
+• The data from the B2C app—for example, identifying which materials citizens find most 
+confusing to sort—feeds directly back into the B2B dashboard, allowing the municipality to run 
+highly targeted and effective awareness campaigns. 
+• The B2C marketplace, by empowering and organizing the informal collector network, creates a 
+reliable and efficient offtake channel for the very recyclables that the integrated B2B-B2C 
+system helps to separate and aggregate. 
+The final investment thesis is therefore one of a uniquely resilient and pragmatic venture, 
+meticulously designed for the Lebanese reality. It does not fight against the existing informal 
+economy but empowers it. It does not require a functional central state but provides undeniable 
+
+financial and political value to the decentralized authorities that hold de facto power. It creates a 
+virtuous cycle where data from one side of the platform strengthens the other, building a moat of 
+network effects and proprietary intelligence that will be difficult for any competitor to replicate. 
+An investment in Zbeleh.ai is not a speculative bet on a single product. It is an investment in a 
+scalable, profitable, and deeply impactful solution to one of Lebanon's most persistent and visible 
+crises. It is an opportunity to build the foundational infrastructure for the country's emerging circular 
+economy. 
+Works cited 
+1. Impacting policies: Waste management and advocacy in Lebanon - Arab Reform 
+Initiative, accessed July 21, 2025, https://www.arab-reform.net/publication/impacting-
+policies-waste-management-and-advocacy-in-lebanon/ 
+2. Waste Not: Pursuing Environmental Justice in Lebanon, accessed July 21, 2025, 
+https://afsc.org/newsroom/waste-not-pursuing-environmental-justice-lebanon 
+3. Live Love, accessed July 21, 2025, https://livelove.org/ 
+4. Live Love Recycle - The Global Solutions Initiative, accessed July 21, 2025, 
+https://www.global-solutions-initiative.org/article/live-love-recycle/ 
+5. « Personne ne peut résoudre la crise des déchets sans l'État », alerte la responsable 
+d'une décharge au Akkar - L'Orient-Le Jour, accessed July 21, 2025, 
+https://www.lorientlejour.com/article/1463289/-personne-ne-peut-resoudre-la-crise-
+des-dechets-sans-letat-alerte-la-responsable-dune-decharge-au-akkar.html 
+6. 20250718_Zbeleh_AI_Pitch_Deck_B2C+B2B.pdf 
+7. Live, love, recycle initiative: an on-demand collection scheme, accessed July 21, 2025, 
+https://bestpractices-waste-med.net/live-love-recycle-initiative-an-on-demand-
+collection-scheme/ 
+8. Live, love, recycle initiative: an on-demand collection scheme, accessed July 21, 2025, 
+https://bestpractices-waste-med.net/wp-content/uploads/2021/12/BP14.pdf 
+9. Live Love Recycle: solving the garbage crisis one bag at a time | Berytech, accessed 
+July 21, 2025, https://berytech.org/live-love-recycle-solving-the-garbage-crisis-one-
+bag-at-a-time/ 
+10. Where to recycle waste in Lebanon? - L'Orient Today, accessed July 21, 2025, 
+https://today.lorientlejour.com/article/1348245/where-to-recycle-waste-in-lebanon.html 
+11. Informal waste collection - Wikipedia, accessed July 21, 2025, 
+https://en.wikipedia.org/wiki/Informal_waste_collection 
+12. Recycling Policies from the Bottom Up: Waste Work in Lebanon - Arab Reform 
+Initiative, accessed July 21, 2025, https://www.arab-reform.net/publication/recycling-
+policies-from-the-bottom-up-waste-work-in-lebanon/ 
+13. Recycle Lebanon, accessed July 21, 2025, https://recyclelebanon.org/ 
+14. Energy and Waste Solutions | United Nations Development Programme, accessed 
+July 21, 2025, https://www.undp.org/lebanon/projects/energy-and-waste-solutions-0 
+15. 2014-01 - Waste Management Conflict | January, 2014 to September, 2018, accessed 
+July 21, 2025, https://civilsociety-centre.org/timeliness/4923 
+16. Ramco » Waste management, accessed July 21, 2025, 
+https://www.ramcoeng.com/waste-management/ 
+17. Ramco Waste Management - LEBANON - SIEGMA | Portfolio, accessed July 21, 
+2025, 
+
+https://siegma.com/portfolio/?proj=Ramco%20Waste%20Management&type=design&i
+d=990 
+18. تایافنلا ةرادإ - Ramco, accessed July 21, 2025, https://www.ramcoeng.com/ar/waste-
+management/ 
+19. La collecte des ordures à Beyrouth et au Mont-Liban ralentie en raison des impayés 
+de l'État - L'Orient-Le Jour, accessed July 21, 2025, 
+https://www.lorientlejour.com/article/1463246/la-collecte-des-ordures-a-beyrouth-et-
+au-mont-liban-ralentie-en-raison-des-impayes-de-letat.html 
+20. Averda Holding- Company Details on ZAWYA, accessed July 21, 2025, 
+https://www.zawya.com/company/4298093922/averda-holding 
+21. AVERDA – Growthgate | Official Website |, accessed July 21, 2025, 
+https://growthgate.com/portfolio/averda/ 
+22. Waste Management Conflict (Starting January 25, 2014) - Civil Society Knowledge 
+Centre |, accessed July 21, 2025, https://civilsociety-centre.org/timelines/31033 
+23. Compology | Climatebase, accessed July 21, 2025, 
+https://climatebase.org/company/1817/compology 
+24. Compology brings AI-powered waste metering to multifamily ..., accessed July 21, 
+2025, https://www.recyclingproductnews.com/article/34840/compology-brings-ai-
+powered-waste-metering-to-multifamily-housing-market 
+25. www.scandit.com, accessed July 21, 2025, https://www.scandit.com/resources/case-
+studies/junker/#:~:text=Junker's%20business%20model%20relies%20on,details%20in
+cluded%20in%20the%20app. 
+26. Junker - Scandit, accessed July 21, 2025, https://www.scandit.com/resources/case-
+studies/junker/ 
+27. Towards a greener future in Lebanon | UNOPS, accessed July 21, 2025, 
+https://www.unops.org/news-and-stories/news/towards-a-greener-future-in-lebanon 
+28. MOE -  مقر نوناق80  ةبلصلا تایافنلل ةلماكتملا ةرادلاا :- ة ئ ی ب ل ا   ةر ا زو, accessed July 21, 2025, 
+https://moe.gov.lb/%D8%A7%D9%84%D9%88%D8%B2%D8%A7%D8%B1%D8%A9/
+%D8%A7%D9%84%D9%82%D9%88%D8%A7%D9%86%D9%8A%D9%86-
+%D9%88%D8%A7%D9%84%D8%A7%D9%86%D8%B8%D9%85%D8%A9/%D8%A7
+%D9%84%D9%82%D9%88%D8%A7%D9%86%D9%8A%D9%86/%D9%82%D8%A7
+%D9%86%D9%88%D9%86-%D8%B1%D9%82%D9%85-80-
+%D8%A7%D9%84%D8%A7%D8%AF%D8%A7%D8%B1%D8%A9-
+%D8%A7%D9%84%D9%85%D8%AA%D9%83%D8%A7%D9%85%D9%84%D8%A9
+-%D9%84%D9%84%D9%86%D9%81%D8%A7%D9%8A%D8%A7%D8%AA-
+%D8%A7%D9%84%D8%B5%D9%84%D8%A8%D8%A9.aspx 
+29. La gestion des déchets urbains au Liban entre politiques publiques et privées, 
+accessed July 21, 2025, https://journals.openedition.org/paysage/18400?lang=en 
+30. Lebanon: US$8.86 million Grant to Support Solid Waste ..., accessed July 21, 2025, 
+https://www.worldbank.org/en/news/press-release/2022/12/20/lebanon-us-8-86-
+million-grant-to-support-solid-waste-management-and-reduce-public-health-and-
+environmental-impacts 
+31. DAWERR: Diverting Waste by Encouraging Reuse and Recycling ..., accessed July 
+21, 2025, https://berytech.org/programs/dawerr/ 
+32. Summary of the Lebanon Solid Waste Roadmap for 2023-2026 : Towards an 
+Integrated Solid Waste Management System - Technical Note - World Bank 
+
+Documents and Reports, accessed July 21, 2025, 
+https://documents.worldbank.org/pt/publication/documents-
+reports/documentdetail/099112023054014380/p179435059e4c00080bd5a091bc0270
+002d 
+33. ECODIT Awarded $15 Million USAID/Lebanon Solid Waste Management Project, 
+accessed July 21, 2025, https://www.ecodit.com/newsDetails/?contId=109925 
+34. Beirut Critical Environment Recovery, Restoration and Waste Management Program, 
+accessed July 21, 2025, https://www.undp.org/lebanon/projects/beirut-critical-
+environment-recovery-restoration-and-waste-management-program 
+35. Environment, Climate and Energy | United Nations Development Programme, 
+accessed July 21, 2025, https://www.undp.org/lebanon/environment-climate-and-
+energy 
+36. Lebanon: New US$250 Million Project to Kickstart the Recovery and Reconstruction in 
+Conflict-Affected Areas - World Bank, accessed July 21, 2025, 
+https://www.worldbank.org/en/news/press-release/2025/06/25/lebanon-new-us-250-
+million-project-to-kickstart-the-recovery-and-reconstruction-in-conflict-affected-areas 
+37. Corporate Social Responsibility - Holcim (Liban), accessed July 21, 2025, 
+https://www.holcim.com.lb/sustainable-development/corporate-social-responsibility 
+38. CSR Banks Lebanon, Financial Inclusion CSR Lebanon - Byblos Bank, accessed July 
+21, 2025, https://www.byblosbank.com/bank-csr-lebanon 
+ 

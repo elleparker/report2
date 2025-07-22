@@ -1,29 +1,78 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { TrendingUp, Users, DollarSign, Globe, Target, BarChart3, FileText, AlertCircle } from 'lucide-react';
 
 import Navigation from '../components/Navigation';
 import BeleLogo from '../components/BeleLogo';
 import { 
-  MarketGrowthChart, 
+  WasteVolumeChart, 
   CompetitorAnalysisChart, 
-  DemographicsChart, 
+  WasteCompositionChart, 
   RevenueProjectionChart,
   MetricCard 
 } from '../components/Charts';
 
 export default function Home() {
-  const [activeSection, setActiveSection] = useState('executive-summary');
+  const [activeSection, setActiveSection] = useState('introduction');
 
   const handleSectionChange = (sectionId: string) => {
     setActiveSection(sectionId);
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const navHeight = 100; // Account for sticky nav height
+      const elementPosition = element.offsetTop - navHeight;
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
     }
   };
+
+  // Scroll observer to update active section
+  useEffect(() => {
+    const sections = [
+      'introduction',
+      'b2c-model',
+      'b2c-competitive',
+      'b2c-proposition',
+      'b2c-monetization',
+      'b2c-partnerships',
+      'b2b-model',
+      'b2b-competitive',
+      'b2b-proposition',
+      'b2b-monetization',
+      'b2b-partnerships',
+      'financial-overview',
+      'conclusion'
+    ];
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -60% 0px',
+      threshold: 0
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    sections.forEach((sectionId) => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
@@ -36,18 +85,18 @@ export default function Home() {
       <Navigation activeSection={activeSection} onSectionChange={handleSectionChange} />
       
       {/* Header */}
-      <header className="relative pt-8 pb-16 px-4 lg:pl-80 xl:pl-72">
+      <header className="relative pt-24 pb-16 px-4">
         <motion.div
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="w-full"
+          className="w-full max-w-7xl mx-auto"
         >
           <div className="glass p-8 mb-8">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
               <div>
                 <BeleLogo size="xl" />
-                <p className="text-gray-400 mt-4 text-lg">Comprehensive Market Research Report</p>
+                <p className="text-gray-400 mt-4 text-lg">Strategic Investment Report: Waste Management Solutions for Lebanon</p>
               </div>
               <div className="text-right">
                 <p className="text-sm text-gray-400">Report Date</p>
@@ -62,8 +111,8 @@ export default function Home() {
       </header>
 
       {/* Main Content */}
-      <main className="px-4 lg:pl-80 xl:pl-72 pb-16">
-        <div className="w-full space-y-16">
+      <main className="px-4 pb-16">
+        <div className="w-full max-w-7xl mx-auto space-y-16">
           
           {/* Executive Summary */}
           <motion.section
@@ -142,7 +191,7 @@ export default function Home() {
               </p>
             </div>
 
-            <MarketGrowthChart />
+            <WasteVolumeChart />
           </motion.section>
 
           {/* Market Size & Growth */}
@@ -164,11 +213,11 @@ export default function Home() {
                     <li className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
                       <span>Growing demand for real-time market intelligence</span>
-                    </li>
+          </li>
                     <li className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
                       <span>Expansion into emerging markets and verticals</span>
-                    </li>
+          </li>
                   </ul>
                 </div>
                 <div>
@@ -214,6 +263,31 @@ export default function Home() {
             <CompetitorAnalysisChart />
           </motion.section>
 
+          {/* Market Trends */}
+          <motion.section
+            id="market-trends"
+            {...fadeInUp}
+            className="space-y-8"
+          >
+            <div className="glass p-8">
+              <h3 className="mb-6">Market Trends & Opportunities</h3>
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div className="data-highlight">
+                  <h4 className="text-yellow-400 font-semibold mb-2">AI Integration</h4>
+                  <p className="text-gray-300">Growing adoption of AI-powered analytics across enterprise workflows</p>
+                </div>
+                <div className="data-highlight">
+                  <h4 className="text-yellow-400 font-semibold mb-2">Real-time Insights</h4>
+                  <p className="text-gray-300">Increasing demand for instant market intelligence and decision support</p>
+                </div>
+                <div className="data-highlight">
+                  <h4 className="text-yellow-400 font-semibold mb-2">Predictive Analytics</h4>
+                  <p className="text-gray-300">Rising need for forecasting and trend prediction capabilities</p>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
           {/* Target Audience */}
           <motion.section
             id="target-audience"
@@ -232,7 +306,129 @@ export default function Home() {
               </p>
             </div>
 
-            <DemographicsChart />
+            <WasteCompositionChart />
+          </motion.section>
+
+          {/* Demographics */}
+          <motion.section
+            id="demographics"
+            {...fadeInUp}
+            className="space-y-8"
+          >
+            <div className="glass p-8">
+              <h3 className="mb-6">Demographics Deep Dive</h3>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                  <h4 className="text-yellow-400 text-lg font-semibold mb-4">Geographic Distribution</h4>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">North America</span>
+                      <span className="text-white font-medium">42%</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">Europe</span>
+                      <span className="text-white font-medium">31%</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">Asia-Pacific</span>
+                      <span className="text-white font-medium">27%</span>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 className="text-yellow-400 text-lg font-semibold mb-4">Industry Sectors</h4>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">Technology</span>
+                      <span className="text-white font-medium">38%</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">Finance</span>
+                      <span className="text-white font-medium">29%</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">Healthcare</span>
+                      <span className="text-white font-medium">21%</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">Other</span>
+                      <span className="text-white font-medium">12%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* User Personas */}
+          <motion.section
+            id="user-personas"
+            {...fadeInUp}
+            className="space-y-8"
+          >
+            <div className="glass p-8">
+              <h3 className="mb-6">User Personas</h3>
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div className="data-highlight">
+                  <h4 className="text-yellow-400 font-semibold mb-2">Executive Decision Maker</h4>
+                  <p className="text-gray-300 text-sm mb-3">C-level executives seeking strategic insights for business decisions</p>
+                  <ul className="text-xs text-gray-400 space-y-1">
+                    <li>• Ages 40-55</li>
+                    <li>• Annual revenue responsibility: $50M+</li>
+                    <li>• Values: Speed, accuracy, ROI</li>
+                  </ul>
+                </div>
+                <div className="data-highlight">
+                  <h4 className="text-yellow-400 font-semibold mb-2">Data Analyst</h4>
+                  <p className="text-gray-300 text-sm mb-3">Technical professionals requiring detailed analytics and reporting</p>
+                  <ul className="text-xs text-gray-400 space-y-1">
+                    <li>• Ages 25-40</li>
+                    <li>• Technical background</li>
+                    <li>• Values: Depth, customization, APIs</li>
+                  </ul>
+                </div>
+                <div className="data-highlight">
+                  <h4 className="text-yellow-400 font-semibold mb-2">Strategic Planner</h4>
+                  <p className="text-gray-300 text-sm mb-3">Business strategists focused on market opportunities and growth</p>
+                  <ul className="text-xs text-gray-400 space-y-1">
+                    <li>• Ages 30-45</li>
+                    <li>• Cross-functional roles</li>
+                    <li>• Values: Trends, forecasting, insights</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* Behavior Analysis */}
+          <motion.section
+            id="behavior-analysis"
+            {...fadeInUp}
+            className="space-y-8"
+          >
+            <div className="glass p-8">
+              <h3 className="mb-6">User Behavior Analysis</h3>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="data-highlight">
+                  <h4 className="text-yellow-400 font-semibold mb-3">Usage Patterns</h4>
+                  <div className="space-y-2">
+                    <p className="text-gray-300">• <strong className="text-white">Daily active users:</strong> 67% of subscriber base</p>
+                    <p className="text-gray-300">• <strong className="text-white">Peak usage:</strong> 9-11 AM and 2-4 PM</p>
+                    <p className="text-gray-300">• <strong className="text-white">Session duration:</strong> Average 23 minutes</p>
+                    <p className="text-gray-300">• <strong className="text-white">Feature adoption:</strong> 89% use core analytics</p>
+                  </div>
+                </div>
+                <div className="data-highlight">
+                  <h4 className="text-yellow-400 font-semibold mb-3">Engagement Metrics</h4>
+                  <div className="space-y-2">
+                    <p className="text-gray-300">• <strong className="text-white">User retention (30-day):</strong> 84%</p>
+                    <p className="text-gray-300">• <strong className="text-white">Feature discovery rate:</strong> 76%</p>
+                    <p className="text-gray-300">• <strong className="text-white">Support ticket volume:</strong> 2.3% of users/month</p>
+                    <p className="text-gray-300">• <strong className="text-white">NPS Score:</strong> 67 (Industry: 42)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </motion.section>
 
           {/* Financial Projections */}
@@ -266,6 +462,114 @@ export default function Home() {
             </div>
 
             <RevenueProjectionChart />
+          </motion.section>
+
+          {/* Revenue Model */}
+          <motion.section
+            id="revenue-model"
+            {...fadeInUp}
+            className="space-y-8"
+          >
+            <div className="glass p-8">
+              <h3 className="mb-6">Revenue Model Breakdown</h3>
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div className="data-highlight">
+                  <h4 className="text-yellow-400 font-semibold mb-2">Subscription Revenue</h4>
+                  <p className="text-3xl font-bold text-white mb-2">$67.2M</p>
+                  <p className="text-green-400 text-sm">75% of total revenue</p>
+                  <p className="text-gray-300 text-sm mt-2">Monthly and annual subscriptions</p>
+                </div>
+                <div className="data-highlight">
+                  <h4 className="text-yellow-400 font-semibold mb-2">Enterprise Licenses</h4>
+                  <p className="text-3xl font-bold text-white mb-2">$18.7M</p>
+                  <p className="text-blue-400 text-sm">21% of total revenue</p>
+                  <p className="text-gray-300 text-sm mt-2">Custom enterprise solutions</p>
+                </div>
+                <div className="data-highlight">
+                  <h4 className="text-yellow-400 font-semibold mb-2">API & Integration</h4>
+                  <p className="text-3xl font-bold text-white mb-2">$3.7M</p>
+                  <p className="text-purple-400 text-sm">4% of total revenue</p>
+                  <p className="text-gray-300 text-sm mt-2">Developer tools and APIs</p>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* Cost Analysis */}
+          <motion.section
+            id="cost-analysis"
+            {...fadeInUp}
+            className="space-y-8"
+          >
+            <div className="glass p-8">
+              <h3 className="mb-6">Cost Structure Analysis</h3>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                  <h4 className="text-yellow-400 text-lg font-semibold mb-4">Operating Expenses</h4>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">R&D</span>
+                      <span className="text-white font-medium">$24.8M (38%)</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">Sales & Marketing</span>
+                      <span className="text-white font-medium">$19.2M (29%)</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">Infrastructure</span>
+                      <span className="text-white font-medium">$12.1M (18%)</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">Operations</span>
+                      <span className="text-white font-medium">$10.3M (15%)</span>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 className="text-yellow-400 text-lg font-semibold mb-4">Cost Optimization</h4>
+                  <div className="space-y-3">
+                    <div className="data-highlight">
+                      <p className="text-gray-300">• Automated infrastructure scaling: <strong className="text-white">-23% costs</strong></p>
+                      <p className="text-gray-300">• AI-driven support: <strong className="text-white">-31% ticket volume</strong></p>
+                      <p className="text-gray-300">• Predictive maintenance: <strong className="text-white">-18% downtime</strong></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* ROI Projections */}
+          <motion.section
+            id="roi-projections"
+            {...fadeInUp}
+            className="space-y-8"
+          >
+            <div className="glass p-8">
+              <h3 className="mb-6">ROI Projections & Investment Returns</h3>
+              <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+                <div className="data-highlight text-center">
+                  <h4 className="text-yellow-400 font-semibold mb-2">Customer LTV</h4>
+                  <p className="text-2xl font-bold text-white">$47,200</p>
+                  <p className="text-green-400 text-sm">+23% vs industry</p>
+                </div>
+                <div className="data-highlight text-center">
+                  <h4 className="text-yellow-400 font-semibold mb-2">CAC Payback</h4>
+                  <p className="text-2xl font-bold text-white">8.2 months</p>
+                  <p className="text-green-400 text-sm">Industry: 14 months</p>
+                </div>
+                <div className="data-highlight text-center">
+                  <h4 className="text-yellow-400 font-semibold mb-2">Gross Margin</h4>
+                  <p className="text-2xl font-bold text-white">78%</p>
+                  <p className="text-blue-400 text-sm">Best in class</p>
+                </div>
+                <div className="data-highlight text-center">
+                  <h4 className="text-yellow-400 font-semibold mb-2">IRR (5-year)</h4>
+                  <p className="text-2xl font-bold text-white">67%</p>
+                  <p className="text-green-400 text-sm">Target: 25%</p>
+                </div>
+              </div>
+            </div>
           </motion.section>
 
           {/* Global Expansion */}
@@ -322,12 +626,106 @@ export default function Home() {
             </div>
           </motion.section>
 
+          {/* Market Entry */}
+          <motion.section
+            id="market-entry"
+            {...fadeInUp}
+            className="space-y-8"
+          >
+            <div className="glass p-8">
+              <h3 className="mb-6">Market Entry Strategy</h3>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                  <h4 className="text-yellow-400 text-lg font-semibold mb-4">Go-to-Market Approach</h4>
+                  <div className="space-y-4">
+                    <div className="data-highlight">
+                      <h5 className="text-white font-medium mb-2">Phase 1: Partnership Strategy</h5>
+                      <p className="text-gray-300 text-sm">Establish local partnerships with consulting firms and system integrators</p>
+                    </div>
+                    <div className="data-highlight">
+                      <h5 className="text-white font-medium mb-2">Phase 2: Direct Sales</h5>
+                      <p className="text-gray-300 text-sm">Build dedicated sales teams in key metropolitan areas</p>
+                    </div>
+                    <div className="data-highlight">
+                      <h5 className="text-white font-medium mb-2">Phase 3: Market Leadership</h5>
+                      <p className="text-gray-300 text-sm">Establish regional offices and capture majority market share</p>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 className="text-yellow-400 text-lg font-semibold mb-4">Investment Requirements</h4>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">European Expansion</span>
+                      <span className="text-white font-medium">$12.5M</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">APAC Launch</span>
+                      <span className="text-white font-medium">$8.7M</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">Localization</span>
+                      <span className="text-white font-medium">$3.2M</span>
+                    </div>
+                    <div className="flex justify-between items-center border-t border-yellow-400/20 pt-2">
+                      <span className="text-yellow-400 font-medium">Total Investment</span>
+                      <span className="text-yellow-400 font-bold">$24.4M</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* Regional Analysis */}
+          <motion.section
+            id="regional-analysis"
+            {...fadeInUp}
+            className="space-y-8"
+          >
+            <div className="glass p-8">
+              <h3 className="mb-6">Regional Market Analysis</h3>
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div className="data-highlight">
+                  <h4 className="text-yellow-400 font-semibold mb-3">Europe</h4>
+                  <div className="space-y-2">
+                    <p className="text-gray-300">• <strong className="text-white">TAM:</strong> $32M</p>
+                    <p className="text-gray-300">• <strong className="text-white">GDPR Compliance:</strong> Built-in</p>
+                    <p className="text-gray-300">• <strong className="text-white">Competition:</strong> Moderate</p>
+                    <p className="text-gray-300">• <strong className="text-white">Timeline:</strong> Q1 2025</p>
+                    <p className="text-green-400 text-sm mt-2">High regulatory alignment</p>
+                  </div>
+                </div>
+                <div className="data-highlight">
+                  <h4 className="text-yellow-400 font-semibold mb-3">Asia-Pacific</h4>
+                  <div className="space-y-2">
+                    <p className="text-gray-300">• <strong className="text-white">TAM:</strong> $28M</p>
+                    <p className="text-gray-300">• <strong className="text-white">Growth Rate:</strong> 89% YoY</p>
+                    <p className="text-gray-300">• <strong className="text-white">Competition:</strong> Low</p>
+                    <p className="text-gray-300">• <strong className="text-white">Timeline:</strong> Q3 2025</p>
+                    <p className="text-blue-400 text-sm mt-2">Fastest growing region</p>
+                  </div>
+                </div>
+                <div className="data-highlight">
+                  <h4 className="text-yellow-400 font-semibold mb-3">Latin America</h4>
+                  <div className="space-y-2">
+                    <p className="text-gray-300">• <strong className="text-white">TAM:</strong> $14M</p>
+                    <p className="text-gray-300">• <strong className="text-white">Digital Adoption:</strong> Rising</p>
+                    <p className="text-gray-300">• <strong className="text-white">Competition:</strong> Minimal</p>
+                    <p className="text-gray-300">• <strong className="text-white">Timeline:</strong> 2026</p>
+                    <p className="text-purple-400 text-sm mt-2">Emerging opportunity</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
         </div>
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-white/10 px-4 lg:pl-80 xl:pl-72 py-8">
-        <div className="w-full">
+      <footer className="border-t border-white/10 px-4 py-8">
+        <div className="w-full max-w-7xl mx-auto">
           <div className="glass p-6">
             <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
               <div className="flex items-center gap-4">

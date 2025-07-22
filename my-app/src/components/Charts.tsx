@@ -19,42 +19,38 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 
-// Sample data for charts
-const marketGrowthData = [
-  { year: '2019', market: 45.2, revenue: 12.3 },
-  { year: '2020', market: 52.1, revenue: 18.7 },
-  { year: '2021', market: 68.9, revenue: 29.4 },
-  { year: '2022', market: 89.2, revenue: 45.8 },
-  { year: '2023', market: 112.7, revenue: 67.2 },
-  { year: '2024', market: 145.3, revenue: 89.6 },
-  { year: '2025', market: 185.7, revenue: 124.8 },
+// Waste management data for Lebanon
+const wasteVolumeData = [
+  { year: '2019', waste_generated: 1.8, properly_managed: 0.4 },
+  { year: '2020', waste_generated: 1.9, properly_managed: 0.5 },
+  { year: '2021', waste_generated: 2.0, properly_managed: 0.6 },
+  { year: '2022', waste_generated: 2.1, properly_managed: 0.7 },
+  { year: '2023', waste_generated: 2.2, properly_managed: 0.8 },
+  { year: '2024', waste_generated: 2.3, properly_managed: 1.0 },
+  { year: '2025', waste_generated: 2.4, properly_managed: 1.5 },
 ];
 
 const competitorData = [
-  { name: 'Bele.ai', market_share: 35, color: '#fbbf24' },
-  { name: 'Competitor A', market_share: 28, color: '#6366f1' },
-  { name: 'Competitor B', market_share: 18, color: '#8b5cf6' },
-  { name: 'Competitor C', market_share: 12, color: '#06b6d4' },
-  { name: 'Others', market_share: 7, color: '#64748b' },
+  { name: 'Live Love Recycle', market_share: 45, color: '#fbbf24' },
+  { name: 'Informal Sector', market_share: 35, color: '#6366f1' },
+  { name: 'Nadeera', market_share: 8, color: '#8b5cf6' },
+  { name: 'OLX/Facebook', market_share: 7, color: '#06b6d4' },
+  { name: 'Others', market_share: 5, color: '#64748b' },
 ];
 
-const demographicsData = [
-  { age_group: '18-24', percentage: 15, target: 18 },
-  { age_group: '25-34', percentage: 35, target: 32 },
-  { age_group: '35-44', percentage: 28, target: 25 },
-  { age_group: '45-54', percentage: 15, target: 18 },
-  { age_group: '55+', percentage: 7, target: 7 },
+const wasteCompositionData = [
+  { category: 'Organic', percentage: 52, recycling_rate: 15 },
+  { category: 'Plastic', percentage: 18, recycling_rate: 25 },
+  { category: 'Paper', percentage: 12, recycling_rate: 30 },
+  { category: 'Glass', percentage: 8, recycling_rate: 45 },
+  { category: 'Metal', percentage: 6, recycling_rate: 65 },
+  { category: 'Others', percentage: 4, recycling_rate: 10 },
 ];
 
 const revenueProjectionData = [
-  { quarter: 'Q1 2024', actual: 22.5, projected: 20.0 },
-  { quarter: 'Q2 2024', actual: 28.3, projected: 25.5 },
-  { quarter: 'Q3 2024', actual: 31.7, projected: 29.0 },
-  { quarter: 'Q4 2024', actual: 38.9, projected: 35.2 },
-  { quarter: 'Q1 2025', actual: null, projected: 42.8 },
-  { quarter: 'Q2 2025', actual: null, projected: 48.3 },
-  { quarter: 'Q3 2025', actual: null, projected: 54.7 },
-  { quarter: 'Q4 2025', actual: null, projected: 62.1 },
+  { year: 'Year 1', commission: 108, subscription: 18, data: 10, total: 136 },
+  { year: 'Year 2', commission: 1575, subscription: 180, data: 150, total: 1905 },
+  { year: 'Year 3', commission: 4725, subscription: 540, data: 500, total: 5765 },
 ];
 
 interface TooltipProps {
@@ -84,7 +80,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps) => {
   return null;
 };
 
-export function MarketGrowthChart() {
+export function WasteVolumeChart() {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -92,17 +88,17 @@ export function MarketGrowthChart() {
       transition={{ duration: 0.6 }}
       className="chart-container"
     >
-      <h3 className="text-xl font-bold mb-4 gradient-text">Market Growth Trajectory</h3>
+      <h3 className="text-xl font-bold mb-4 gradient-text">Lebanon Waste Generation & Management</h3>
       <ResponsiveContainer width="100%" height={400}>
-        <AreaChart data={marketGrowthData}>
+        <AreaChart data={wasteVolumeData}>
           <defs>
-            <linearGradient id="marketGradient" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#fbbf24" stopOpacity={0.3}/>
-              <stop offset="95%" stopColor="#fbbf24" stopOpacity={0}/>
+            <linearGradient id="wasteGradient" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="5%" stopColor="#ef4444" stopOpacity={0.3}/>
+              <stop offset="95%" stopColor="#ef4444" stopOpacity={0}/>
             </linearGradient>
-            <linearGradient id="revenueGradient" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.3}/>
-              <stop offset="95%" stopColor="#3b82f6" stopOpacity={0}/>
+            <linearGradient id="managedGradient" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="5%" stopColor="#22c55e" stopOpacity={0.3}/>
+              <stop offset="95%" stopColor="#22c55e" stopOpacity={0}/>
             </linearGradient>
           </defs>
           <CartesianGrid strokeDasharray="3 3" stroke="#374151" opacity={0.3} />
@@ -112,19 +108,19 @@ export function MarketGrowthChart() {
           <Legend />
           <Area
             type="monotone"
-            dataKey="market"
-            stroke="#fbbf24"
+            dataKey="waste_generated"
+            stroke="#ef4444"
             fillOpacity={1}
-            fill="url(#marketGradient)"
-            name="Market Size ($B)"
+            fill="url(#wasteGradient)"
+            name="Total Waste Generated (M tons)"
           />
           <Area
             type="monotone"
-            dataKey="revenue"
-            stroke="#3b82f6"
+            dataKey="properly_managed"
+            stroke="#22c55e"
             fillOpacity={1}
-            fill="url(#revenueGradient)"
-            name="Our Revenue ($M)"
+            fill="url(#managedGradient)"
+            name="Properly Managed (M tons)"
           />
         </AreaChart>
       </ResponsiveContainer>
@@ -164,7 +160,7 @@ export function CompetitorAnalysisChart() {
   );
 }
 
-export function DemographicsChart() {
+export function WasteCompositionChart() {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -172,16 +168,16 @@ export function DemographicsChart() {
       transition={{ duration: 0.6, delay: 0.4 }}
       className="chart-container"
     >
-      <h3 className="text-xl font-bold mb-4 gradient-text">Target Demographics Analysis</h3>
+      <h3 className="text-xl font-bold mb-4 gradient-text">Lebanon Waste Composition & Recycling Rates</h3>
       <ResponsiveContainer width="100%" height={400}>
-        <BarChart data={demographicsData}>
+        <BarChart data={wasteCompositionData}>
           <CartesianGrid strokeDasharray="3 3" stroke="#374151" opacity={0.3} />
-          <XAxis dataKey="age_group" stroke="#9ca3af" />
+          <XAxis dataKey="category" stroke="#9ca3af" />
           <YAxis stroke="#9ca3af" />
           <Tooltip content={<CustomTooltip />} />
           <Legend />
-          <Bar dataKey="percentage" fill="#fbbf24" name="Current %" radius={[4, 4, 0, 0]} />
-          <Bar dataKey="target" fill="#3b82f6" name="Target %" radius={[4, 4, 0, 0]} />
+          <Bar dataKey="percentage" fill="#fbbf24" name="Waste Composition %" radius={[4, 4, 0, 0]} />
+          <Bar dataKey="recycling_rate" fill="#22c55e" name="Current Recycling Rate %" radius={[4, 4, 0, 0]} />
         </BarChart>
       </ResponsiveContainer>
     </motion.div>
@@ -196,32 +192,36 @@ export function RevenueProjectionChart() {
       transition={{ duration: 0.6, delay: 0.6 }}
       className="chart-container"
     >
-      <h3 className="text-xl font-bold mb-4 gradient-text">Revenue Projections</h3>
+      <h3 className="text-xl font-bold mb-4 gradient-text">Zbeleh.ai Revenue Projections</h3>
       <ResponsiveContainer width="100%" height={400}>
-        <LineChart data={revenueProjectionData}>
+        <BarChart data={revenueProjectionData}>
           <CartesianGrid strokeDasharray="3 3" stroke="#374151" opacity={0.3} />
-          <XAxis dataKey="quarter" stroke="#9ca3af" />
+          <XAxis dataKey="year" stroke="#9ca3af" />
           <YAxis stroke="#9ca3af" />
           <Tooltip content={<CustomTooltip />} />
           <Legend />
-          <Line
-            type="monotone"
-            dataKey="actual"
-            stroke="#fbbf24"
-            strokeWidth={3}
-            dot={{ fill: '#fbbf24', strokeWidth: 2, r: 6 }}
-            name="Actual Revenue ($M)"
+          <Bar
+            dataKey="commission"
+            stackId="revenue"
+            fill="#fbbf24"
+            name="Commission/Fee Revenue ($K)"
+            radius={[0, 0, 0, 0]}
           />
-          <Line
-            type="monotone"
-            dataKey="projected"
-            stroke="#3b82f6"
-            strokeWidth={2}
-            strokeDasharray="5 5"
-            dot={{ fill: '#3b82f6', strokeWidth: 2, r: 4 }}
-            name="Projected Revenue ($M)"
+          <Bar
+            dataKey="subscription"
+            stackId="revenue"
+            fill="#3b82f6"
+            name="SME Subscriptions ($K)"
+            radius={[0, 0, 0, 0]}
           />
-        </LineChart>
+          <Bar
+            dataKey="data"
+            stackId="revenue"
+            fill="#22c55e"
+            name="Data/Sponsorship ($K)"
+            radius={[4, 4, 0, 0]}
+          />
+        </BarChart>
       </ResponsiveContainer>
     </motion.div>
   );
