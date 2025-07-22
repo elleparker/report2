@@ -31,6 +31,18 @@ export default function RootLayout({
           src="https://tianji.motherfucking.fun/tracker.js" 
           data-website-id="cmdez8mwo12vw5kbiejavldfq"
         ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+    var _mtm = window._mtm = window._mtm || [];
+    _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+    (function() {
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.async=true; g.src='https://matomo.motherfucking.fun/js/container_7tMWVUlD.js'; s.parentNode.insertBefore(g,s);
+    })();
+            `,
+          }}
+        ></script>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

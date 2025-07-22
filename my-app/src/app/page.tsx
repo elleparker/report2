@@ -90,7 +90,7 @@ export default function Home() {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="w-full max-w-7xl mx-auto"
+          className="w-full px-4"
         >
           <div className="glass p-8 mb-8">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
@@ -112,247 +112,328 @@ export default function Home() {
 
       {/* Main Content */}
       <main className="px-4 pb-16">
-        <div className="w-full max-w-7xl mx-auto space-y-16">
+        <div className="w-full px-4 space-y-16">
           
-          {/* Executive Summary */}
+          {/* Introduction: Investment Opportunity */}
           <motion.section
-            id="executive-summary"
+            id="introduction"
             {...fadeInUp}
             className="space-y-8"
           >
             <div className="glass p-8">
-              <h1 className="mb-6">AI Market Intelligence Report</h1>
+              <h1 className="mb-6">Zbeleh.ai Strategic Investment Report</h1>
+              <h2 className="text-yellow-400 text-2xl mb-4">A Pragmatic, Technology-Driven Solution for Lebanon's Waste Crisis</h2>
               <div className="prose prose-invert max-w-none">
                 <p className="text-xl text-gray-300 leading-relaxed mb-6">
-                  The artificial intelligence market continues to experience unprecedented growth, 
-                  with Bele.ai positioned as a key player in the emerging market intelligence sector.
+                  Lebanon's waste management sector is not merely a public service issue; it is a profound economic, environmental, and public health catastrophe. 
+                  The country generates over <strong className="text-white">2 million tons</strong> of solid waste annually, with over <strong className="text-white">80%</strong> being mismanaged through open dumping and burning, 
+                  at an exorbitant cost of approximately <strong className="text-white">$154.50 per ton</strong>—significantly higher than regional peers.
                 </p>
                 
                 <div className="data-highlight">
-                  <h3 className="text-yellow-400 mb-3">Key Findings</h3>
+                  <h3 className="text-yellow-400 mb-3">Core Investment Thesis</h3>
+                  <p className="text-gray-300 leading-relaxed mb-4">
+                    This systemic collapse creates a significant and untapped economic opportunity. The fragmentation and decentralization of Lebanon's waste sector 
+                    makes it uniquely suited for a flexible, technology-enabled solution like Zbeleh.ai.
+                  </p>
                   <ul className="space-y-2 text-gray-300">
-                    <li>• Market size projected to reach <strong className="text-white">$185.7B by 2025</strong></li>
-                    <li>• Bele.ai holds <strong className="text-white">35% market share</strong> in specialized AI analytics</li>
-                    <li>• Expected <strong className="text-white">124% YoY growth</strong> in revenue by Q4 2025</li>
-                    <li>• Target demographic engagement increased by <strong className="text-white">67%</strong></li>
+                    <li>• <strong className="text-white">Dual-track strategy</strong>: B2C Consumer Model + B2B Enterprise Model</li>
+                    <li>• <strong className="text-white">Market gap</strong>: No technology platform organizing the informal waste economy</li>
+                    <li>• <strong className="text-white">Financial opportunity</strong>: Transform cost centers into profit centers</li>
+                    <li>• <strong className="text-white">Social impact</strong>: Empower informal workers and create dignified employment</li>
                   </ul>
                 </div>
               </div>
             </div>
 
-            {/* Key Metrics */}
+            {/* Key Market Metrics */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <MetricCard
-                title="Market Size"
-                value="$145.3B"
-                change="+29%"
+                title="Annual Waste Generated"
+                value="2M tons"
+                change="Growing"
                 trend="up"
-                icon={<TrendingUp className="w-6 h-6" />}
+                icon={<BarChart3 className="w-6 h-6" />}
               />
               <MetricCard
-                title="Active Users"
-                value="2.4M"
-                change="+45%"
-                trend="up"
-                icon={<Users className="w-6 h-6" />}
+                title="Mismanaged Waste"
+                value="80%"
+                change="Crisis"
+                trend="down"
+                icon={<AlertCircle className="w-6 h-6" />}
               />
               <MetricCard
-                title="Revenue"
-                value="$89.6M"
-                change="+67%"
-                trend="up"
+                title="Cost Per Ton"
+                value="$154.50"
+                change="High"
+                trend="down"
                 icon={<DollarSign className="w-6 h-6" />}
               />
               <MetricCard
-                title="Global Reach"
-                value="127"
-                change="+23%"
+                title="Potential Revenue"
+                value="$1.5M+"
+                change="Annually"
                 trend="up"
-                icon={<Globe className="w-6 h-6" />}
+                icon={<TrendingUp className="w-6 h-6" />}
               />
             </div>
           </motion.section>
 
-          {/* Market Analysis */}
+          {/* B2C Consumer Model Overview */}
           <motion.section
-            id="market-analysis"
-            {...fadeInUp}
-            className="space-y-8"
-          >
-            <div className="glass p-8">
-              <h2 className="mb-6 flex items-center gap-3">
-                <BarChart3 className="w-8 h-8 text-yellow-400" />
-                Market Analysis Overview
-              </h2>
-              <p className="text-gray-300 text-lg leading-relaxed mb-8">
-                Our comprehensive analysis reveals significant growth opportunities in the AI market intelligence sector, 
-                with Bele.ai strategically positioned to capture substantial market share through innovative solutions 
-                and strategic partnerships.
-              </p>
-            </div>
-
-            <WasteVolumeChart />
-          </motion.section>
-
-          {/* Market Size & Growth */}
-          <motion.section
-            id="market-size"
-            {...fadeInUp}
-            className="space-y-8"
-          >
-            <div className="glass p-8">
-              <h3 className="mb-6">Market Size & Growth Trajectory</h3>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div>
-                  <h4 className="text-yellow-400 text-lg font-semibold mb-4">Growth Drivers</h4>
-                  <ul className="space-y-3 text-gray-300">
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Increased enterprise adoption of AI-driven analytics</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Growing demand for real-time market intelligence</span>
-          </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Expansion into emerging markets and verticals</span>
-          </li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="text-yellow-400 text-lg font-semibold mb-4">Market Segments</h4>
-                  <div className="space-y-4">
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-300">Enterprise Solutions</span>
-                      <span className="text-white font-medium">45%</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-300">SMB Analytics</span>
-                      <span className="text-white font-medium">30%</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-300">API & Integration</span>
-                      <span className="text-white font-medium">25%</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.section>
-
-          {/* Competitive Landscape */}
-          <motion.section
-            id="competitive-landscape"
-            {...fadeInUp}
-            className="space-y-8"
-          >
-            <div className="glass p-8">
-              <h3 className="mb-6 flex items-center gap-3">
-                <Target className="w-6 h-6 text-yellow-400" />
-                Competitive Landscape
-              </h3>
-              <div className="data-highlight">
-                <p className="text-gray-300 leading-relaxed">
-                  Bele.ai maintains a strong competitive position with <strong className="text-white">35% market share</strong>, 
-                  significantly ahead of competitors through superior AI algorithms and comprehensive market coverage.
-                </p>
-              </div>
-            </div>
-            
-            <CompetitorAnalysisChart />
-          </motion.section>
-
-          {/* Market Trends */}
-          <motion.section
-            id="market-trends"
-            {...fadeInUp}
-            className="space-y-8"
-          >
-            <div className="glass p-8">
-              <h3 className="mb-6">Market Trends & Opportunities</h3>
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <div className="data-highlight">
-                  <h4 className="text-yellow-400 font-semibold mb-2">AI Integration</h4>
-                  <p className="text-gray-300">Growing adoption of AI-powered analytics across enterprise workflows</p>
-                </div>
-                <div className="data-highlight">
-                  <h4 className="text-yellow-400 font-semibold mb-2">Real-time Insights</h4>
-                  <p className="text-gray-300">Increasing demand for instant market intelligence and decision support</p>
-                </div>
-                <div className="data-highlight">
-                  <h4 className="text-yellow-400 font-semibold mb-2">Predictive Analytics</h4>
-                  <p className="text-gray-300">Rising need for forecasting and trend prediction capabilities</p>
-                </div>
-              </div>
-            </div>
-          </motion.section>
-
-          {/* Target Audience */}
-          <motion.section
-            id="target-audience"
+            id="b2c-model"
             {...fadeInUp}
             className="space-y-8"
           >
             <div className="glass p-8">
               <h2 className="mb-6 flex items-center gap-3">
                 <Users className="w-8 h-8 text-yellow-400" />
-                Target Audience Analysis
+                Part I: The Zbeleh.ai B2C Consumer Model
+              </h2>
+              <p className="text-gray-300 text-lg leading-relaxed mb-8">
+                Organizing chaos and creating value through a grassroots network that tackles the problem from the bottom up, 
+                empowering citizens and the informal sector with AI-powered logistics and marketplace solutions.
+              </p>
+              
+              <WasteVolumeChart />
+            </div>
+          </motion.section>
+
+          {/* B2C Competitive Arena */}
+          <motion.section
+            id="b2c-competitive"
+            {...fadeInUp}
+            className="space-y-8"
+          >
+            <div className="glass p-8">
+              <h3 className="mb-6 flex items-center gap-3">
+                <Target className="w-6 h-6 text-yellow-400" />
+                B2C Competitive Arena: Mapping a Fragmented Ecosystem
+              </h3>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                <div>
+                  <h4 className="text-yellow-400 text-lg font-semibold mb-4">Direct Digital Competitors</h4>
+                  <div className="space-y-4">
+                    <div className="data-highlight">
+                      <h5 className="text-white font-medium mb-2">Live Love Recycle (LLR)</h5>
+                      <p className="text-gray-300 text-sm mb-2">NGO-driven, on-demand collection service serving 25,000+ subscribers</p>
+                      <p className="text-red-400 text-sm"><strong>Weakness:</strong> Unsustainable funding model dependent on grants</p>
+                    </div>
+                    <div className="data-highlight">
+                      <h5 className="text-white font-medium mb-2">Nadeera</h5>
+                      <p className="text-gray-300 text-sm mb-2">AI-powered mobile app for identifying recyclables</p>
+                      <p className="text-red-400 text-sm"><strong>Weakness:</strong> No collection logistics - just identification</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <h4 className="text-yellow-400 text-lg font-semibold mb-4">Informal & Indirect Competitors</h4>
+                  <div className="space-y-4">
+                    <div className="data-highlight">
+                      <h5 className="text-white font-medium mb-2">Informal Sector (Kabaris & Muallims)</h5>
+                      <p className="text-gray-300 text-sm mb-2">Street-level waste pickers and scrapyard masters</p>
+                      <p className="text-green-400 text-sm"><strong>Opportunity:</strong> Empower, don't replace - potential supply chain partners</p>
+                    </div>
+                    <div className="data-highlight">
+                      <h5 className="text-white font-medium mb-2">P2P Marketplaces (OLX, Facebook)</h5>
+                      <p className="text-gray-300 text-sm mb-2">Default solution for bulky waste disposal</p>
+                      <p className="text-red-400 text-sm"><strong>Weakness:</strong> Inefficient, no trust mechanisms, opaque pricing</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <CompetitorAnalysisChart />
+          </motion.section>
+
+          {/* B2C Value Proposition */}
+          <motion.section
+            id="b2c-proposition"
+            {...fadeInUp}
+            className="space-y-8"
+          >
+            <div className="glass p-8">
+              <h3 className="mb-6">Fortifying the B2C Proposition: Blueprint for Adoption and Loyalty</h3>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                <div>
+                  <h4 className="text-yellow-400 text-lg font-semibold mb-4">SWOT Analysis</h4>
+                  <div className="space-y-3">
+                    <div className="p-4 bg-green-500/10 border border-green-500/20 rounded-lg">
+                      <h5 className="text-green-400 font-medium mb-2">Strengths</h5>
+                      <ul className="text-gray-300 text-sm space-y-1">
+                        <li>• Asset-light, highly scalable model</li>
+                        <li>• Addresses daily citizen frustration</li>
+                        <li>• Positive social impact potential</li>
+                      </ul>
+                    </div>
+                    <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-lg">
+                      <h5 className="text-red-400 font-medium mb-2">Challenges</h5>
+                      <ul className="text-gray-300 text-sm space-y-1">
+                        <li>• Marketplace chicken-and-egg problem</li>
+                        <li>• Requires smartphone penetration</li>
+                        <li>• Potential resistance from middlemen</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <h4 className="text-yellow-400 text-lg font-semibold mb-4">AI Differentiator</h4>
+                  <div className="space-y-4">
+                    <div className="data-highlight">
+                      <h5 className="text-white font-medium mb-2">Dynamic Valuation</h5>
+                      <p className="text-gray-300 text-sm">AI identifies material grades (PET Grade A vs HDPE Grade B) and provides real-time market pricing</p>
+                    </div>
+                    <div className="data-highlight">
+                      <h5 className="text-white font-medium mb-2">Predictive Hotspot Mapping</h5>
+                      <p className="text-gray-300 text-sm">Algorithm analyzes patterns to predict waste accumulation and optimize collection routes</p>
+                    </div>
+                    <div className="data-highlight">
+                      <h5 className="text-white font-medium mb-2">"Trace Your Trash" Feature</h5>
+                      <p className="text-gray-300 text-sm">Users can track their recyclables from pickup to final destination, building unprecedented trust</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* B2C Monetization */}
+          <motion.section
+            id="b2c-monetization"
+            {...fadeInUp}
+            className="space-y-8"
+          >
+            <div className="glass p-8">
+              <h3 className="mb-6">B2C Monetization: Diverse and Resilient Revenue Streams</h3>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                <div className="data-highlight">
+                  <h4 className="text-yellow-400 font-semibold mb-2">Commission Model</h4>
+                  <p className="text-3xl font-bold text-white mb-2">15-20%</p>
+                  <p className="text-gray-300 text-sm">Commission on valuable materials (aluminum, copper, e-waste)</p>
+                </div>
+                <div className="data-highlight">
+                  <h4 className="text-yellow-400 font-semibold mb-2">Convenience Fee</h4>
+                  <p className="text-3xl font-bold text-white mb-2">$1-2</p>
+                  <p className="text-gray-300 text-sm">Fixed fee for low-value materials (glass, mixed paper)</p>
+                </div>
+                <div className="data-highlight">
+                  <h4 className="text-yellow-400 font-semibold mb-2">SME Subscriptions</h4>
+                  <p className="text-3xl font-bold text-white mb-2">$30/mo</p>
+                  <p className="text-gray-300 text-sm">Monthly subscriptions for small businesses</p>
+                </div>
+              </div>
+
+              <RevenueProjectionChart />
+            </div>
+          </motion.section>
+
+          {/* B2C Partnerships */}
+          <motion.section
+            id="b2c-partnerships"
+            {...fadeInUp}
+            className="space-y-8"
+          >
+            <div className="glass p-8">
+              <h3 className="mb-6">The B2C Partnership Nexus: Beyond the Obvious</h3>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                  <h4 className="text-yellow-400 text-lg font-semibold mb-4">Strategic Partnerships</h4>
+                  <div className="space-y-4">
+                    <div className="data-highlight">
+                      <h5 className="text-white font-medium mb-2">Retail & FMCG Sector</h5>
+                      <p className="text-gray-300 text-sm">Partner with Spinneys, Carrefour for take-back programs. Users scan barcodes for subsidized pickups.</p>
+                    </div>
+                    <div className="data-highlight">
+                      <h5 className="text-white font-medium mb-2">Real Estate & Property</h5>
+                      <p className="text-gray-300 text-sm">Building-wide subscriptions as premium amenity. "Zbeleh.ai Certified Green Building" marketing.</p>
+                    </div>
+                    <div className="data-highlight">
+                      <h5 className="text-white font-medium mb-2">Telecom Operators</h5>
+                      <p className="text-gray-300 text-sm">Alfa, Touch loyalty point integration. Redeem points for pickup credits.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <h4 className="text-yellow-400 text-lg font-semibold mb-4">Academic Partnerships</h4>
+                  <div className="space-y-4">
+                    <div className="data-highlight">
+                      <h5 className="text-white font-medium mb-2">Universities (AUB, LAU, USJ)</h5>
+                      <p className="text-gray-300 text-sm">Provide datasets for research, host hackathons, recruit talent pipeline.</p>
+                    </div>
+                    <div className="data-highlight">
+                      <h5 className="text-white font-medium mb-2">NGO Collaboration</h5>
+                      <p className="text-gray-300 text-sm">Partner with Arcenciel for verified material streams, Recycle Lebanon for awareness campaigns.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* B2B Enterprise Model Overview */}
+          <motion.section
+            id="b2b-model"
+            {...fadeInUp}
+            className="space-y-8"
+          >
+            <div className="glass p-8">
+              <h2 className="mb-6 flex items-center gap-3">
+                <BarChart3 className="w-8 h-8 text-yellow-400" />
+                Part II: The Zbeleh.ai B2B Enterprise Model
               </h2>
               <p className="text-gray-300 text-lg leading-relaxed">
-                Our primary target demographic consists of enterprise decision-makers, 
-                data analysts, and strategic planners across various industries seeking 
-                advanced market intelligence solutions.
+                The irrefutable case for efficiency and control. A paradigm shift from brute-force operations to data-driven intelligence 
+                for municipalities and large enterprises struggling with escalating waste management costs.
               </p>
             </div>
-
-            <WasteCompositionChart />
           </motion.section>
 
-          {/* Demographics */}
+          {/* B2B Competitive Analysis */}
           <motion.section
-            id="demographics"
+            id="b2b-competitive"
             {...fadeInUp}
             className="space-y-8"
           >
             <div className="glass p-8">
-              <h3 className="mb-6">Demographics Deep Dive</h3>
+              <h3 className="mb-6">B2B Competitive Arena: Challenging Incumbents and Foreign Giants</h3>
+              
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div>
-                  <h4 className="text-yellow-400 text-lg font-semibold mb-4">Geographic Distribution</h4>
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-300">North America</span>
-                      <span className="text-white font-medium">42%</span>
+                  <h4 className="text-yellow-400 text-lg font-semibold mb-4">Incumbent Contractors</h4>
+                  <div className="space-y-4">
+                    <div className="data-highlight">
+                      <h5 className="text-white font-medium mb-2">Ramco</h5>
+                      <p className="text-gray-300 text-sm mb-2">Current contractor for Beirut and Metn & Keserwan</p>
+                      <p className="text-red-400 text-sm"><strong>Weakness:</strong> Traditional, operational-only model. No data intelligence.</p>
                     </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-300">Europe</span>
-                      <span className="text-white font-medium">31%</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-300">Asia-Pacific</span>
-                      <span className="text-white font-medium">27%</span>
+                    <div className="data-highlight">
+                      <h5 className="text-white font-medium mb-2">Sukleen/Averda Legacy</h5>
+                      <p className="text-gray-300 text-sm mb-2">Two-decade tenure with public distrust</p>
+                      <p className="text-red-400 text-sm"><strong>Issues:</strong> Monopoly accusations, inflated costs ($140/ton), opacity</p>
                     </div>
                   </div>
                 </div>
+                
                 <div>
-                  <h4 className="text-yellow-400 text-lg font-semibold mb-4">Industry Sectors</h4>
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-300">Technology</span>
-                      <span className="text-white font-medium">38%</span>
+                  <h4 className="text-yellow-400 text-lg font-semibold mb-4">Global Benchmarks</h4>
+                  <div className="space-y-4">
+                    <div className="data-highlight">
+                      <h5 className="text-white font-medium mb-2">Compology (US)</h5>
+                      <p className="text-gray-300 text-sm mb-2">AI-powered bin monitoring and route optimization</p>
+                      <p className="text-green-400 text-sm"><strong>Results:</strong> 40% cost reduction, 80% contamination decrease</p>
                     </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-300">Finance</span>
-                      <span className="text-white font-medium">29%</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-300">Healthcare</span>
-                      <span className="text-white font-medium">21%</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-300">Other</span>
-                      <span className="text-white font-medium">12%</span>
+                    <div className="data-highlight">
+                      <h5 className="text-white font-medium mb-2">Junker (Italy)</h5>
+                      <p className="text-gray-300 text-sm mb-2">Municipality-subscription model for citizen engagement</p>
+                      <p className="text-green-400 text-sm"><strong>Validation:</strong> Municipalities pay for digital citizen tools</p>
                     </div>
                   </div>
                 </div>
@@ -360,361 +441,221 @@ export default function Home() {
             </div>
           </motion.section>
 
-          {/* User Personas */}
+          {/* B2B Value Proposition */}
           <motion.section
-            id="user-personas"
+            id="b2b-proposition"
             {...fadeInUp}
             className="space-y-8"
           >
             <div className="glass p-8">
-              <h3 className="mb-6">User Personas</h3>
+              <h3 className="mb-6">Fortifying the B2B Proposition: Political and Financial Survival</h3>
+              
+              <div className="data-highlight mb-8">
+                <h4 className="text-yellow-400 font-semibold mb-3">The Core Pitch</h4>
+                <p className="text-xl text-white font-bold mb-2">
+                  "Our platform can reduce your fleet's fuel consumption by up to 40%, with a payback period of less than 12 months."
+                </p>
+                <p className="text-gray-300">
+                  Lebanese municipalities face extreme financial pressure. Fuel costs are their largest, most volatile expense. 
+                  This positions Zbeleh.ai as a self-funding investment in fiscal survival.
+                </p>
+              </div>
+
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <div className="data-highlight">
-                  <h4 className="text-yellow-400 font-semibold mb-2">Executive Decision Maker</h4>
-                  <p className="text-gray-300 text-sm mb-3">C-level executives seeking strategic insights for business decisions</p>
-                  <ul className="text-xs text-gray-400 space-y-1">
-                    <li>• Ages 40-55</li>
-                    <li>• Annual revenue responsibility: $50M+</li>
-                    <li>• Values: Speed, accuracy, ROI</li>
-                  </ul>
+                <div className="data-highlight text-center">
+                  <h4 className="text-yellow-400 font-semibold mb-2">Cost Reduction</h4>
+                  <p className="text-3xl font-bold text-white">40%</p>
+                  <p className="text-green-400 text-sm">Fuel & maintenance savings</p>
                 </div>
-                <div className="data-highlight">
-                  <h4 className="text-yellow-400 font-semibold mb-2">Data Analyst</h4>
-                  <p className="text-gray-300 text-sm mb-3">Technical professionals requiring detailed analytics and reporting</p>
-                  <ul className="text-xs text-gray-400 space-y-1">
-                    <li>• Ages 25-40</li>
-                    <li>• Technical background</li>
-                    <li>• Values: Depth, customization, APIs</li>
-                  </ul>
+                <div className="data-highlight text-center">
+                  <h4 className="text-yellow-400 font-semibold mb-2">Payback Period</h4>
+                  <p className="text-3xl font-bold text-white">12 months</p>
+                  <p className="text-green-400 text-sm">Self-funding investment</p>
                 </div>
-                <div className="data-highlight">
-                  <h4 className="text-yellow-400 font-semibold mb-2">Strategic Planner</h4>
-                  <p className="text-gray-300 text-sm mb-3">Business strategists focused on market opportunities and growth</p>
-                  <ul className="text-xs text-gray-400 space-y-1">
-                    <li>• Ages 30-45</li>
-                    <li>• Cross-functional roles</li>
-                    <li>• Values: Trends, forecasting, insights</li>
-                  </ul>
+                <div className="data-highlight text-center">
+                  <h4 className="text-yellow-400 font-semibold mb-2">Data Compliance</h4>
+                  <p className="text-3xl font-bold text-white">Law 80/2018</p>
+                  <p className="text-blue-400 text-sm">Legal compliance built-in</p>
                 </div>
               </div>
             </div>
           </motion.section>
 
-          {/* Behavior Analysis */}
+          {/* B2B Monetization */}
           <motion.section
-            id="behavior-analysis"
+            id="b2b-monetization"
             {...fadeInUp}
             className="space-y-8"
           >
             <div className="glass p-8">
-              <h3 className="mb-6">User Behavior Analysis</h3>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <h3 className="mb-6">B2B Monetization: Scalable, Long-Term Contracts</h3>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
                 <div className="data-highlight">
-                  <h4 className="text-yellow-400 font-semibold mb-3">Usage Patterns</h4>
-                  <div className="space-y-2">
-                    <p className="text-gray-300">• <strong className="text-white">Daily active users:</strong> 67% of subscriber base</p>
-                    <p className="text-gray-300">• <strong className="text-white">Peak usage:</strong> 9-11 AM and 2-4 PM</p>
-                    <p className="text-gray-300">• <strong className="text-white">Session duration:</strong> Average 23 minutes</p>
-                    <p className="text-gray-300">• <strong className="text-white">Feature adoption:</strong> 89% use core analytics</p>
-                  </div>
+                  <h4 className="text-yellow-400 font-semibold mb-3">Tier 1: Basic Monitoring</h4>
+                  <ul className="text-gray-300 text-sm space-y-1">
+                    <li>• Real-time fill-level data</li>
+                    <li>• Basic overflow alerts</li>
+                    <li>• Entry-level pricing</li>
+                  </ul>
                 </div>
                 <div className="data-highlight">
-                  <h4 className="text-yellow-400 font-semibold mb-3">Engagement Metrics</h4>
-                  <div className="space-y-2">
-                    <p className="text-gray-300">• <strong className="text-white">User retention (30-day):</strong> 84%</p>
-                    <p className="text-gray-300">• <strong className="text-white">Feature discovery rate:</strong> 76%</p>
-                    <p className="text-gray-300">• <strong className="text-white">Support ticket volume:</strong> 2.3% of users/month</p>
-                    <p className="text-gray-300">• <strong className="text-white">NPS Score:</strong> 67 (Industry: 42)</p>
+                  <h4 className="text-yellow-400 font-semibold mb-3">Tier 2: Professional Optimization</h4>
+                  <ul className="text-gray-300 text-sm space-y-1">
+                    <li>• AI route optimization</li>
+                    <li>• Analytics dashboard</li>
+                    <li>• Historical data access</li>
+                  </ul>
+                </div>
+                <div className="data-highlight">
+                  <h4 className="text-yellow-400 font-semibold mb-3">Tier 3: Enterprise Intelligence</h4>
+                  <ul className="text-gray-300 text-sm space-y-1">
+                    <li>• AI contamination detection</li>
+                    <li>• Predictive analytics</li>
+                    <li>• API integration</li>
+                    <li>• Public-facing dashboard</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="data-highlight">
+                <h4 className="text-yellow-400 font-semibold mb-4">Innovative Models</h4>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                  <div>
+                    <h5 className="text-white font-medium mb-2">Gain-Share Model</h5>
+                    <p className="text-gray-300 text-sm">Lower fixed fee + 30-50% of documented savings. Aligns incentives perfectly.</p>
+                  </div>
+                  <div>
+                    <h5 className="text-white font-medium mb-2">Recyclables Revenue Share</h5>
+                    <p className="text-gray-300 text-sm">Percentage of additional revenue from improved sorting quality.</p>
                   </div>
                 </div>
               </div>
             </div>
           </motion.section>
 
-          {/* Financial Projections */}
+          {/* B2B Partnerships */}
           <motion.section
-            id="financial-projections"
+            id="b2b-partnerships"
+            {...fadeInUp}
+            className="space-y-8"
+          >
+            <div className="glass p-8">
+              <h3 className="mb-6">B2B Partnership Nexus: Ecosystem of Credibility</h3>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                  <h4 className="text-yellow-400 text-lg font-semibold mb-4">International Development</h4>
+                  <div className="space-y-4">
+                    <div className="data-highlight">
+                      <h5 className="text-white font-medium mb-2">World Bank, UNDP, USAID</h5>
+                      <p className="text-gray-300 text-sm">Position as "Monitoring, Evaluation & Learning" partner for accountability and impact measurement.</p>
+                    </div>
+                    <div className="data-highlight">
+                      <h5 className="text-white font-medium mb-2">USAID DAWERR Program</h5>
+                      <p className="text-gray-300 text-sm">Embed platform as mandatory MEL component for grant requirements.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <h4 className="text-yellow-400 text-lg font-semibold mb-4">Financial & Insurance</h4>
+                  <div className="space-y-4">
+                    <div className="data-highlight">
+                      <h5 className="text-white font-medium mb-2">Lebanese Banks</h5>
+                      <p className="text-gray-300 text-sm">Green financing packages where loan repayments come from operational savings.</p>
+                    </div>
+                    <div className="data-highlight">
+                      <h5 className="text-white font-medium mb-2">Insurance Companies</h5>
+                      <p className="text-gray-300 text-sm">"Certified Green Risk" program with lower premiums for platform users.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* Financial Overview */}
+          <motion.section
+            id="financial-overview"
             {...fadeInUp}
             className="space-y-8"
           >
             <div className="glass p-8">
               <h2 className="mb-6 flex items-center gap-3">
                 <DollarSign className="w-8 h-8 text-yellow-400" />
-                Financial Projections
+                Financial Overview: Investment Requirements & Returns
               </h2>
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-                <div className="data-highlight">
-                  <h4 className="text-yellow-400 font-semibold mb-2">2024 Revenue</h4>
-                  <p className="text-3xl font-bold text-white">$89.6M</p>
-                  <p className="text-green-400 text-sm">+67% YoY</p>
+              
+              <WasteCompositionChart />
+              
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-8">
+                <div className="data-highlight text-center">
+                  <h4 className="text-yellow-400 font-semibold mb-2">Year 1 Target</h4>
+                  <p className="text-3xl font-bold text-white">$136K</p>
+                  <p className="text-gray-300 text-sm">Pilot phase revenue</p>
                 </div>
-                <div className="data-highlight">
-                  <h4 className="text-yellow-400 font-semibold mb-2">2025 Projection</h4>
-                  <p className="text-3xl font-bold text-white">$124.8M</p>
-                  <p className="text-green-400 text-sm">+39% Growth</p>
+                <div className="data-highlight text-center">
+                  <h4 className="text-yellow-400 font-semibold mb-2">Year 2 Scale</h4>
+                  <p className="text-3xl font-bold text-white">$1.9M</p>
+                  <p className="text-gray-300 text-sm">Beirut-wide expansion</p>
                 </div>
-                <div className="data-highlight">
-                  <h4 className="text-yellow-400 font-semibold mb-2">5-Year CAGR</h4>
-                  <p className="text-3xl font-bold text-white">47%</p>
-                  <p className="text-blue-400 text-sm">Industry: 23%</p>
-                </div>
-              </div>
-            </div>
-
-            <RevenueProjectionChart />
-          </motion.section>
-
-          {/* Revenue Model */}
-          <motion.section
-            id="revenue-model"
-            {...fadeInUp}
-            className="space-y-8"
-          >
-            <div className="glass p-8">
-              <h3 className="mb-6">Revenue Model Breakdown</h3>
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <div className="data-highlight">
-                  <h4 className="text-yellow-400 font-semibold mb-2">Subscription Revenue</h4>
-                  <p className="text-3xl font-bold text-white mb-2">$67.2M</p>
-                  <p className="text-green-400 text-sm">75% of total revenue</p>
-                  <p className="text-gray-300 text-sm mt-2">Monthly and annual subscriptions</p>
-                </div>
-                <div className="data-highlight">
-                  <h4 className="text-yellow-400 font-semibold mb-2">Enterprise Licenses</h4>
-                  <p className="text-3xl font-bold text-white mb-2">$18.7M</p>
-                  <p className="text-blue-400 text-sm">21% of total revenue</p>
-                  <p className="text-gray-300 text-sm mt-2">Custom enterprise solutions</p>
-                </div>
-                <div className="data-highlight">
-                  <h4 className="text-yellow-400 font-semibold mb-2">API & Integration</h4>
-                  <p className="text-3xl font-bold text-white mb-2">$3.7M</p>
-                  <p className="text-purple-400 text-sm">4% of total revenue</p>
-                  <p className="text-gray-300 text-sm mt-2">Developer tools and APIs</p>
+                <div className="data-highlight text-center">
+                  <h4 className="text-yellow-400 font-semibold mb-2">Year 3 Growth</h4>
+                  <p className="text-3xl font-bold text-white">$5.8M</p>
+                  <p className="text-gray-300 text-sm">Multi-city deployment</p>
                 </div>
               </div>
             </div>
           </motion.section>
 
-          {/* Cost Analysis */}
+          {/* Conclusion */}
           <motion.section
-            id="cost-analysis"
-            {...fadeInUp}
-            className="space-y-8"
-          >
-            <div className="glass p-8">
-              <h3 className="mb-6">Cost Structure Analysis</h3>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div>
-                  <h4 className="text-yellow-400 text-lg font-semibold mb-4">Operating Expenses</h4>
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-300">R&D</span>
-                      <span className="text-white font-medium">$24.8M (38%)</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-300">Sales & Marketing</span>
-                      <span className="text-white font-medium">$19.2M (29%)</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-300">Infrastructure</span>
-                      <span className="text-white font-medium">$12.1M (18%)</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-300">Operations</span>
-                      <span className="text-white font-medium">$10.3M (15%)</span>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <h4 className="text-yellow-400 text-lg font-semibold mb-4">Cost Optimization</h4>
-                  <div className="space-y-3">
-                    <div className="data-highlight">
-                      <p className="text-gray-300">• Automated infrastructure scaling: <strong className="text-white">-23% costs</strong></p>
-                      <p className="text-gray-300">• AI-driven support: <strong className="text-white">-31% ticket volume</strong></p>
-                      <p className="text-gray-300">• Predictive maintenance: <strong className="text-white">-18% downtime</strong></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.section>
-
-          {/* ROI Projections */}
-          <motion.section
-            id="roi-projections"
-            {...fadeInUp}
-            className="space-y-8"
-          >
-            <div className="glass p-8">
-              <h3 className="mb-6">ROI Projections & Investment Returns</h3>
-              <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-                <div className="data-highlight text-center">
-                  <h4 className="text-yellow-400 font-semibold mb-2">Customer LTV</h4>
-                  <p className="text-2xl font-bold text-white">$47,200</p>
-                  <p className="text-green-400 text-sm">+23% vs industry</p>
-                </div>
-                <div className="data-highlight text-center">
-                  <h4 className="text-yellow-400 font-semibold mb-2">CAC Payback</h4>
-                  <p className="text-2xl font-bold text-white">8.2 months</p>
-                  <p className="text-green-400 text-sm">Industry: 14 months</p>
-                </div>
-                <div className="data-highlight text-center">
-                  <h4 className="text-yellow-400 font-semibold mb-2">Gross Margin</h4>
-                  <p className="text-2xl font-bold text-white">78%</p>
-                  <p className="text-blue-400 text-sm">Best in class</p>
-                </div>
-                <div className="data-highlight text-center">
-                  <h4 className="text-yellow-400 font-semibold mb-2">IRR (5-year)</h4>
-                  <p className="text-2xl font-bold text-white">67%</p>
-                  <p className="text-green-400 text-sm">Target: 25%</p>
-                </div>
-              </div>
-            </div>
-          </motion.section>
-
-          {/* Global Expansion */}
-          <motion.section
-            id="global-expansion"
+            id="conclusion"
             {...fadeInUp}
             className="space-y-8"
           >
             <div className="glass p-8">
               <h2 className="mb-6 flex items-center gap-3">
-                <Globe className="w-8 h-8 text-yellow-400" />
-                Global Expansion Strategy
+                <Target className="w-8 h-8 text-yellow-400" />
+                The Winning Formula: Synthesized Dual-Track Vision
               </h2>
               
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div>
-                  <h4 className="text-yellow-400 text-lg font-semibold mb-4">Priority Markets</h4>
-                  <div className="space-y-4">
-                    <div className="flex justify-between items-center p-4 glass">
-                      <span className="text-white font-medium">North America</span>
-                      <span className="text-yellow-400">$45M TAM</span>
-                    </div>
-                    <div className="flex justify-between items-center p-4 glass">
-                      <span className="text-white font-medium">Europe</span>
-                      <span className="text-yellow-400">$32M TAM</span>
-                    </div>
-                    <div className="flex justify-between items-center p-4 glass">
-                      <span className="text-white font-medium">Asia-Pacific</span>
-                      <span className="text-yellow-400">$28M TAM</span>
-                    </div>
-                  </div>
-                </div>
+              <div className="prose prose-invert max-w-none">
+                <p className="text-xl text-gray-300 leading-relaxed mb-8">
+                  The key element that elevates Zbeleh.ai from a mere product to a defensible ecosystem is the profound synergy between the B2C and B2B models. 
+                  This is not two separate businesses operating in parallel; it is one integrated, intelligent ecosystem designed to attack Lebanon's waste crisis from both top-down and bottom-up.
+                </p>
                 
-                <div>
-                  <h4 className="text-yellow-400 text-lg font-semibold mb-4">Expansion Timeline</h4>
+                <div className="data-highlight mb-8">
+                  <h3 className="text-yellow-400 mb-4">The Flywheel Effect</h3>
                   <div className="space-y-4">
-                    <div className="flex items-center gap-4 p-4 glass">
-                      <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                      <div>
-                        <p className="text-white font-medium">Q1 2025: European Launch</p>
-                        <p className="text-gray-400 text-sm">Germany, UK, France</p>
-                      </div>
+                    <div className="flex items-start gap-4">
+                      <div className="w-8 h-8 bg-yellow-400 text-black rounded-full flex items-center justify-center font-bold text-sm">1</div>
+                      <p className="text-gray-300">B2B Enterprise Platform provides municipalities operational efficiency and cost control</p>
                     </div>
-                    <div className="flex items-center gap-4 p-4 glass">
-                      <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                      <div>
-                        <p className="text-white font-medium">Q3 2025: APAC Expansion</p>
-                        <p className="text-gray-400 text-sm">Singapore, Japan, Australia</p>
-                      </div>
+                    <div className="flex items-start gap-4">
+                      <div className="w-8 h-8 bg-yellow-400 text-black rounded-full flex items-center justify-center font-bold text-sm">2</div>
+                      <p className="text-gray-300">This enables them to sponsor/subsidize the B2C Consumer App for residents</p>
+                    </div>
+                    <div className="flex items-start gap-4">
+                      <div className="w-8 h-8 bg-yellow-400 text-black rounded-full flex items-center justify-center font-bold text-sm">3</div>
+                      <p className="text-gray-300">B2C data feeds back into B2B dashboard for targeted awareness campaigns</p>
+                    </div>
+                    <div className="flex items-start gap-4">
+                      <div className="w-8 h-8 bg-yellow-400 text-black rounded-full flex items-center justify-center font-bold text-sm">4</div>
+                      <p className="text-gray-300">B2C marketplace empowers informal collectors, creating efficient offtake channels</p>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </motion.section>
 
-          {/* Market Entry */}
-          <motion.section
-            id="market-entry"
-            {...fadeInUp}
-            className="space-y-8"
-          >
-            <div className="glass p-8">
-              <h3 className="mb-6">Market Entry Strategy</h3>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div>
-                  <h4 className="text-yellow-400 text-lg font-semibold mb-4">Go-to-Market Approach</h4>
-                  <div className="space-y-4">
-                    <div className="data-highlight">
-                      <h5 className="text-white font-medium mb-2">Phase 1: Partnership Strategy</h5>
-                      <p className="text-gray-300 text-sm">Establish local partnerships with consulting firms and system integrators</p>
-                    </div>
-                    <div className="data-highlight">
-                      <h5 className="text-white font-medium mb-2">Phase 2: Direct Sales</h5>
-                      <p className="text-gray-300 text-sm">Build dedicated sales teams in key metropolitan areas</p>
-                    </div>
-                    <div className="data-highlight">
-                      <h5 className="text-white font-medium mb-2">Phase 3: Market Leadership</h5>
-                      <p className="text-gray-300 text-sm">Establish regional offices and capture majority market share</p>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <h4 className="text-yellow-400 text-lg font-semibold mb-4">Investment Requirements</h4>
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-300">European Expansion</span>
-                      <span className="text-white font-medium">$12.5M</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-300">APAC Launch</span>
-                      <span className="text-white font-medium">$8.7M</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-300">Localization</span>
-                      <span className="text-white font-medium">$3.2M</span>
-                    </div>
-                    <div className="flex justify-between items-center border-t border-yellow-400/20 pt-2">
-                      <span className="text-yellow-400 font-medium">Total Investment</span>
-                      <span className="text-yellow-400 font-bold">$24.4M</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.section>
-
-          {/* Regional Analysis */}
-          <motion.section
-            id="regional-analysis"
-            {...fadeInUp}
-            className="space-y-8"
-          >
-            <div className="glass p-8">
-              <h3 className="mb-6">Regional Market Analysis</h3>
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 <div className="data-highlight">
-                  <h4 className="text-yellow-400 font-semibold mb-3">Europe</h4>
-                  <div className="space-y-2">
-                    <p className="text-gray-300">• <strong className="text-white">TAM:</strong> $32M</p>
-                    <p className="text-gray-300">• <strong className="text-white">GDPR Compliance:</strong> Built-in</p>
-                    <p className="text-gray-300">• <strong className="text-white">Competition:</strong> Moderate</p>
-                    <p className="text-gray-300">• <strong className="text-white">Timeline:</strong> Q1 2025</p>
-                    <p className="text-green-400 text-sm mt-2">High regulatory alignment</p>
-                  </div>
-                </div>
-                <div className="data-highlight">
-                  <h4 className="text-yellow-400 font-semibold mb-3">Asia-Pacific</h4>
-                  <div className="space-y-2">
-                    <p className="text-gray-300">• <strong className="text-white">TAM:</strong> $28M</p>
-                    <p className="text-gray-300">• <strong className="text-white">Growth Rate:</strong> 89% YoY</p>
-                    <p className="text-gray-300">• <strong className="text-white">Competition:</strong> Low</p>
-                    <p className="text-gray-300">• <strong className="text-white">Timeline:</strong> Q3 2025</p>
-                    <p className="text-blue-400 text-sm mt-2">Fastest growing region</p>
-                  </div>
-                </div>
-                <div className="data-highlight">
-                  <h4 className="text-yellow-400 font-semibold mb-3">Latin America</h4>
-                  <div className="space-y-2">
-                    <p className="text-gray-300">• <strong className="text-white">TAM:</strong> $14M</p>
-                    <p className="text-gray-300">• <strong className="text-white">Digital Adoption:</strong> Rising</p>
-                    <p className="text-gray-300">• <strong className="text-white">Competition:</strong> Minimal</p>
-                    <p className="text-gray-300">• <strong className="text-white">Timeline:</strong> 2026</p>
-                    <p className="text-purple-400 text-sm mt-2">Emerging opportunity</p>
-                  </div>
+                  <h3 className="text-yellow-400 mb-4">Final Investment Thesis</h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    An investment in Zbeleh.ai is not a speculative bet on a single product. It is an investment in a scalable, profitable, 
+                    and deeply impactful solution to one of Lebanon's most persistent and visible crises. It is an opportunity to build 
+                    the foundational infrastructure for the country's emerging circular economy.
+                  </p>
                 </div>
               </div>
             </div>
@@ -725,7 +666,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="border-t border-white/10 px-4 py-8">
-        <div className="w-full max-w-7xl mx-auto">
+        <div className="w-full px-4">
           <div className="glass p-6">
             <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
               <div className="flex items-center gap-4">
