@@ -31,8 +31,8 @@ export function NavBar({ items, className, onNavigate }: NavBarProps) {
   
   useEffect(() => {
     const handleResize = () => {
-      // Mobile detection for any future use
-      window.innerWidth < 768
+      // Mobile detection for any future use (currently unused)
+      // const isMobile = window.innerWidth < 768
     }
 
     handleResize()

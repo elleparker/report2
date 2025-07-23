@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { TrendingUp, Users, DollarSign, Globe, Target, BarChart3, FileText, AlertCircle, Lightbulb } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { TrendingUp, Users, DollarSign, Target, BarChart3, AlertCircle, Lightbulb } from 'lucide-react';
 
 import ZbelehNavBar from '../components/NavBar';
 import BeleLogo from '../components/BeleLogo';
@@ -15,7 +15,7 @@ import {
 } from '../components/Charts';
 
 export default function Home() {
-  const [activeSection, setActiveSection] = useState('introduction');
+  const [_activeSection, setActiveSection] = useState('introduction');
 
   const handleSectionChange = (url: string) => {
     // Handle both URL format (#section) and direct section ID
