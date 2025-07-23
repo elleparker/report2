@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import {
   LineChart,
   Line,
@@ -90,7 +91,7 @@ export function WasteVolumeChart() {
     >
       <h3 className="text-xl font-bold mb-4 gradient-text">Lebanon Waste Generation & Management</h3>
       <ResponsiveContainer width="100%" height={400}>
-        <AreaChart data={wasteVolumeData}>
+        <AreaChart data={wasteVolumeData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
           <defs>
             <linearGradient id="wasteGradient" x1="0" y1="0" x2="0" y2="1">
               <stop offset="5%" stopColor="#ef4444" stopOpacity={0.3}/>
@@ -102,10 +103,23 @@ export function WasteVolumeChart() {
             </linearGradient>
           </defs>
           <CartesianGrid strokeDasharray="3 3" stroke="#374151" opacity={0.3} />
-          <XAxis dataKey="year" stroke="#9ca3af" />
-          <YAxis stroke="#9ca3af" />
+          <XAxis 
+            dataKey="year" 
+            stroke="#9ca3af" 
+            fontSize={12}
+            tick={{ fontSize: 12 }}
+          />
+          <YAxis 
+            stroke="#9ca3af"
+            fontSize={12} 
+            tick={{ fontSize: 12 }}
+            width={60}
+          />
           <Tooltip content={<CustomTooltip />} />
-          <Legend />
+          <Legend 
+            wrapperStyle={{ fontSize: '12px', paddingTop: '10px' }}
+            iconSize={10}
+          />
           <Area
             type="monotone"
             dataKey="waste_generated"
@@ -129,6 +143,18 @@ export function WasteVolumeChart() {
 }
 
 export function CompetitorAnalysisChart() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -138,22 +164,27 @@ export function CompetitorAnalysisChart() {
     >
       <h3 className="text-xl font-bold mb-4 gradient-text">Competitive Market Share</h3>
       <ResponsiveContainer width="100%" height={400}>
-        <PieChart>
+        <PieChart margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
           <Pie
             data={competitorData}
             cx="50%"
             cy="50%"
-            outerRadius={120}
+            outerRadius={isMobile ? 80 : 120}
             fill="#8884d8"
             dataKey="market_share"
-            label={({ name, value }) => `${name}: ${value}%`}
+            label={isMobile ? false : ({ name, value }) => `${name}: ${value}%`}
             labelLine={false}
+            fontSize={12}
           >
             {competitorData.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={entry.color} />
             ))}
           </Pie>
           <Tooltip content={<CustomTooltip />} />
+          <Legend 
+            wrapperStyle={{ fontSize: '11px', paddingTop: '10px' }}
+            iconSize={8}
+          />
         </PieChart>
       </ResponsiveContainer>
     </motion.div>
@@ -161,6 +192,18 @@ export function CompetitorAnalysisChart() {
 }
 
 export function WasteCompositionChart() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -170,12 +213,29 @@ export function WasteCompositionChart() {
     >
       <h3 className="text-xl font-bold mb-4 gradient-text">Lebanon Waste Composition & Recycling Rates</h3>
       <ResponsiveContainer width="100%" height={400}>
-        <BarChart data={wasteCompositionData}>
+        <BarChart data={wasteCompositionData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
           <CartesianGrid strokeDasharray="3 3" stroke="#374151" opacity={0.3} />
-          <XAxis dataKey="category" stroke="#9ca3af" />
-          <YAxis stroke="#9ca3af" />
+          <XAxis 
+            dataKey="category" 
+            stroke="#9ca3af"
+            fontSize={12}
+            tick={{ fontSize: 11 }}
+            interval={0}
+            angle={isMobile ? -45 : 0}
+            textAnchor={isMobile ? "end" : "middle"}
+            height={isMobile ? 60 : 30}
+          />
+          <YAxis 
+            stroke="#9ca3af"
+            fontSize={12}
+            tick={{ fontSize: 11 }}
+            width={50}
+          />
           <Tooltip content={<CustomTooltip />} />
-          <Legend />
+          <Legend 
+            wrapperStyle={{ fontSize: '11px', paddingTop: '10px' }}
+            iconSize={8}
+          />
           <Bar dataKey="percentage" fill="#fbbf24" name="Waste Composition %" radius={[4, 4, 0, 0]} />
           <Bar dataKey="recycling_rate" fill="#22c55e" name="Current Recycling Rate %" radius={[4, 4, 0, 0]} />
         </BarChart>
@@ -194,12 +254,25 @@ export function RevenueProjectionChart() {
     >
       <h3 className="text-xl font-bold mb-4 gradient-text">Zbeleh.ai Revenue Projections</h3>
       <ResponsiveContainer width="100%" height={400}>
-        <BarChart data={revenueProjectionData}>
+        <BarChart data={revenueProjectionData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
           <CartesianGrid strokeDasharray="3 3" stroke="#374151" opacity={0.3} />
-          <XAxis dataKey="year" stroke="#9ca3af" />
-          <YAxis stroke="#9ca3af" />
+          <XAxis 
+            dataKey="year" 
+            stroke="#9ca3af"
+            fontSize={12}
+            tick={{ fontSize: 12 }}
+          />
+          <YAxis 
+            stroke="#9ca3af"
+            fontSize={12}
+            tick={{ fontSize: 11 }}
+            width={60}
+          />
           <Tooltip content={<CustomTooltip />} />
-          <Legend />
+          <Legend 
+            wrapperStyle={{ fontSize: '10px', paddingTop: '10px' }}
+            iconSize={8}
+          />
           <Bar
             dataKey="commission"
             stackId="revenue"

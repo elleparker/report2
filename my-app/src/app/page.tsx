@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { TrendingUp, Users, DollarSign, Globe, Target, BarChart3, FileText, AlertCircle } from 'lucide-react';
+import { TrendingUp, Users, DollarSign, Globe, Target, BarChart3, FileText, AlertCircle, Lightbulb } from 'lucide-react';
 
-import Navigation from '../components/Navigation';
+import ZbelehNavBar from '../components/NavBar';
 import BeleLogo from '../components/BeleLogo';
 import { 
   WasteVolumeChart, 
@@ -17,11 +17,15 @@ import {
 export default function Home() {
   const [activeSection, setActiveSection] = useState('introduction');
 
-  const handleSectionChange = (sectionId: string) => {
+  const handleSectionChange = (url: string) => {
+    // Handle both URL format (#section) and direct section ID
+    const sectionId = url.startsWith('#') ? url.slice(1) : url;
+    
     setActiveSection(sectionId);
     const element = document.getElementById(sectionId);
+    
     if (element) {
-      const navHeight = 100; // Account for sticky nav height
+      const navHeight = 120; // Account for sticky nav height
       const elementPosition = element.offsetTop - navHeight;
       window.scrollTo({
         top: elementPosition,
@@ -45,7 +49,8 @@ export default function Home() {
       'b2b-monetization',
       'b2b-partnerships',
       'financial-overview',
-      'conclusion'
+      'conclusion',
+      'namestorming'
     ];
 
     const observerOptions = {
@@ -82,26 +87,26 @@ export default function Home() {
 
   return (
     <div className="min-h-screen animated-bg">
-      <Navigation activeSection={activeSection} onSectionChange={handleSectionChange} />
+      <ZbelehNavBar onNavigate={handleSectionChange} />
       
       {/* Header */}
-      <header className="relative pt-24 pb-16 px-4">
+      <header className="relative pt-20 sm:pt-28 pb-8 sm:pb-16 px-4">
         <motion.div
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="w-full px-4"
+          className="w-full"
         >
-          <div className="glass p-8 mb-8">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
-              <div>
-                <BeleLogo size="xl" />
-                <p className="text-gray-400 mt-4 text-lg">Strategic Investment Report: Waste Management Solutions for Lebanon</p>
+          <div className="glass p-4 sm:p-8 mb-6 sm:mb-8">
+            <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 sm:gap-6">
+              <div className="w-full lg:w-auto">
+                <BeleLogo size="lg" />
+                <h1 className="text-gray-400 mt-3 sm:mt-4 text-base sm:text-lg leading-relaxed">Strategic Investment Report: Waste Management Solutions for Lebanon</h1>
               </div>
-              <div className="text-right">
+              <div className="w-full lg:w-auto lg:text-right">
                 <p className="text-sm text-gray-400">Report Date</p>
-                <p className="text-white font-medium">December 2024</p>
-                <div className="mt-2 px-3 py-1 bg-yellow-400/20 text-yellow-400 rounded-full text-xs font-medium">
+                <p className="text-white font-medium text-lg sm:text-xl">December 2024</p>
+                <div className="mt-2 px-3 py-1 bg-yellow-400/20 text-yellow-400 rounded-full text-xs font-medium inline-block">
                   CONFIDENTIAL - FIRST DRAFT
                 </div>
               </div>
@@ -110,9 +115,9 @@ export default function Home() {
         </motion.div>
       </header>
 
-      {/* Main Content */}
-      <main className="px-4 pb-16">
-        <div className="w-full px-4 space-y-16">
+              {/* Main Content */}
+        <main className="px-4 pb-8 sm:pb-16">
+          <div className="w-full space-y-8 sm:space-y-16">
           
           {/* Introduction: Investment Opportunity */}
           <motion.section
@@ -655,6 +660,119 @@ export default function Home() {
                     An investment in Zbeleh.ai is not a speculative bet on a single product. It is an investment in a scalable, profitable, 
                     and deeply impactful solution to one of Lebanon's most persistent and visible crises. It is an opportunity to build 
                     the foundational infrastructure for the country's emerging circular economy.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* Namestorming Section */}
+          <motion.section
+            id="namestorming"
+            {...fadeInUp}
+            className="space-y-8"
+          >
+            <div className="glass p-8">
+              <h2 className="mb-6 flex items-center gap-3">
+                <Lightbulb className="w-8 h-8 text-yellow-400" />
+                🧼 Namestorming – Finding the Perfect Brand for Our Clean Tech Revolution
+              </h2>
+              
+              <div className="prose prose-invert max-w-none">
+                <p className="text-lg text-gray-300 leading-relaxed mb-8">
+                  Before we commit to a final name for our city-cleaning AI overlord, let&apos;s embrace the chaos of creativity. Naming a product is like taking out the trash—you have to sift through a lot of garbage before you find gold. For now, we&apos;re using Zbeleh.ai as a placeholder, but the dumpster fire of ideas below is where we start shaping identity, satire, and smart waste management into one slick, sarcastic, and unforgettable brand.
+                </p>
+                
+                <p className="text-gray-300 leading-relaxed mb-8">
+                  Let&apos;s dig into a few standout contenders from our internal name dump—each with its own personality, attitude, and vibe. 😎
+                </p>
+
+                <div className="data-highlight mb-8">
+                  <h3 className="text-yellow-400 mb-6">💡 Name Ideas for Our City-Saving CleanTech Monster:</h3>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div className="p-4 bg-gray-800/50 rounded-lg border border-gray-700">
+                      <h4 className="text-white font-bold mb-2">1. SukBot 🤖</h4>
+                      <p className="text-gray-300 text-sm">The AI that does what Sukleen should&apos;ve done. A robotic tribute to failed promises.</p>
+                    </div>
+                    
+                    <div className="p-4 bg-gray-800/50 rounded-lg border border-gray-700">
+                      <h4 className="text-white font-bold mb-2">2. Trashformers ♻️</h4>
+                      <p className="text-gray-300 text-sm">Robots in disguise, collecting your lies—and your garbage.</p>
+                    </div>
+                    
+                    <div className="p-4 bg-gray-800/50 rounded-lg border border-gray-700">
+                      <h4 className="text-white font-bold mb-2">3. NaddafNet 🧹</h4>
+                      <p className="text-gray-300 text-sm">Like Skynet, but with more brooms and less genocide.</p>
+                    </div>
+                    
+                    <div className="p-4 bg-gray-800/50 rounded-lg border border-gray-700">
+                      <h4 className="text-white font-bold mb-2">4. SmartKleen 🧠</h4>
+                      <p className="text-gray-300 text-sm">Because it sounds corporate enough to get EU funding and sarcastic enough to be Lebanese.</p>
+                    </div>
+                    
+                    <div className="p-4 bg-gray-800/50 rounded-lg border border-gray-700">
+                      <h4 className="text-white font-bold mb-2">5. ZbaleX 🛸</h4>
+                      <p className="text-gray-300 text-sm">The sleek, elite, high-efficiency Zbeleh intelligence agency of the future.</p>
+                    </div>
+                    
+                    <div className="p-4 bg-gray-800/50 rounded-lg border border-gray-700">
+                      <h4 className="text-white font-bold mb-2">6. E-Zbeleh ⚡</h4>
+                      <p className="text-gray-300 text-sm">It&apos;s fast. It&apos;s dirty. It&apos;s digitized trash collection for the swipe generation.</p>
+                    </div>
+                    
+                    <div className="p-4 bg-gray-800/50 rounded-lg border border-gray-700">
+                      <h4 className="text-white font-bold mb-2">7. YallaKleen 🚚</h4>
+                      <p className="text-gray-300 text-sm">Motivational and exhausted, like every Lebanese mother: &quot;Yalla habibi, clean up already.&quot;</p>
+                    </div>
+                    
+                    <div className="p-4 bg-gray-800/50 rounded-lg border border-gray-700">
+                      <h4 className="text-white font-bold mb-2">8. NadafeGPT 🧽</h4>
+                      <p className="text-gray-300 text-sm">The generative pre-trained trash-cleaning language model you didn&apos;t know you needed.</p>
+                    </div>
+                    
+                    <div className="p-4 bg-gray-800/50 rounded-lg border border-gray-700">
+                      <h4 className="text-white font-bold mb-2">9. KBL-ZBL.ai 🗑️</h4>
+                      <p className="text-gray-300 text-sm">Short for &quot;Keb el Zbele.&quot; The name screams API, the mission screams efficiency.</p>
+                    </div>
+                    
+                    <div className="p-4 bg-gray-800/50 rounded-lg border border-gray-700">
+                      <h4 className="text-white font-bold mb-2">10. NadafeBot 🧼</h4>
+                      <p className="text-gray-300 text-sm">Always on, never judging. Okay, maybe judging a little.</p>
+                    </div>
+                    
+                    <div className="p-4 bg-gray-800/50 rounded-lg border border-gray-700">
+                      <h4 className="text-white font-bold mb-2">11. MrTrash.ai 🕶️</h4>
+                      <p className="text-gray-300 text-sm">He&apos;s not your friend. He&apos;s your refuse executioner.</p>
+                    </div>
+                    
+                    <div className="p-4 bg-gray-800/50 rounded-lg border border-gray-700">
+                      <h4 className="text-white font-bold mb-2">12. TrashCollectors.ai 💾</h4>
+                      <p className="text-gray-300 text-sm">Sounds like a SaaS platform. Functions like a mop army.</p>
+                    </div>
+                    
+                    <div className="p-4 bg-gray-800/50 rounded-lg border border-gray-700">
+                      <h4 className="text-white font-bold mb-2">13. NadafeLeb.ai 🏙️</h4>
+                      <p className="text-gray-300 text-sm">For people who like their patriotism as tidy as their streets.</p>
+                    </div>
+                    
+                    <div className="p-4 bg-gray-800/50 rounded-lg border border-gray-700">
+                      <h4 className="text-white font-bold mb-2">14. CityClean.ai 🌇</h4>
+                      <p className="text-gray-300 text-sm">A clean-cut, internationally-palatable name for urban sanitization—with fangs.</p>
+                    </div>
+                    
+                    <div className="p-4 bg-gray-800/50 rounded-lg border border-gray-700">
+                      <h4 className="text-white font-bold mb-2">15. ByeByeZbeleh.ai 👋</h4>
+                      <p className="text-gray-300 text-sm">Waves goodbye to waste, corruption, and maybe your neighbors&apos; bad habits too.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="data-highlight">
+                  <p className="text-center text-gray-400 italic">
+                    Each name represents a different personality for our AI waste management revolution. 
+                    From sarcastic commentary on Lebanon&apos;s waste crisis to internationally viable tech branding, 
+                    the perfect name will capture our mission: intelligent, efficient, and slightly rebellious urban cleaning.
                   </p>
                 </div>
               </div>

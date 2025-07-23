@@ -12,15 +12,15 @@ export default function BeleLogo({ size = 'md', animated = true, className = '' 
   const sizeClasses = {
     sm: 'w-8 h-8',
     md: 'w-12 h-12',
-    lg: 'w-16 h-16',
-    xl: 'w-24 h-24'
+    lg: 'w-12 h-12 sm:w-16 sm:h-16',
+    xl: 'w-16 h-16 sm:w-24 sm:h-24'
   };
 
   const textSizeClasses = {
     sm: 'text-lg',
     md: 'text-xl',
-    lg: 'text-2xl',
-    xl: 'text-4xl'
+    lg: 'text-xl sm:text-2xl',
+    xl: 'text-2xl sm:text-4xl'
   };
 
   const logoVariants = {
@@ -165,7 +165,7 @@ export default function BeleLogo({ size = 'md', animated = true, className = '' 
           Zbeleh<span className="text-white">.ai</span>
         </div>
         {size === 'lg' || size === 'xl' ? (
-          <div className="text-xs text-gray-400 font-medium">Waste Management Solutions</div>
+          <div className="text-xs sm:text-sm text-gray-400 font-medium">Waste Management Solutions</div>
         ) : null}
       </motion.div>
     </div>
