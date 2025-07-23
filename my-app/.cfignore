@@ -1,9 +1,4 @@
-# Cloudflare ignore file
-cache/
-.cache/
-.next/cache/
-node_modules/
-*.log
-.DS_Store
-.env*
-*.tsbuildinfo 
+# Cloudflare ignore file - exclude everything except the out/ directory
+*
+!out/
+!out/** 

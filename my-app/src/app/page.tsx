@@ -15,7 +15,7 @@ import {
 } from '../components/Charts';
 
 export default function Home() {
-  const [_activeSection, setActiveSection] = useState('introduction');
+  const [, setActiveSection] = useState('introduction');
 
   const handleSectionChange = (url: string) => {
     // Handle both URL format (#section) and direct section ID
