@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "rm -rf .next out cache && next build",
+    "export": "next export",
     "start": "next start",
     "lint": "next lint"
   },
