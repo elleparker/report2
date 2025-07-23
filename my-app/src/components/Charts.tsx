@@ -3,8 +3,6 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import {
-  LineChart,
-  Line,
   AreaChart,
   Area,
   BarChart,
@@ -213,7 +211,7 @@ export function WasteCompositionChart() {
     >
       <h3 className="text-xl font-bold mb-4 gradient-text">Lebanon Waste Composition & Recycling Rates</h3>
       <ResponsiveContainer width="100%" height={400}>
-        <BarChart data={wasteCompositionData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+        <BarChart data={wasteCompositionData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }} className="disable-hover">
           <CartesianGrid strokeDasharray="3 3" stroke="#374151" opacity={0.3} />
           <XAxis 
             dataKey="category" 
@@ -236,8 +234,18 @@ export function WasteCompositionChart() {
             wrapperStyle={{ fontSize: '11px', paddingTop: '10px' }}
             iconSize={8}
           />
-          <Bar dataKey="percentage" fill="#fbbf24" name="Waste Composition %" radius={[4, 4, 0, 0]} />
-          <Bar dataKey="recycling_rate" fill="#22c55e" name="Current Recycling Rate %" radius={[4, 4, 0, 0]} />
+          <Bar 
+            dataKey="percentage" 
+            fill="#fbbf24" 
+            name="Waste Composition %" 
+            radius={[4, 4, 0, 0]}
+          />
+          <Bar 
+            dataKey="recycling_rate" 
+            fill="#22c55e" 
+            name="Current Recycling Rate %" 
+            radius={[4, 4, 0, 0]}
+          />
         </BarChart>
       </ResponsiveContainer>
     </motion.div>
@@ -254,7 +262,7 @@ export function RevenueProjectionChart() {
     >
       <h3 className="text-xl font-bold mb-4 gradient-text">Zbeleh.ai Revenue Projections</h3>
       <ResponsiveContainer width="100%" height={400}>
-        <BarChart data={revenueProjectionData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+        <BarChart data={revenueProjectionData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }} className="disable-hover">
           <CartesianGrid strokeDasharray="3 3" stroke="#374151" opacity={0.3} />
           <XAxis 
             dataKey="year" 

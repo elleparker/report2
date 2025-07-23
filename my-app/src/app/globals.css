@@ -177,3 +177,81 @@ h3 {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;  /* Safari and Chrome */
 }
+
+/* NUCLEAR OPTION: Completely disable hover effects on ALL chart elements */
+.recharts-bar-rectangle,
+.recharts-rectangle {
+  transition: none !important;
+  filter: none !important;
+}
+
+.recharts-bar-rectangle:hover,
+.recharts-rectangle:hover,
+.recharts-bar:hover .recharts-rectangle,
+.recharts-active-bar .recharts-rectangle,
+.recharts-bar:hover .recharts-bar-rectangle {
+  fill: currentColor !important;
+  transition: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+  stroke: none !important;
+  stroke-width: 0 !important;
+}
+
+/* Override Recharts internal hover styles completely */
+.recharts-bar {
+  pointer-events: none !important;
+}
+
+.recharts-bar:hover {
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+/* Re-enable pointer events only for tooltip functionality */
+.recharts-wrapper {
+  pointer-events: all !important;
+}
+
+.recharts-surface {
+  pointer-events: all !important;
+}
+
+/* Force each color to stay exactly the same */
+rect[fill="#fbbf24"],
+rect[fill="#22c55e"], 
+rect[fill="#3b82f6"] {
+  transition: none !important;
+}
+
+rect[fill="#fbbf24"]:hover {
+  fill: #fbbf24 !important;
+}
+
+rect[fill="#22c55e"]:hover {
+  fill: #22c55e !important;
+}
+
+rect[fill="#3b82f6"]:hover {
+  fill: #3b82f6 !important;
+}
+
+/* Specific targeting for charts with disable-hover class */
+.disable-hover .recharts-bar-rectangle,
+.disable-hover .recharts-rectangle {
+  pointer-events: none !important;
+}
+
+.disable-hover .recharts-bar-rectangle:hover,
+.disable-hover .recharts-rectangle:hover {
+  fill: inherit !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+/* Ensure tooltips still work by enabling pointer events on parent */
+.disable-hover .recharts-wrapper,
+.disable-hover .recharts-surface,
+.disable-hover .recharts-layer {
+  pointer-events: all !important;
+}

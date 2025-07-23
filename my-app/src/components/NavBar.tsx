@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { LucideIcon, FileText, Users, Target, DollarSign, BarChart3, TrendingUp, Building2, Handshake, Coins, Calculator, Lightbulb, Award, PieChart, LineChart, UserCheck, Brain, Crosshair, Zap, Globe, Recycle } from "lucide-react"
+import { LucideIcon, FileText, Users, Target, BarChart3, TrendingUp, Building2, Handshake, Coins, Calculator, Lightbulb, Award, Crosshair, Globe } from "lucide-react"
 
 interface SubItem {
   name: string
@@ -25,25 +25,20 @@ interface NavBarProps {
 
 export function NavBar({ items, className, onNavigate }: NavBarProps) {
   const [activeTab, setActiveTab] = useState(items[0].name)
-  const [isMobile, setIsMobile] = useState(false)
-  const [isDarkMode, setIsDarkMode] = useState(true)
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null)
 
-
-
+ 
+  
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768)
+      // Mobile detection for any future use
+      window.innerWidth < 768
     }
 
     handleResize()
     window.addEventListener("resize", handleResize)
     return () => window.removeEventListener("resize", handleResize)
   }, [])
-
-  useEffect(() => {
-    document.documentElement.classList.toggle('dark', isDarkMode)
-  }, [isDarkMode])
 
   const handleNavClick = (itemName: string, hasSubItems: boolean, url?: string) => {
     setActiveTab(itemName)

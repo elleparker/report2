@@ -127,10 +127,10 @@ export default function Home() {
           >
             <div className="glass p-8">
               <h1 className="mb-6">Zbeleh.ai Strategic Investment Report</h1>
-              <h2 className="text-yellow-400 text-2xl mb-4">A Pragmatic, Technology-Driven Solution for Lebanon's Waste Crisis</h2>
+              <h2 className="text-yellow-400 text-2xl mb-4">A Pragmatic, Technology-Driven Solution for Lebanon&apos;s Waste Crisis</h2>
               <div className="prose prose-invert max-w-none">
                 <p className="text-xl text-gray-300 leading-relaxed mb-6">
-                  Lebanon's waste management sector is not merely a public service issue; it is a profound economic, environmental, and public health catastrophe. 
+                  Lebanon&apos;s waste management sector is not merely a public service issue; it is a profound economic, environmental, and public health catastrophe. 
                   The country generates over <strong className="text-white">2 million tons</strong> of solid waste annually, with over <strong className="text-white">80%</strong> being mismanaged through open dumping and burning, 
                   at an exorbitant cost of approximately <strong className="text-white">$154.50 per ton</strong>—significantly higher than regional peers.
                 </p>
@@ -138,7 +138,7 @@ export default function Home() {
                 <div className="data-highlight">
                   <h3 className="text-yellow-400 mb-3">Core Investment Thesis</h3>
                   <p className="text-gray-300 leading-relaxed mb-4">
-                    This systemic collapse creates a significant and untapped economic opportunity. The fragmentation and decentralization of Lebanon's waste sector 
+                    This systemic collapse creates a significant and untapped economic opportunity. The fragmentation and decentralization of Lebanon&apos;s waste sector 
                     makes it uniquely suited for a flexible, technology-enabled solution like Zbeleh.ai.
                   </p>
                   <ul className="space-y-2 text-gray-300">
