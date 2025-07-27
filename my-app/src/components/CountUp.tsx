@@ -13,6 +13,7 @@ interface CountUpProps {
   duration?: number;
   className?: string;
   separator?: string;
+  startWhen?: boolean;
 }
 
 export default function CountUp({
@@ -23,6 +24,7 @@ export default function CountUp({
   duration = 2,
   className = "",
   separator = "",
+  startWhen,
 }: CountUpProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const motionValue = useMotionValue(direction === "down" ? to : from);
@@ -57,8 +59,11 @@ export default function CountUp({
     }
   }, [from, to, direction]);
 
+  // Use external startWhen prop if provided, otherwise use built-in intersection observer
+  const shouldStart = startWhen !== undefined ? startWhen : isInView;
+
   useEffect(() => {
-    if (isInView) {
+    if (shouldStart) {
       const timeoutId = setTimeout(() => {
         motionValue.set(direction === "down" ? from : to);
       }, delay * 1000);
@@ -68,7 +73,7 @@ export default function CountUp({
       };
     }
   }, [
-    isInView,
+    shouldStart,
     motionValue,
     direction,
     from,

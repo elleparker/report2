@@ -18,6 +18,65 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 
+// Custom animated bar component
+interface AnimatedBarProps {
+  fill: string;
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+  payload?: any;
+  index?: number;
+  datasetSize?: number;
+}
+
+const AnimatedBar = ({ fill, x, y, width, height, payload, index = 0, datasetSize = 10 }: AnimatedBarProps) => {
+  // Performance optimization: reduce animation complexity for large datasets
+  const shouldAnimate = datasetSize <= 100;
+  const staggerDelay = datasetSize <= 50 ? index * 0.05 : 0;
+  const duration = datasetSize <= 10 ? 0.8 : datasetSize <= 50 ? 0.6 : 0.4;
+  
+  if (!shouldAnimate) {
+    // For very large datasets, render static bars with simple hover
+    return (
+      <motion.rect
+        x={x}
+        y={y}
+        width={width}
+        height={height}
+        fill={fill}
+        whileHover={{
+          fill: "#fefefe",
+          transition: { duration: 0.15, ease: "easeInOut" }
+        }}
+      />
+    );
+  }
+  
+  return (
+    <motion.rect
+      x={x}
+      y={y}
+      width={width}
+      height={height}
+      fill={fill}
+      initial={{ height: 0, y: y + height }}
+      animate={{ height: height, y: y }}
+      transition={{ 
+        duration, 
+        delay: staggerDelay,
+        ease: "easeOut" 
+      }}
+      whileHover={{
+        fill: "#fefefe",
+        transition: { duration: 0.2, ease: "easeInOut" }
+      }}
+      onHoverStart={() => {}}
+      onHoverEnd={() => {}}
+    />
+  );
+};
+
 // Waste management data for Lebanon
 const wasteVolumeData = [
   { year: '2019', waste_generated: 1.8, properly_managed: 0.4 },
@@ -207,47 +266,51 @@ export function WasteCompositionChart() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.4 }}
-      className="chart-container"
+      className="chart-container relative z-10"
     >
-      <h3 className="text-xl font-bold mb-4 gradient-text">Lebanon Waste Composition & Recycling Rates</h3>
-      <ResponsiveContainer width="100%" height={400}>
-        <BarChart data={wasteCompositionData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }} className="disable-hover">
-          <CartesianGrid strokeDasharray="3 3" stroke="#374151" opacity={0.3} />
-          <XAxis 
-            dataKey="category" 
-            stroke="#9ca3af"
-            fontSize={12}
-            tick={{ fontSize: 11 }}
-            interval={0}
-            angle={isMobile ? -45 : 0}
-            textAnchor={isMobile ? "end" : "middle"}
-            height={isMobile ? 60 : 30}
-          />
-          <YAxis 
-            stroke="#9ca3af"
-            fontSize={12}
-            tick={{ fontSize: 11 }}
-            width={50}
-          />
-          <Tooltip content={<CustomTooltip />} />
-          <Legend 
-            wrapperStyle={{ fontSize: '11px', paddingTop: '10px' }}
-            iconSize={8}
-          />
-          <Bar 
-            dataKey="percentage" 
-            fill="#fbbf24" 
-            name="Waste Composition %" 
-            radius={[4, 4, 0, 0]}
-          />
-          <Bar 
-            dataKey="recycling_rate" 
-            fill="#22c55e" 
-            name="Current Recycling Rate %" 
-            radius={[4, 4, 0, 0]}
-          />
-        </BarChart>
-      </ResponsiveContainer>
+      <h3 className="text-xl font-bold mb-4 gradient-text relative z-20">Lebanon Waste Composition & Recycling Rates</h3>
+      <div className="relative z-20">
+        <ResponsiveContainer width="100%" height={400}>
+          <BarChart data={wasteCompositionData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+            <CartesianGrid strokeDasharray="3 3" stroke="#374151" opacity={0.3} />
+            <XAxis 
+              dataKey="category" 
+              stroke="#9ca3af"
+              fontSize={12}
+              tick={{ fontSize: 11 }}
+              interval={0}
+              angle={isMobile ? -45 : 0}
+              textAnchor={isMobile ? "end" : "middle"}
+              height={isMobile ? 60 : 30}
+            />
+            <YAxis 
+              stroke="#9ca3af"
+              fontSize={12}
+              tick={{ fontSize: 11 }}
+              width={50}
+            />
+            <Tooltip content={<CustomTooltip />} />
+            <Legend 
+              wrapperStyle={{ fontSize: '11px', paddingTop: '10px' }}
+              iconSize={8}
+            />
+            <Bar 
+              dataKey="percentage" 
+              fill="#fbbf24" 
+              name="Waste Composition %" 
+              radius={[4, 4, 0, 0]}
+              shape={(props: any) => <AnimatedBar {...props} />}
+            />
+            <Bar 
+              dataKey="recycling_rate" 
+              fill="#22c55e" 
+              name="Current Recycling Rate %" 
+              radius={[4, 4, 0, 0]}
+              shape={(props: any) => <AnimatedBar {...props} />}
+            />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
     </motion.div>
   );
 }
@@ -258,52 +321,57 @@ export function RevenueProjectionChart() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.6 }}
-      className="chart-container"
+      className="chart-container relative z-10"
     >
-      <h3 className="text-xl font-bold mb-4 gradient-text">Zbeleh.ai Revenue Projections</h3>
-      <ResponsiveContainer width="100%" height={400}>
-        <BarChart data={revenueProjectionData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }} className="disable-hover">
-          <CartesianGrid strokeDasharray="3 3" stroke="#374151" opacity={0.3} />
-          <XAxis 
-            dataKey="year" 
-            stroke="#9ca3af"
-            fontSize={12}
-            tick={{ fontSize: 12 }}
-          />
-          <YAxis 
-            stroke="#9ca3af"
-            fontSize={12}
-            tick={{ fontSize: 11 }}
-            width={60}
-          />
-          <Tooltip content={<CustomTooltip />} />
-          <Legend 
-            wrapperStyle={{ fontSize: '10px', paddingTop: '10px' }}
-            iconSize={8}
-          />
-          <Bar
-            dataKey="commission"
-            stackId="revenue"
-            fill="#fbbf24"
-            name="Commission/Fee Revenue ($K)"
-            radius={[0, 0, 0, 0]}
-          />
-          <Bar
-            dataKey="subscription"
-            stackId="revenue"
-            fill="#3b82f6"
-            name="SME Subscriptions ($K)"
-            radius={[0, 0, 0, 0]}
-          />
-          <Bar
-            dataKey="data"
-            stackId="revenue"
-            fill="#22c55e"
-            name="Data/Sponsorship ($K)"
-            radius={[4, 4, 0, 0]}
-          />
-        </BarChart>
-      </ResponsiveContainer>
+      <h3 className="text-xl font-bold mb-4 gradient-text relative z-20">BinDoc.AI Revenue Projections</h3>
+      <div className="relative z-20">
+        <ResponsiveContainer width="100%" height={400}>
+          <BarChart data={revenueProjectionData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+            <CartesianGrid strokeDasharray="3 3" stroke="#374151" opacity={0.3} />
+            <XAxis 
+              dataKey="year" 
+              stroke="#9ca3af"
+              fontSize={12}
+              tick={{ fontSize: 12 }}
+            />
+            <YAxis 
+              stroke="#9ca3af"
+              fontSize={12}
+              tick={{ fontSize: 11 }}
+              width={60}
+            />
+            <Tooltip content={<CustomTooltip />} />
+            <Legend 
+              wrapperStyle={{ fontSize: '10px', paddingTop: '10px' }}
+              iconSize={8}
+            />
+            <Bar
+              dataKey="commission"
+              stackId="revenue"
+              fill="#fbbf24"
+              name="Commission/Fee Revenue ($K)"
+              radius={[0, 0, 0, 0]}
+              shape={(props: any) => <AnimatedBar {...props} />}
+            />
+            <Bar
+              dataKey="subscription"
+              stackId="revenue"
+              fill="#3b82f6"
+              name="SME Subscriptions ($K)"
+              radius={[0, 0, 0, 0]}
+              shape={(props: any) => <AnimatedBar {...props} />}
+            />
+            <Bar
+              dataKey="data"
+              stackId="revenue"
+              fill="#22c55e"
+              name="Data/Sponsorship ($K)"
+              radius={[4, 4, 0, 0]}
+              shape={(props: any) => <AnimatedBar {...props} />}
+            />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
     </motion.div>
   );
 }
@@ -340,4 +408,7 @@ export function MetricCard({ title, value, change, trend, icon }: MetricCardProp
       </div>
     </motion.div>
   );
-} 
+}
+
+// Export the new AnimatedMetricCard
+export { AnimatedMetricCard } from './AnimatedMetricCard';

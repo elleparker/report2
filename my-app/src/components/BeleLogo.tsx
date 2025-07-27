@@ -77,7 +77,7 @@ export default function BeleLogo({ size = 'md', animated = true, className = '' 
           <motion.div
             variants={pulseVariants}
             animate="animate"
-            className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-500 blur-md opacity-30"
+            className="absolute inset-0 rounded-full bg-gradient-to-r from-bel-yellow to-yellow-500 blur-md opacity-30"
           />
         )}
         
@@ -93,7 +93,7 @@ export default function BeleLogo({ size = 'md', animated = true, className = '' 
             {/* Gradient definitions */}
             <defs>
               <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#fbbf24" />
+                <stop offset="0%" stopColor="#FACC15" />
                 <stop offset="100%" stopColor="#f59e0b" />
               </linearGradient>
               <linearGradient id="logoGradientAlt" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -139,16 +139,16 @@ export default function BeleLogo({ size = 'md', animated = true, className = '' 
               <circle cx="0" cy="25" r="4" fill="url(#logoGradient)" className="opacity-80" />
               
               {/* Neural network dots */}
-              <circle cx="-30" cy="0" r="2" fill="#fbbf24" className="opacity-60" />
-              <circle cx="30" cy="0" r="2" fill="#fbbf24" className="opacity-60" />
-              <circle cx="0" cy="-35" r="2" fill="#fbbf24" className="opacity-60" />
-              <circle cx="0" cy="35" r="2" fill="#fbbf24" className="opacity-60" />
+              <circle cx="-30" cy="0" r="2" fill="#FACC15" className="opacity-60" />
+              <circle cx="30" cy="0" r="2" fill="#FACC15" className="opacity-60" />
+              <circle cx="0" cy="-35" r="2" fill="#FACC15" className="opacity-60" />
+              <circle cx="0" cy="35" r="2" fill="#FACC15" className="opacity-60" />
               
               {/* Connecting lines */}
-              <line x1="-15" y1="0" x2="-30" y2="0" stroke="#fbbf24" strokeWidth="1" className="opacity-40" />
-              <line x1="15" y1="0" x2="30" y2="0" stroke="#fbbf24" strokeWidth="1" className="opacity-40" />
-              <line x1="0" y1="-15" x2="0" y2="-35" stroke="#fbbf24" strokeWidth="1" className="opacity-40" />
-              <line x1="0" y1="15" x2="0" y2="35" stroke="#fbbf24" strokeWidth="1" className="opacity-40" />
+              <line x1="-15" y1="0" x2="-30" y2="0" stroke="#FACC15" strokeWidth="1" className="opacity-40" />
+              <line x1="15" y1="0" x2="30" y2="0" stroke="#FACC15" strokeWidth="1" className="opacity-40" />
+              <line x1="0" y1="-15" x2="0" y2="-35" stroke="#FACC15" strokeWidth="1" className="opacity-40" />
+              <line x1="0" y1="15" x2="0" y2="35" stroke="#FACC15" strokeWidth="1" className="opacity-40" />
             </g>
           </svg>
         </div>
@@ -162,7 +162,7 @@ export default function BeleLogo({ size = 'md', animated = true, className = '' 
         className="flex flex-col"
       >
         <div className={`font-bold gradient-text ${textSizeClasses[size]}`}>
-          Zbeleh<span className="text-white">.ai</span>
+          BinDoc<span className="text-white">.AI</span>
         </div>
         {size === 'lg' || size === 'xl' ? (
           <div className="text-xs sm:text-sm text-gray-400 font-medium">Waste Management Solutions</div>

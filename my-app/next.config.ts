@@ -1,9 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'export',
-  trailingSlash: true,
-  distDir: 'out',
+  // Comment out export config for dev mode to avoid ENOENT errors
+  // output: 'export',
+  // trailingSlash: true,
+  // distDir: 'out',
   images: {
     unoptimized: true
   }

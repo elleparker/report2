@@ -1,0 +1,54 @@
+import React from 'react';
+import '@testing-library/jest-dom';
+import 'intersection-observer';
+
+// Mock framer-motion to avoid issues with animations in tests
+jest.mock('framer-motion', () => ({
+  ...jest.requireActual('framer-motion'),
+  useMotionValue: jest.fn(() => ({
+    set: jest.fn(),
+    on: jest.fn(() => jest.fn()),
+  })),
+  useSpring: jest.fn(() => ({
+    on: jest.fn(() => jest.fn()),
+  })),
+  useInView: jest.fn(),
+motion: {
+    // Mocking framer-motion motion.div
+    div: ({ children, ...props }: any) => (
+      React.createElement('div', props, children)
+    ),
+    // Mocking framer-motion motion.span
+    span: ({ children, ...props }: any) => (
+      React.createElement('span', props, children)
+    ),
+  },
+}));
+
+// Extend window object for intersection observer
+declare global {
+  interface Window {
+    IntersectionObserver: any;
+    IntersectionObserverEntry: any;
+  }
+}
+
+// Setup intersection observer mock
+const mockIntersectionObserver = jest.fn();
+mockIntersectionObserver.mockReturnValue({
+  observe: () => null,
+  unobserve: () => null,
+  disconnect: () => null
+});
+
+Object.defineProperty(window, 'IntersectionObserver', {
+  writable: true,
+  configurable: true,
+  value: mockIntersectionObserver,
+});
+
+Object.defineProperty(global, 'IntersectionObserver', {
+  writable: true,
+  configurable: true,
+  value: mockIntersectionObserver,
+});

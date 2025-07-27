@@ -1,8 +1,9 @@
 'use client';
 
+import { useRef } from 'react';
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import CountUp from 'react-countup';
+import { useInView } from 'framer-motion';
+import CountUp from './CountUp';
 import { cn } from '@/lib/utils';
 
 interface AnimatedMetricCardProps {
@@ -15,11 +16,8 @@ interface AnimatedMetricCardProps {
 
 
 export function AnimatedMetricCard({ title, value, change, trend, icon }: AnimatedMetricCardProps) {
-  const { ref, inView } = useInView({
-    threshold: 0.3,
-    triggerOnce: true,
-  });
-
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: "0px" });
 
   // Extract numeric value for CountUp animation
   const getNumericValue = (val: string): number => {
@@ -29,24 +27,27 @@ export function AnimatedMetricCard({ title, value, change, trend, icon }: Animat
     const numStr = numericMatch[0].replace(/,/g, '');
     const num = parseFloat(numStr);
     
-    // Handle special cases like "1.5M+", "80%", etc.
-    if (val.includes('M')) return num;
-    if (val.includes('K')) return num;
-    if (val.includes('%')) return num;
-    
     return num;
   };
 
-  const formatValue = (val: number, originalValue: string): string => {
-    if (originalValue.includes('M')) return `${val.toFixed(1)}M${originalValue.includes('+') ? '+' : ''}`;
-    if (originalValue.includes('K')) return `${val.toFixed(0)}K`;
-    if (originalValue.includes('%')) return `${val.toFixed(0)}%`;
-    if (originalValue.includes('$')) return `$${val.toFixed(2)}`;
-    
-    return val.toString();
+  // Get suffix from original value
+  const getSuffix = (val: string): string => {
+    if (val.includes('M+')) return 'M+';
+    if (val.includes('M')) return 'M';
+    if (val.includes('K')) return 'K';
+    if (val.includes('%')) return '%';
+    return '';
+  };
+
+  // Get prefix from original value
+  const getPrefix = (val: string): string => {
+    if (val.includes('$')) return '$';
+    return '';
   };
 
   const numericValue = getNumericValue(value);
+  const suffix = getSuffix(value);
+  const prefix = getPrefix(value);
 
 
 
@@ -138,16 +139,19 @@ export function AnimatedMetricCard({ title, value, change, trend, icon }: Animat
           </h4>
           
           <p className="text-2xl font-bold text-white group-hover:text-yellow-100 transition-colors duration-300">
-            {inView && numericValue > 0 ? (
-              <CountUp
-                start={0}
-                end={numericValue}
-                duration={2.5}
-                decimals={value.includes('.') ? 1 : 0}
-                formattingFn={(val) => formatValue(val, value)}
-                useEasing={true}
-                separator=","
-              />
+            {numericValue > 0 ? (
+              <>
+                {prefix}
+                <CountUp
+                  to={numericValue}
+                  from={0}
+                  duration={2.5}
+                  startWhen={inView}
+                  separator=","
+                  className=""
+                />
+                {suffix}
+              </>
             ) : (
               value
             )}

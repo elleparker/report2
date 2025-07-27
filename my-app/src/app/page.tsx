@@ -2,20 +2,36 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { TrendingUp, Users, DollarSign, Target, BarChart3, AlertCircle, Lightbulb } from 'lucide-react';
+import { TrendingUp, Users, DollarSign, Target, BarChart3, AlertCircle, Lightbulb, HelpCircle } from 'lucide-react';
 
-import ZbelehNavBar from '../components/NavBar';
+import BinDocNavBar from '../components/NavBar';
 import BeleLogo from '../components/BeleLogo';
+import Hero from '../components/Hero';
+import SectionTitle from '../components/SectionTitle';
 import { 
   WasteVolumeChart, 
   CompetitorAnalysisChart, 
   WasteCompositionChart, 
   RevenueProjectionChart,
-  MetricCard 
+  AnimatedMetricCard 
 } from '../components/Charts';
+import { Cover } from '../components/ui/cover';
+import FAQAccordion from '../components/FAQAccordion';
+import ScrollStack, { ScrollStackItem } from '../components/ScrollStack';
 
 export default function Home() {
-  const [, setActiveSection] = useState('introduction');
+  const [, setActiveSection] = useState('executive-summary');
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Mobile detection with breakpoint synchronization
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 640);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleSectionChange = (url: string) => {
     // Handle both URL format (#section) and direct section ID
@@ -25,7 +41,16 @@ export default function Home() {
     const element = document.getElementById(sectionId);
     
     if (element) {
-      const navHeight = 120; // Account for sticky nav height
+      // Responsive navigation height with proper breakpoints
+      // Mobile (≤640px): 90px, Desktop (>640px): 120px
+      // Alternative: derive from CSS variables for better maintainability
+      const navHeight = isMobile ? 90 : 120;
+      
+      // Optional CSS variable approach:
+      // const navHeight = isMobile 
+      //   ? parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-height-mobile')) || 90
+      //   : parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-height-desktop')) || 120;
+      
       const elementPosition = element.offsetTop - navHeight;
       window.scrollTo({
         top: elementPosition,
@@ -37,6 +62,7 @@ export default function Home() {
   // Scroll observer to update active section
   useEffect(() => {
     const sections = [
+      'executive-summary',
       'introduction',
       'b2c-model',
       'b2c-competitive',
@@ -50,7 +76,7 @@ export default function Home() {
       'b2b-partnerships',
       'financial-overview',
       'conclusion',
-      'namestorming'
+      'faq',
     ];
 
     const observerOptions = {
@@ -87,59 +113,130 @@ export default function Home() {
 
   return (
     <div className="min-h-screen animated-bg">
-      <ZbelehNavBar onNavigate={handleSectionChange} />
+      <BinDocNavBar onNavigate={handleSectionChange} />
       
-      {/* Header */}
-      <header className="relative pt-20 sm:pt-28 pb-8 sm:pb-16 px-4">
-        <motion.div
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="w-full"
+      {/* Hero Section */}
+      <Hero />
+
+      {/* Main Content */}
+      <main className="px-4 pb-10">
+        <div className="w-full">
+        
+        {/* Executive Summary */}
+        <motion.section
+          id="executive-summary"
+          {...fadeInUp}
+          className="section-wrapper space-y-6"
         >
-          <div className="glass p-4 sm:p-8 mb-6 sm:mb-8">
-            <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 sm:gap-6">
-              <div className="w-full lg:w-auto">
-                <BeleLogo size="lg" />
-                <h1 className="text-gray-400 mt-3 sm:mt-4 text-base sm:text-lg leading-relaxed">Strategic Investment Report: Waste Management Solutions for Lebanon</h1>
-              </div>
-              <div className="w-full lg:w-auto lg:text-right">
-                <p className="text-sm text-gray-400">Report Date</p>
-                <p className="text-white font-medium text-lg sm:text-xl">December 2024</p>
-                <div className="mt-2 px-3 py-1 bg-yellow-400/20 text-yellow-400 rounded-full text-xs font-medium inline-block">
-                  CONFIDENTIAL - FIRST DRAFT
-                </div>
-              </div>
+          <div className="relative glass p-8 overflow-hidden group">
+            {/* Animated background elements */}
+            <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/3 via-transparent to-green-400/3 group-hover:from-yellow-400/5 group-hover:to-green-400/5 transition-all duration-700"></div>
+            <div className="absolute -top-20 -right-20 w-40 h-40 bg-yellow-400/5 rounded-full blur-3xl group-hover:bg-yellow-400/10 transition-all duration-1000"></div>
+            <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-green-400/5 rounded-full blur-3xl group-hover:bg-green-400/10 transition-all duration-1000"></div>
+            
+            <div className="relative">
+            <motion.h1 
+              initial={{ opacity: 10, y: 80 }}
+              animate={{ opacity: 10, y: 10 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-3xl sm:text-4xl font-bold mb-12 sm:mb-16 gradient-text"
+            >
+              BinDoc.AI: <Cover particleColor="#FACC15">Executive Summary</Cover>
+            </motion.h1>
+
+             <div className="space-y-16 sm:space-y-20 text-gray-300 leading-relaxed">
+               <div>
+                 <SectionTitle text="The Problem:" level="h3" className="mb-8" />
+                 <p className="text-lg leading-relaxed">
+                   Lebanon faces a chronic and costly waste management crisis, with over <strong className="text-white">80%</strong> of its <strong className="text-white">2 million+</strong> annual tons of waste being mismanaged at an exorbitant cost. Decades of political paralysis and failed top-down initiatives have created a vacuum, leaving waste management to a fragmented and inefficient system of municipalities and informal networks. This national failure presents a significant, untapped economic opportunity for a pragmatic, technology-driven solution.
+                 </p>
+               </div>
+
+               <div>
+                 <SectionTitle text="Our Solution:" level="h3" className="mb-8" />
+                 <p className="text-lg leading-relaxed mb-12">
+                   BinDoc.AI is not another collection company. It is an asset-light, AI-powered technology platform designed to organize, optimize, and monetize Lebanon's existing waste ecosystem. We employ a synergistic dual-track strategy to attack the problem from both the bottom-up and the top-down:
+                 </p>
+                 
+                 <div className="grid md:grid-cols-2 gap-8 mb-8">
+                   <motion.div 
+                     whileHover={{ scale: 1.02, y: -5 }}
+                     transition={{ duration: 0.3 }}
+                     className="bg-gradient-to-br from-black/40 to-black/20 p-6 rounded-lg border border-yellow-400/30 hover:border-yellow-400/50 transition-all duration-300 group cursor-pointer"
+                   >
+                     <h4 className="text-white font-semibold mb-3 flex items-center gap-2">
+                       <Users className="w-5 h-5 text-yellow-400 group-hover:text-yellow-300 transition-colors" />
+                       1. B2C Consumer Model:
+                     </h4>
+                     <p className="text-sm text-gray-300 group-hover:text-gray-200 transition-colors mb-3">
+                       A mobile app that acts as the "Uber for waste," connecting households and SMEs with a network of formalized informal collectors. Using AI-powered image recognition, the app helps users sort, value, and schedule pickups for their recyclables, making the process simple, transparent, and rewarding. This empowers citizens and provides collectors with optimized routes and increased income.
+                     </p>
+                     <div className="text-xs text-yellow-400/70 font-medium">💡 Consumer-Focused • AI-Powered • Scalable</div>
+                   </motion.div>
+                   
+                   <motion.div 
+                     whileHover={{ scale: 1.02, y: -5 }}
+                     transition={{ duration: 0.3 }}
+                     className="bg-gradient-to-br from-black/40 to-black/20 p-6 rounded-lg border border-green-400/30 hover:border-green-400/50 transition-all duration-300 group cursor-pointer"
+                   >
+                     <h4 className="text-white font-semibold mb-3 flex items-center gap-2">
+                       <BarChart3 className="w-5 h-5 text-green-400 group-hover:text-green-300 transition-colors" />
+                       2. B2B Enterprise Model:
+                     </h4>
+                     <p className="text-sm text-gray-300 group-hover:text-gray-200 transition-colors mb-3">
+                       An IoT and AI platform for municipalities and large enterprises that provides a clear and rapid return on investment. By deploying smart sensors in dumpsters, our AI analyzes fill-levels and calculates hyper-efficient collection routes, demonstrably cutting fleet fuel and operational costs by up to <strong className="text-white">40%</strong>. The platform provides a "Mayor's Dashboard" for data-driven governance and public transparency.
+                     </p>
+                     <div className="text-xs text-green-400/70 font-medium">🏢 Enterprise-Grade • IoT Integration • Cost Reduction</div>
+                   </motion.div>
+                 </div>
+               </div>
+
+               <div>
+                 <SectionTitle text="The Flywheel Effect:" level="h3" className="mb-8" />
+                 <p className="text-lg leading-relaxed">
+                   The B2C and B2B models are not separate; they are interlocking gears that create a powerful, defensible ecosystem. The B2B platform gives municipalities the financial savings to sponsor the B2C app for their residents. The B2C app, in turn, improves sorting-at-source and generates valuable data that makes the B2B platform smarter. This synergy creates a virtuous cycle and a significant moat against competitors.
+                 </p>
+               </div>
+
+               <div>
+                 <SectionTitle text="Market & Vision:" level="h3" className="mb-8" />
+                 <p className="text-lg leading-relaxed">
+                   BinDoc.AI is positioned to capture a significant share of Lebanon's multi-million dollar waste management market. Our competitive advantage lies in our practical AI that delivers tangible value, our deep understanding of the local context, and our strategy for building trust through radical transparency (e.g., our "Trace Your Trash" feature).
+                 </p>
+               </div>
+
+               <div className="bg-gradient-to-r from-yellow-400/10 to-yellow-600/10 p-8 rounded-lg border border-yellow-400/30">
+                 <p className="text-xl font-medium text-white leading-relaxed">
+                   An investment in BinDoc.AI is an investment in a <strong className="text-yellow-400">scalable, profitable, and deeply impactful</strong> venture. We are building the foundational, intelligent infrastructure for Lebanon's entire circular economy, with a clear vision for regional expansion.
+                 </p>
+               </div>
+             </div>
             </div>
           </div>
-        </motion.div>
-      </header>
+        </motion.section>
 
-              {/* Main Content */}
-        <main className="px-4 pb-8 sm:pb-16">
-          <div className="w-full space-y-8 sm:space-y-16">
-          
           {/* Introduction: Investment Opportunity */}
+          
           <motion.section
             id="introduction"
             {...fadeInUp}
-            className="space-y-8"
+            className="section-wrapper space-y-8"
           >
             <div className="glass p-8">
-              <h1 className="mb-6">Zbeleh.ai Strategic Investment Report</h1>
-              <h2 className="text-yellow-400 text-2xl mb-4">A Pragmatic, Technology-Driven Solution for Lebanon&apos;s Waste Crisis</h2>
+              <h1 className="mb-8 sm:mb-12">BinDoc.AI Strategic Investment <Cover particleColor="#FACC15">Report</Cover></h1>
+              <SectionTitle text="A Pragmatic, Technology-Driven Solution for Lebanon's Waste Crisis" level="h2" className="mb-8 sm:mb-12" />
               <div className="prose prose-invert max-w-none">
-                <p className="text-xl text-gray-300 leading-relaxed mb-6">
+                <p className="text-xl text-gray-300 leading-relaxed mb-12">
                   Lebanon&apos;s waste management sector is not merely a public service issue; it is a profound economic, environmental, and public health catastrophe. 
                   The country generates over <strong className="text-white">2 million tons</strong> of solid waste annually, with over <strong className="text-white">80%</strong> being mismanaged through open dumping and burning, 
                   at an exorbitant cost of approximately <strong className="text-white">$154.50 per ton</strong>—significantly higher than regional peers.
                 </p>
                 
                 <div className="data-highlight">
-                  <h3 className="text-yellow-400 mb-3">Core Investment Thesis</h3>
+                  <SectionTitle text="Core Investment Thesis" level="h3" className="mb-3" />
                   <p className="text-gray-300 leading-relaxed mb-4">
                     This systemic collapse creates a significant and untapped economic opportunity. The fragmentation and decentralization of Lebanon&apos;s waste sector 
-                    makes it uniquely suited for a flexible, technology-enabled solution like Zbeleh.ai.
+                    makes it uniquely suited for a flexible, technology-enabled solution like BinDoc.AI.
                   </p>
                   <ul className="space-y-2 text-gray-300">
                     <li>• <strong className="text-white">Dual-track strategy</strong>: B2C Consumer Model + B2B Enterprise Model</li>
@@ -153,28 +250,28 @@ export default function Home() {
 
             {/* Key Market Metrics */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <MetricCard
+              <AnimatedMetricCard
                 title="Annual Waste Generated"
                 value="2M tons"
                 change="Growing"
                 trend="up"
                 icon={<BarChart3 className="w-6 h-6" />}
               />
-              <MetricCard
+              <AnimatedMetricCard
                 title="Mismanaged Waste"
                 value="80%"
                 change="Crisis"
                 trend="down"
                 icon={<AlertCircle className="w-6 h-6" />}
               />
-              <MetricCard
+              <AnimatedMetricCard
                 title="Cost Per Ton"
                 value="$154.50"
                 change="High"
                 trend="down"
                 icon={<DollarSign className="w-6 h-6" />}
               />
-              <MetricCard
+              <AnimatedMetricCard
                 title="Potential Revenue"
                 value="$1.5M+"
                 change="Annually"
@@ -188,12 +285,14 @@ export default function Home() {
           <motion.section
             id="b2c-model"
             {...fadeInUp}
-            className="space-y-8"
+            className="section-wrapper space-y-8"
           >
             <div className="glass p-8">
-              <h2 className="mb-6 flex items-center gap-3">
-                <Users className="w-8 h-8 text-yellow-400" />
-                Part I: The Zbeleh.ai B2C Consumer Model
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 flex items-center gap-3">
+                <span className="flex-shrink-0">
+                  <Users className="w-8 h-8 text-yellow-400" />
+                </span>
+                <Cover particleColor="#FACC15">Part I: The BinDoc.AI B2C Consumer Model</Cover>
               </h2>
               <p className="text-gray-300 text-lg leading-relaxed mb-8">
                 Organizing chaos and creating value through a grassroots network that tackles the problem from the bottom up, 
@@ -208,13 +307,15 @@ export default function Home() {
           <motion.section
             id="b2c-competitive"
             {...fadeInUp}
-            className="space-y-8"
+            className="section-wrapper space-y-8"
           >
             <div className="glass p-8">
-              <h3 className="mb-6 flex items-center gap-3">
-                <Target className="w-6 h-6 text-yellow-400" />
-                B2C Competitive Arena: Mapping a Fragmented Ecosystem
-              </h3>
+              <SectionTitle 
+                text="B2C Competitive Arena: Mapping a Fragmented Ecosystem" 
+                level="h3" 
+                icon={<Target className="w-6 h-6 text-yellow-400" />}
+                className="mb-6"
+              />
               
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
                 <div>
@@ -258,10 +359,10 @@ export default function Home() {
           <motion.section
             id="b2c-proposition"
             {...fadeInUp}
-            className="space-y-8"
+            className="section-wrapper space-y-8"
           >
             <div className="glass p-8">
-              <h3 className="mb-6">Fortifying the B2C Proposition: Blueprint for Adoption and Loyalty</h3>
+              <SectionTitle text="Fortifying the B2C Proposition: Blueprint for Adoption and Loyalty" level="h3" className="mb-6" />
               
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
                 <div>
@@ -311,10 +412,10 @@ export default function Home() {
           <motion.section
             id="b2c-monetization"
             {...fadeInUp}
-            className="space-y-8"
+            className="section-wrapper space-y-8"
           >
             <div className="glass p-8">
-              <h3 className="mb-6">B2C Monetization: Diverse and Resilient Revenue Streams</h3>
+              <SectionTitle text="B2C Monetization: Diverse and Resilient Revenue Streams" level="h3" className="mb-6" />
               
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
                 <div className="data-highlight">
@@ -342,57 +443,106 @@ export default function Home() {
           <motion.section
             id="b2c-partnerships"
             {...fadeInUp}
-            className="space-y-8"
+            className="section-wrapper space-y-8"
           >
             <div className="glass p-8">
-              <h3 className="mb-6">The B2C Partnership Nexus: Beyond the Obvious</h3>
+              <SectionTitle text="The B2C Partnership Nexus: Beyond the Obvious" level="h3" className="mb-6" />
               
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div>
+              <motion.div 
+                className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+                initial={{y: 40, opacity: 0}}
+                whileInView={{y: 0, opacity: 1}}
+                viewport={{once: true}}
+                transition={{duration: 0.6}}
+              >
+                <motion.div
+                  initial={{y: 40, opacity: 0}}
+                  whileInView={{y: 0, opacity: 1}}
+                  viewport={{once: true}}
+                  transition={{duration: 0.6, delay: 0.1}}
+                >
                   <h4 className="text-yellow-400 text-lg font-semibold mb-4">Strategic Partnerships</h4>
                   <div className="space-y-4">
-                    <div className="data-highlight">
+                    <motion.div 
+                      className="data-highlight"
+                      initial={{y: 40, opacity: 0}}
+                      whileInView={{y: 0, opacity: 1}}
+                      viewport={{once: true}}
+                      transition={{duration: 0.6, delay: 0.2}}
+                    >
                       <h5 className="text-white font-medium mb-2">Retail & FMCG Sector</h5>
                       <p className="text-gray-300 text-sm">Partner with Spinneys, Carrefour for take-back programs. Users scan barcodes for subsidized pickups.</p>
-                    </div>
-                    <div className="data-highlight">
+                    </motion.div>
+                    <motion.div 
+                      className="data-highlight"
+                      initial={{y: 40, opacity: 0}}
+                      whileInView={{y: 0, opacity: 1}}
+                      viewport={{once: true}}
+                      transition={{duration: 0.6, delay: 0.3}}
+                    >
                       <h5 className="text-white font-medium mb-2">Real Estate & Property</h5>
-                      <p className="text-gray-300 text-sm">Building-wide subscriptions as premium amenity. "Zbeleh.ai Certified Green Building" marketing.</p>
-                    </div>
-                    <div className="data-highlight">
+                      <p className="text-gray-300 text-sm">Building-wide subscriptions as premium amenity. "BinDoc.AI Certified Green Building" marketing.</p>
+                    </motion.div>
+                    <motion.div 
+                      className="data-highlight"
+                      initial={{y: 40, opacity: 0}}
+                      whileInView={{y: 0, opacity: 1}}
+                      viewport={{once: true}}
+                      transition={{duration: 0.6, delay: 0.4}}
+                    >
                       <h5 className="text-white font-medium mb-2">Telecom Operators</h5>
                       <p className="text-gray-300 text-sm">Alfa, Touch loyalty point integration. Redeem points for pickup credits.</p>
-                    </div>
+                    </motion.div>
                   </div>
-                </div>
+                </motion.div>
                 
-                <div>
+                <motion.div
+                  initial={{y: 40, opacity: 0}}
+                  whileInView={{y: 0, opacity: 1}}
+                  viewport={{once: true}}
+                  transition={{duration: 0.6, delay: 0.2}}
+                >
                   <h4 className="text-yellow-400 text-lg font-semibold mb-4">Academic Partnerships</h4>
                   <div className="space-y-4">
-                    <div className="data-highlight">
+                    <motion.div 
+                      className="data-highlight"
+                      initial={{y: 40, opacity: 0}}
+                      whileInView={{y: 0, opacity: 1}}
+                      viewport={{once: true}}
+                      transition={{duration: 0.6, delay: 0.5}}
+                    >
                       <h5 className="text-white font-medium mb-2">Universities (AUB, LAU, USJ)</h5>
                       <p className="text-gray-300 text-sm">Provide datasets for research, host hackathons, recruit talent pipeline.</p>
-                    </div>
-                    <div className="data-highlight">
+                    </motion.div>
+                    <motion.div 
+                      className="data-highlight"
+                      initial={{y: 40, opacity: 0}}
+                      whileInView={{y: 0, opacity: 1}}
+                      viewport={{once: true}}
+                      transition={{duration: 0.6, delay: 0.6}}
+                    >
                       <h5 className="text-white font-medium mb-2">NGO Collaboration</h5>
                       <p className="text-gray-300 text-sm">Partner with Arcenciel for verified material streams, Recycle Lebanon for awareness campaigns.</p>
-                    </div>
+                    </motion.div>
                   </div>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             </div>
-          </motion.section>
+    </motion.section>
 
-          {/* B2B Enterprise Model Overview */}
+
+    {/* B2B Enterprise Model Overview */}
           <motion.section
             id="b2b-model"
             {...fadeInUp}
-            className="space-y-8"
+            className="section-wrapper space-y-8"
           >
             <div className="glass p-8">
-              <h2 className="mb-6 flex items-center gap-3">
-                <BarChart3 className="w-8 h-8 text-yellow-400" />
-                Part II: The Zbeleh.ai B2B Enterprise Model
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 flex items-center gap-3">
+                <span className="flex-shrink-0">
+                  <BarChart3 className="w-8 h-8 text-yellow-400" />
+                </span>
+                <Cover particleColor="#FACC15">Part II: The BinDoc.AI B2B Enterprise Model</Cover>
               </h2>
               <p className="text-gray-300 text-lg leading-relaxed">
                 The irrefutable case for efficiency and control. A paradigm shift from brute-force operations to data-driven intelligence 
@@ -405,10 +555,10 @@ export default function Home() {
           <motion.section
             id="b2b-competitive"
             {...fadeInUp}
-            className="space-y-8"
+            className="section-wrapper space-y-8"
           >
             <div className="glass p-8">
-              <h3 className="mb-6">B2B Competitive Arena: Challenging Incumbents and Foreign Giants</h3>
+              <SectionTitle text="B2B Competitive Arena: Challenging Incumbents and Foreign Giants" level="h3" className="mb-6" />
               
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div>
@@ -450,7 +600,7 @@ export default function Home() {
           <motion.section
             id="b2b-proposition"
             {...fadeInUp}
-            className="space-y-8"
+            className="section-wrapper space-y-8"
           >
             <div className="glass p-8">
               <h3 className="mb-6">Fortifying the B2B Proposition: Political and Financial Survival</h3>
@@ -462,26 +612,32 @@ export default function Home() {
                 </p>
                 <p className="text-gray-300">
                   Lebanese municipalities face extreme financial pressure. Fuel costs are their largest, most volatile expense. 
-                  This positions Zbeleh.ai as a self-funding investment in fiscal survival.
+                  This positions BinDoc.AI as a self-funding investment in fiscal survival.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <div className="data-highlight text-center">
-                  <h4 className="text-yellow-400 font-semibold mb-2">Cost Reduction</h4>
-                  <p className="text-3xl font-bold text-white">40%</p>
-                  <p className="text-green-400 text-sm">Fuel & maintenance savings</p>
-                </div>
-                <div className="data-highlight text-center">
-                  <h4 className="text-yellow-400 font-semibold mb-2">Payback Period</h4>
-                  <p className="text-3xl font-bold text-white">12 months</p>
-                  <p className="text-green-400 text-sm">Self-funding investment</p>
-                </div>
-                <div className="data-highlight text-center">
-                  <h4 className="text-yellow-400 font-semibold mb-2">Data Compliance</h4>
-                  <p className="text-3xl font-bold text-white">Law 80/2018</p>
-                  <p className="text-blue-400 text-sm">Legal compliance built-in</p>
-                </div>
+                <AnimatedMetricCard
+                  title="Cost Reduction"
+                  value="40%"
+                  change="Savings"
+                  trend="up"
+                  icon={<TrendingUp className="w-6 h-6" />}
+                />
+                <AnimatedMetricCard
+                  title="Payback Period"
+                  value="12 months"
+                  change="Investment"
+                  trend="down"
+                  icon={<DollarSign className="w-6 h-6" />}
+                />
+                <AnimatedMetricCard
+                  title="Data Compliance"
+                  value="Law 80/2018"
+                  change="Compliance"
+                  trend="up"
+                  icon={<Target className="w-6 h-6" />}
+                />
               </div>
             </div>
           </motion.section>
@@ -490,7 +646,7 @@ export default function Home() {
           <motion.section
             id="b2b-monetization"
             {...fadeInUp}
-            className="space-y-8"
+            className="section-wrapper space-y-8"
           >
             <div className="glass p-8">
               <h3 className="mb-6">B2B Monetization: Scalable, Long-Term Contracts</h3>
@@ -543,40 +699,122 @@ export default function Home() {
           <motion.section
             id="b2b-partnerships"
             {...fadeInUp}
-            className="space-y-8"
+            className="section-wrapper space-y-8"
           >
+
+          {/* AI Technology */}
+          <motion.section
+            id="ai-technology"
+            {...fadeInUp}
+            className="section-wrapper space-y-8"
+          >
+            <div className="glass p-8 border border-yellow-400">
+              <SectionTitle text="AI Technology" level="h2" className="mb-6" />
+              <div className="space-y-6">
+                <ScrollStackItem itemClassName="glass p-4 rounded-lg border border-yellow-400">
+                  <h4 className="text-xl font-bold mb-2 text-white">Sensor Layer</h4>
+                  <p className="text-gray-300">Smart IoT sensors deployed in dumpsters monitor fill levels, temperature, and contamination in real-time.</p>
+                </ScrollStackItem>
+                
+                <ScrollStackItem itemClassName="glass p-4 rounded-lg border border-yellow-400">
+                  <h4 className="text-xl font-bold mb-2 text-white">Edge AI</h4>
+                  <p className="text-gray-300">Local processing units analyze waste composition and optimize collection routes without relying on cloud connectivity.</p>
+                </ScrollStackItem>
+                
+                <ScrollStackItem itemClassName="glass p-4 rounded-lg border border-yellow-400">
+                  <h4 className="text-xl font-bold mb-2 text-white">Cloud Optimizer</h4>
+                  <p className="text-gray-300">Central intelligence platform that aggregates data from all sensors to provide city-wide optimization insights.</p>
+                </ScrollStackItem>
+                
+                <ScrollStackItem itemClassName="glass p-4 rounded-lg border border-yellow-400">
+                  <h4 className="text-xl font-bold mb-2 text-white">Marketplace API</h4>
+                  <p className="text-gray-300">Connects formal and informal waste collectors with real-time demand data and pricing intelligence.</p>
+                </ScrollStackItem>
+                
+                <ScrollStackItem itemClassName="glass p-4 rounded-lg border border-yellow-400">
+                  <h4 className="text-xl font-bold mb-2 text-white">Transparency Ledger</h4>
+                  <p className="text-gray-300">Blockchain-based tracking system that enables citizens to trace their waste from collection to final processing.</p>
+                </ScrollStackItem>
+                
+                <ScrollStackItem itemClassName="glass p-4 rounded-lg border border-yellow-400">
+                  <h4 className="text-xl font-bold mb-2 text-white">Data Science Portal</h4>
+                  <p className="text-gray-300">Advanced analytics dashboard for municipalities to make data-driven decisions and demonstrate compliance.</p>
+                </ScrollStackItem>
+              </div>
+            </div>
+          </motion.section>
             <div className="glass p-8">
               <h3 className="mb-6">B2B Partnership Nexus: Ecosystem of Credibility</h3>
               
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div>
+              <motion.div 
+                className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+                initial={{y: 40, opacity: 0}}
+                whileInView={{y: 0, opacity: 1}}
+                viewport={{once: true}}
+                transition={{duration: 0.6}}
+              >
+                <motion.div
+                  initial={{y: 40, opacity: 0}}
+                  whileInView={{y: 0, opacity: 1}}
+                  viewport={{once: true}}
+                  transition={{duration: 0.6, delay: 0.1}}
+                >
                   <h4 className="text-yellow-400 text-lg font-semibold mb-4">International Development</h4>
                   <div className="space-y-4">
-                    <div className="data-highlight">
+                    <motion.div 
+                      className="data-highlight"
+                      initial={{y: 40, opacity: 0}}
+                      whileInView={{y: 0, opacity: 1}}
+                      viewport={{once: true}}
+                      transition={{duration: 0.6, delay: 0.2}}
+                    >
                       <h5 className="text-white font-medium mb-2">World Bank, UNDP, USAID</h5>
                       <p className="text-gray-300 text-sm">Position as "Monitoring, Evaluation & Learning" partner for accountability and impact measurement.</p>
-                    </div>
-                    <div className="data-highlight">
+                    </motion.div>
+                    <motion.div 
+                      className="data-highlight"
+                      initial={{y: 40, opacity: 0}}
+                      whileInView={{y: 0, opacity: 1}}
+                      viewport={{once: true}}
+                      transition={{duration: 0.6, delay: 0.3}}
+                    >
                       <h5 className="text-white font-medium mb-2">USAID DAWERR Program</h5>
                       <p className="text-gray-300 text-sm">Embed platform as mandatory MEL component for grant requirements.</p>
-                    </div>
+                    </motion.div>
                   </div>
-                </div>
+                </motion.div>
                 
-                <div>
+                <motion.div
+                  initial={{y: 40, opacity: 0}}
+                  whileInView={{y: 0, opacity: 1}}
+                  viewport={{once: true}}
+                  transition={{duration: 0.6, delay: 0.2}}
+                >
                   <h4 className="text-yellow-400 text-lg font-semibold mb-4">Financial & Insurance</h4>
                   <div className="space-y-4">
-                    <div className="data-highlight">
+                    <motion.div 
+                      className="data-highlight"
+                      initial={{y: 40, opacity: 0}}
+                      whileInView={{y: 0, opacity: 1}}
+                      viewport={{once: true}}
+                      transition={{duration: 0.6, delay: 0.4}}
+                    >
                       <h5 className="text-white font-medium mb-2">Lebanese Banks</h5>
                       <p className="text-gray-300 text-sm">Green financing packages where loan repayments come from operational savings.</p>
-                    </div>
-                    <div className="data-highlight">
+                    </motion.div>
+                    <motion.div 
+                      className="data-highlight"
+                      initial={{y: 40, opacity: 0}}
+                      whileInView={{y: 0, opacity: 1}}
+                      viewport={{once: true}}
+                      transition={{duration: 0.6, delay: 0.5}}
+                    >
                       <h5 className="text-white font-medium mb-2">Insurance Companies</h5>
                       <p className="text-gray-300 text-sm">"Certified Green Risk" program with lower premiums for platform users.</p>
-                    </div>
+                    </motion.div>
                   </div>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             </div>
           </motion.section>
 
@@ -584,7 +822,7 @@ export default function Home() {
           <motion.section
             id="financial-overview"
             {...fadeInUp}
-            className="space-y-8"
+            className="section-wrapper space-y-8"
           >
             <div className="glass p-8">
               <h2 className="mb-6 flex items-center gap-3">
@@ -595,21 +833,27 @@ export default function Home() {
               <WasteCompositionChart />
               
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-8">
-                <div className="data-highlight text-center">
-                  <h4 className="text-yellow-400 font-semibold mb-2">Year 1 Target</h4>
-                  <p className="text-3xl font-bold text-white">$136K</p>
-                  <p className="text-gray-300 text-sm">Pilot phase revenue</p>
-                </div>
-                <div className="data-highlight text-center">
-                  <h4 className="text-yellow-400 font-semibold mb-2">Year 2 Scale</h4>
-                  <p className="text-3xl font-bold text-white">$1.9M</p>
-                  <p className="text-gray-300 text-sm">Beirut-wide expansion</p>
-                </div>
-                <div className="data-highlight text-center">
-                  <h4 className="text-yellow-400 font-semibold mb-2">Year 3 Growth</h4>
-                  <p className="text-3xl font-bold text-white">$5.8M</p>
-                  <p className="text-gray-300 text-sm">Multi-city deployment</p>
-                </div>
+                <AnimatedMetricCard
+                  title="Year 1 Target"
+                  value="$136K"
+                  change="Pilot"
+                  trend="up"
+                  icon={<BarChart3 className="w-6 h-6" />}
+                />
+                <AnimatedMetricCard
+                  title="Year 2 Scale"
+                  value="$1.9M"
+                  change="Expansion"
+                  trend="up"
+                  icon={<TrendingUp className="w-6 h-6" />}
+                />
+                <AnimatedMetricCard
+                  title="Year 3 Growth"
+                  value="$5.8M"
+                  change="Growth"
+                  trend="up"
+                  icon={<TrendingUp className="w-6 h-6" />}
+                />
               </div>
             </div>
           </motion.section>
@@ -618,7 +862,7 @@ export default function Home() {
           <motion.section
             id="conclusion"
             {...fadeInUp}
-            className="space-y-8"
+            className="section-wrapper space-y-8"
           >
             <div className="glass p-8">
               <h2 className="mb-6 flex items-center gap-3">
@@ -628,7 +872,7 @@ export default function Home() {
               
               <div className="prose prose-invert max-w-none">
                 <p className="text-xl text-gray-300 leading-relaxed mb-8">
-                  The key element that elevates Zbeleh.ai from a mere product to a defensible ecosystem is the profound synergy between the B2C and B2B models. 
+                  The key element that elevates BinDoc.AI from a mere product to a defensible ecosystem is the profound synergy between the B2C and B2B models. 
                   This is not two separate businesses operating in parallel; it is one integrated, intelligent ecosystem designed to attack Lebanon's waste crisis from both top-down and bottom-up.
                 </p>
                 
@@ -657,7 +901,7 @@ export default function Home() {
                 <div className="data-highlight">
                   <h3 className="text-yellow-400 mb-4">Final Investment Thesis</h3>
                   <p className="text-gray-300 leading-relaxed">
-                    An investment in Zbeleh.ai is not a speculative bet on a single product. It is an investment in a scalable, profitable, 
+                    An investment in BinDoc.AI is not a speculative bet on a single product. It is an investment in a scalable, profitable, 
                     and deeply impactful solution to one of Lebanon's most persistent and visible crises. It is an opportunity to build 
                     the foundational infrastructure for the country's emerging circular economy.
                   </p>
@@ -666,118 +910,43 @@ export default function Home() {
             </div>
           </motion.section>
 
-          {/* Namestorming Section */}
+          {/* FAQ Section */}
           <motion.section
-            id="namestorming"
+            id="faq"
             {...fadeInUp}
-            className="space-y-8"
+            className="section-wrapper space-y-8"
           >
             <div className="glass p-8">
-              <h2 className="mb-6 flex items-center gap-3">
-                <Lightbulb className="w-8 h-8 text-yellow-400" />
-                🧼 Namestorming – Finding the Perfect Brand for Our Clean Tech Revolution
-              </h2>
+              <motion.h2 
+                className="text-2xl sm:text-3xl font-bold text-white mb-8 flex items-center gap-3"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <span className="flex-shrink-0">
+                  <HelpCircle className="w-8 h-8 text-yellow-400" />
+                </span>
+                <Cover particleColor="#FACC15">Investor FAQ</Cover>
+              </motion.h2>
+              <motion.p 
+                className="text-gray-300 text-lg leading-relaxed mb-8"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                Common questions from investors about BinDoc.AI's business model, market opportunity, and growth strategy.
+              </motion.p>
               
-              <div className="prose prose-invert max-w-none">
-                <p className="text-lg text-gray-300 leading-relaxed mb-8">
-                  Before we commit to a final name for our city-cleaning AI overlord, let&apos;s embrace the chaos of creativity. Naming a product is like taking out the trash—you have to sift through a lot of garbage before you find gold. For now, we&apos;re using Zbeleh.ai as a placeholder, but the dumpster fire of ideas below is where we start shaping identity, satire, and smart waste management into one slick, sarcastic, and unforgettable brand.
-                </p>
-                
-                <p className="text-gray-300 leading-relaxed mb-8">
-                  Let&apos;s dig into a few standout contenders from our internal name dump—each with its own personality, attitude, and vibe. 😎
-                </p>
-
-                <div className="data-highlight mb-8">
-                  <h3 className="text-yellow-400 mb-6">💡 Name Ideas for Our City-Saving CleanTech Monster:</h3>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    <div className="p-4 bg-gray-800/50 rounded-lg border border-gray-700">
-                      <h4 className="text-white font-bold mb-2">1. SukBot 🤖</h4>
-                      <p className="text-gray-300 text-sm">The AI that does what Sukleen should&apos;ve done. A robotic tribute to failed promises.</p>
-                    </div>
-                    
-                    <div className="p-4 bg-gray-800/50 rounded-lg border border-gray-700">
-                      <h4 className="text-white font-bold mb-2">2. Trashformers ♻️</h4>
-                      <p className="text-gray-300 text-sm">Robots in disguise, collecting your lies—and your garbage.</p>
-                    </div>
-                    
-                    <div className="p-4 bg-gray-800/50 rounded-lg border border-gray-700">
-                      <h4 className="text-white font-bold mb-2">3. NaddafNet 🧹</h4>
-                      <p className="text-gray-300 text-sm">Like Skynet, but with more brooms and less genocide.</p>
-                    </div>
-                    
-                    <div className="p-4 bg-gray-800/50 rounded-lg border border-gray-700">
-                      <h4 className="text-white font-bold mb-2">4. SmartKleen 🧠</h4>
-                      <p className="text-gray-300 text-sm">Because it sounds corporate enough to get EU funding and sarcastic enough to be Lebanese.</p>
-                    </div>
-                    
-                    <div className="p-4 bg-gray-800/50 rounded-lg border border-gray-700">
-                      <h4 className="text-white font-bold mb-2">5. ZbaleX 🛸</h4>
-                      <p className="text-gray-300 text-sm">The sleek, elite, high-efficiency Zbeleh intelligence agency of the future.</p>
-                    </div>
-                    
-                    <div className="p-4 bg-gray-800/50 rounded-lg border border-gray-700">
-                      <h4 className="text-white font-bold mb-2">6. E-Zbeleh ⚡</h4>
-                      <p className="text-gray-300 text-sm">It&apos;s fast. It&apos;s dirty. It&apos;s digitized trash collection for the swipe generation.</p>
-                    </div>
-                    
-                    <div className="p-4 bg-gray-800/50 rounded-lg border border-gray-700">
-                      <h4 className="text-white font-bold mb-2">7. YallaKleen 🚚</h4>
-                      <p className="text-gray-300 text-sm">Motivational and exhausted, like every Lebanese mother: &quot;Yalla habibi, clean up already.&quot;</p>
-                    </div>
-                    
-                    <div className="p-4 bg-gray-800/50 rounded-lg border border-gray-700">
-                      <h4 className="text-white font-bold mb-2">8. NadafeGPT 🧽</h4>
-                      <p className="text-gray-300 text-sm">The generative pre-trained trash-cleaning language model you didn&apos;t know you needed.</p>
-                    </div>
-                    
-                    <div className="p-4 bg-gray-800/50 rounded-lg border border-gray-700">
-                      <h4 className="text-white font-bold mb-2">9. KBL-ZBL.ai 🗑️</h4>
-                      <p className="text-gray-300 text-sm">Short for &quot;Keb el Zbele.&quot; The name screams API, the mission screams efficiency.</p>
-                    </div>
-                    
-                    <div className="p-4 bg-gray-800/50 rounded-lg border border-gray-700">
-                      <h4 className="text-white font-bold mb-2">10. NadafeBot 🧼</h4>
-                      <p className="text-gray-300 text-sm">Always on, never judging. Okay, maybe judging a little.</p>
-                    </div>
-                    
-                    <div className="p-4 bg-gray-800/50 rounded-lg border border-gray-700">
-                      <h4 className="text-white font-bold mb-2">11. MrTrash.ai 🕶️</h4>
-                      <p className="text-gray-300 text-sm">He&apos;s not your friend. He&apos;s your refuse executioner.</p>
-                    </div>
-                    
-                    <div className="p-4 bg-gray-800/50 rounded-lg border border-gray-700">
-                      <h4 className="text-white font-bold mb-2">12. TrashCollectors.ai 💾</h4>
-                      <p className="text-gray-300 text-sm">Sounds like a SaaS platform. Functions like a mop army.</p>
-                    </div>
-                    
-                    <div className="p-4 bg-gray-800/50 rounded-lg border border-gray-700">
-                      <h4 className="text-white font-bold mb-2">13. NadafeLeb.ai 🏙️</h4>
-                      <p className="text-gray-300 text-sm">For people who like their patriotism as tidy as their streets.</p>
-                    </div>
-                    
-                    <div className="p-4 bg-gray-800/50 rounded-lg border border-gray-700">
-                      <h4 className="text-white font-bold mb-2">14. CityClean.ai 🌇</h4>
-                      <p className="text-gray-300 text-sm">A clean-cut, internationally-palatable name for urban sanitization—with fangs.</p>
-                    </div>
-                    
-                    <div className="p-4 bg-gray-800/50 rounded-lg border border-gray-700">
-                      <h4 className="text-white font-bold mb-2">15. ByeByeZbeleh.ai 👋</h4>
-                      <p className="text-gray-300 text-sm">Waves goodbye to waste, corruption, and maybe your neighbors&apos; bad habits too.</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="data-highlight">
-                  <p className="text-center text-gray-400 italic">
-                    Each name represents a different personality for our AI waste management revolution. 
-                    From sarcastic commentary on Lebanon&apos;s waste crisis to internationally viable tech branding, 
-                    the perfect name will capture our mission: intelligent, efficient, and slightly rebellious urban cleaning.
-                  </p>
-                </div>
-              </div>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+              >
+                <FAQAccordion />
+              </motion.div>
             </div>
           </motion.section>
+
 
         </div>
       </main>
@@ -790,7 +959,7 @@ export default function Home() {
               <div className="flex items-center gap-4">
                 <BeleLogo size="sm" animated={false} />
                 <div className="text-sm text-gray-400">
-                  <p>© 2024 Bele.ai - All rights reserved</p>
+                  <p>© 2025 BinDoc.AI - All rights reserved</p>
                   <p>Market Intelligence Platform</p>
                 </div>
               </div>

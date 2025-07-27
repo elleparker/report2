@@ -24,7 +24,7 @@ interface NavBarProps {
 }
 
 export function NavBar({ items, className, onNavigate }: NavBarProps) {
-  const [activeTab, setActiveTab] = useState(items[0].name)
+  const [activeTab, setActiveTab] = useState(items[0]?.name || '')
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null)
 
  
@@ -66,7 +66,7 @@ export function NavBar({ items, className, onNavigate }: NavBarProps) {
     <div
       className={`fixed top-2 sm:top-6 left-2 right-2 sm:left-1/2 sm:right-auto sm:-translate-x-1/2 z-50 sm:w-auto ${className || ''}`}
     >
-      <div className="flex items-center justify-center gap-1 sm:gap-4 bg-gradient-to-r from-black/20 via-black/10 to-black/20 border border-yellow-400/20 backdrop-blur-xl py-2 sm:py-3 px-3 sm:px-8 rounded-full shadow-2xl ring-1 ring-white/10">
+      <nav className="flex items-center justify-center gap-1 sm:gap-4 bg-gradient-to-r from-black/20 via-black/10 to-black/20 border border-yellow-400/20 backdrop-blur-xl py-4 px-6 sm:px-10 rounded-full shadow-2xl ring-1 ring-white/10" role="navigation" aria-label="Main navigation">
         {items.map((item) => {
           const Icon = item.icon
           const isActive = activeTab === item.name
@@ -79,7 +79,10 @@ export function NavBar({ items, className, onNavigate }: NavBarProps) {
             <div key={item.name} className="relative flex-shrink-0">
               <button
                 onClick={() => handleNavClick(item.name, hasSubItems, item.url)}
-                                  className="relative cursor-pointer px-2.5 sm:px-6 py-2 sm:py-3 rounded-full transition-colors text-gray-300 hover:text-yellow-400 flex-shrink-0"
+                aria-label={hasSubItems ? `${item.name} menu` : `Navigate to ${item.name}`}
+                aria-expanded={hasSubItems ? isSubmenuOpen : undefined}
+                aria-haspopup={hasSubItems ? "menu" : undefined}
+                className="relative cursor-pointer px-2.5 sm:px-6 py-2 sm:py-3 rounded-full transition-colors text-gray-300 hover:text-yellow-400 flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-bel-yellow focus:ring-offset-2 focus:ring-offset-black"
               >
                                             <div className="flex items-center gap-1 sm:gap-3">
                               <Icon size={12} strokeWidth={2.5} className="text-yellow-400 sm:w-[22px] sm:h-[22px] flex-shrink-0" />
@@ -127,12 +130,16 @@ export function NavBar({ items, className, onNavigate }: NavBarProps) {
                     transition={{ duration: 0.2 }}
                     className="absolute top-full mt-2 left-1/2 -translate-x-1/2 bg-black/95 backdrop-blur-xl border border-yellow-400 rounded-lg shadow-2xl py-3 min-w-52 ring-1 ring-white/10"
                     style={{ zIndex: 99999 }}
+                    role="menu"
+                    aria-labelledby={`${item.name}-menu-button`}
                   >
                   {item.subItems?.map((subItem, index) => (
                     <button
                       key={index}
                       onClick={() => handleSubItemClick(subItem.url)}
-                      className="w-full flex items-center gap-3 sm:gap-4 px-4 sm:px-5 py-3 sm:py-3 text-xs sm:text-sm hover:bg-yellow-400/20 hover:shadow-lg hover:shadow-yellow-400/30 transition-all duration-200 text-gray-300 hover:text-yellow-400 group rounded-md"
+                      role="menuitem"
+                      aria-label={`Navigate to ${subItem.name}`}
+                      className="w-full flex items-center gap-3 sm:gap-4 px-4 sm:px-5 py-3 sm:py-3 text-xs sm:text-sm hover:bg-yellow-400/20 hover:shadow-lg hover:shadow-yellow-400/30 transition-all duration-200 text-gray-300 hover:text-yellow-400 group rounded-md focus:outline-none focus:ring-2 focus:ring-bel-yellow focus:ring-offset-2 focus:ring-offset-black"
                       style={{ color: 'white' }}
                     >
                       <subItem.icon size={14} className="text-yellow-400/70 group-hover:text-yellow-400 transition-colors flex-shrink-0 sm:w-[16px] sm:h-[16px]" />
@@ -145,14 +152,14 @@ export function NavBar({ items, className, onNavigate }: NavBarProps) {
             </div>
           )
         })}
-      </div>
+      </nav>
     </div>
   )
 }
 
 // Helper function for utility classes (removed as not needed)
 
-export default function ZbelehNavBar({ onNavigate }: { onNavigate?: (url: string) => void }) {
+export default function BinDocNavBar({ onNavigate }: { onNavigate?: (url: string) => void }) {
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
@@ -164,9 +171,14 @@ export default function ZbelehNavBar({ onNavigate }: { onNavigate?: (url: string
 
   const navItems: NavItem[] = [
     { 
+      name: isMobile ? 'Summary' : 'Executive Summary', 
+      url: '#executive-summary', 
+      icon: FileText
+    },
+    { 
       name: isMobile ? 'Intro' : 'Investment Opportunity', 
       url: '#introduction', 
-      icon: FileText
+      icon: Target
     },
     { 
       name: 'B2C', 
@@ -201,8 +213,8 @@ export default function ZbelehNavBar({ onNavigate }: { onNavigate?: (url: string
       icon: Award
     },
     { 
-      name: isMobile ? 'Names' : 'Namestorming', 
-      url: '#namestorming', 
+      name: 'FAQ', 
+      url: '#faq', 
       icon: Lightbulb
     }
   ]

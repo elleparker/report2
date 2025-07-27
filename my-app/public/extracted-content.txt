@@ -1,7 +1,7 @@
 
 
  
-Zbeleh.ai Strategic Investment Report: A 
+BinDoc.AI Strategic Investment Report: A 
 Pragmatic, Technology-Driven Solution for 
 Lebanon's Waste Crisis 
  
@@ -11,7 +11,7 @@ From National Crisis to Profitable Enterprise
 To address the inherent skepticism of any seasoned Lebanese investor, who is intimately familiar 
 with a history of failed top-down initiatives and emergency plans (
 1
-), the Zbeleh.ai proposition is 
+), the BinDoc.AI proposition is 
 framed not as an idealistic panacea but as a pragmatic, market-driven response to a chronic and 
 costly national failure. Lebanon's waste management sector is not merely a public service issue; it is 
 a profound economic, environmental, and public health catastrophe (
@@ -31,8 +31,8 @@ management is relegated to the municipality level at best and is often an inform
 (
 6
 ), makes it uniquely suited for a flexible, technology-enabled, and non-monolithic solution like 
-Zbeleh.ai. The objective is not to replace the state, but to create the intelligent infrastructure for the 
-de facto system that already exists. Zbeleh.ai is designed to organize the chaos, inject efficiency, 
+BinDoc.AI. The objective is not to replace the state, but to create the intelligent infrastructure for the 
+de facto system that already exists. BinDoc.AI is designed to organize the chaos, inject efficiency, 
 and create value where there is currently only cost and contamination. 
 The dual-track strategy, comprising a B2C Consumer Model and a B2B Enterprise Model, is 
 presented not as a choice but as a synergistic approach that mitigates risk and creates a powerful, 
@@ -44,7 +44,7 @@ provides a top-down solution for municipalities and large enterprises, addressin
 for cost control and operational efficiency. Together, they form a comprehensive, data-driven 
 platform poised to become the central nervous system of Lebanon's future waste economy. 
  
-Part I: The Zbeleh.ai B2C Consumer Model: Organizing 
+Part I: The BinDoc.AI B2C Consumer Model: Organizing 
 Chaos, Creating Value 
  
 Section 1.1: The B2C Competitive Arena – Mapping a Fragmented 
@@ -53,7 +53,7 @@ Ecosystem
 
 The B2C waste collection landscape in Lebanon is not a traditional market with clear incumbents but 
 a fragmented ecosystem of digital pioneers, entrenched informal networks, and non-governmental 
-organizations (NGOs). Understanding this complex interplay is fundamental to positioning Zbeleh.ai 
+organizations (NGOs). Understanding this complex interplay is fundamental to positioning BinDoc.AI 
 for success. 
  
 Analysis of Direct Digital Competitors 
@@ -78,7 +78,7 @@ Programme (WFP) and the German government (BMZ), as well as crowdfunding campaig
 aggressively without a constant infusion of aid. Their reported plan to introduce a small fee of 
 LBP 3,000 per pickup underscores a struggle for financial viability (
 9
-). Zbeleh.ai is positioned 
+). BinDoc.AI is positioned 
 as the for-profit evolution of the LLR model—offering a more robust, scalable, and reliable 
 service built on sound business principles, not precarious donor funding. 
 • Nadeera: This startup presents a direct feature overlap with its AI-powered mobile app for 
@@ -90,17 +90,17 @@ points, explaining
 what and where to recycle (
 10
 ). This is a valuable educational tool but does not solve the core 
-logistical problem of getting waste out of the home. Zbeleh.ai's value proposition is superior as 
+logistical problem of getting waste out of the home. BinDoc.AI's value proposition is superior as 
 it provides an end-to-end solution. While Nadeera’s AI tells a user 
-if an item is recyclable, Zbeleh.ai’s AI will not only identify the material but also facilitate its 
+if an item is recyclable, BinDoc.AI’s AI will not only identify the material but also facilitate its 
 immediate collection and create economic value through its integrated marketplace. 
  
 Analysis of Informal & Indirect Competitors 
  
 These are not traditional competitors but existing market players whose inefficiencies represent 
-Zbeleh.ai's core opportunity. 
+BinDoc.AI's core opportunity. 
 • The Informal Sector (Kabaris & Muallims): This is the bedrock of Lebanon's current 
-recycling system and should be viewed as Zbeleh.ai's primary target user base and supply 
+recycling system and should be viewed as BinDoc.AI's primary target user base and supply 
 chain, not its competition. This sector is a complex, deeply entrenched network of street-level 
 waste pickers (kabaris), often comprising migrant workers or underprivileged youth, who 
 collect recyclables from bins and sell them to local scrapyard masters (muallims) (
@@ -110,7 +110,7 @@ individuals are micro-entrepreneurs providing essential labor for Lebanon's surp
 successful scrap metal export industry (
 12
 ). They operate within a chaotic, inefficient, and often 
-exploitative system. Zbeleh.ai's platform is designed to empower them, not replace them. The 
+exploitative system. BinDoc.AI's platform is designed to empower them, not replace them. The 
 app will serve as a powerful tool to increase their daily earnings through AI-optimized routes, 
 direct access to a wider pool of households, and transparent pricing suggestions, transforming 
 them from marginalized "scavengers" into dignified "logistics partners." 
@@ -120,7 +120,7 @@ solution for disposing of bulky waste like old furniture or electronics (
 6
 , p. 6). However, they are 
 fraught with problems: transactions are inefficient, pricing is opaque and subject to haggling, 
-and there are no mechanisms for trust, safety, or quality control. Zbeleh.ai offers a specialized, 
+and there are no mechanisms for trust, safety, or quality control. BinDoc.AI offers a specialized, 
 trusted, and efficient alternative. The platform professionalizes these one-off transactions by 
 providing standardized job requests, AI-driven price suggestions based on item analysis, and 
 a two-way rating system to build a community of trusted users and collectors. 
@@ -143,11 +143,11 @@ programs, Arcenciel is a key player in the recycling value chain (
 its collected recyclables to Arcenciel for free highlights Arcenciel's role as a major off-taker (
 9
 ). 
-Zbeleh.ai can establish a formal partnership with Arcenciel, directing a verified, pre-sorted 
+BinDoc.AI can establish a formal partnership with Arcenciel, directing a verified, pre-sorted 
 stream of materials from its collection network to Arcenciel's facilities, thereby improving their 
 operational efficiency. 
 The NGO sector is primarily concerned with the "software" of waste management—awareness and 
-behavior change. Zbeleh.ai provides the critical "hardware" and "operating system"—the efficient 
+behavior change. BinDoc.AI provides the critical "hardware" and "operating system"—the efficient 
 logistics and marketplace to connect sorted waste with recyclers. This complementary relationship 
 forms the basis for collaboration, not conflict. 
  
@@ -169,7 +169,7 @@ Estimated
 Scale/Use
 rs 
 Key Weakness 
-(Zbeleh.ai's 
+(BinDoc.AI's 
 Opportunity) 
 Live Love 
 Recycle 
@@ -349,7 +349,7 @@ demonstration. Using simulations, the onboarding team will show how the app's AI
 optimized routing can increase their daily take-home pay by 20-30% by reducing time 
 spent searching for pickups and minimizing travel distance between jobs. 
 2. Tools & Legitimacy: To enhance their social acceptance and professionalize their 
-work, collectors will be provided with Zbeleh.ai branded vests. Partnerships with 
+work, collectors will be provided with BinDoc.AI branded vests. Partnerships with 
 microfinance institutions or NGOs will be explored to offer them access to better 
 equipment, such as improved carts or trolleys. 
 3. Simplicity and Accessibility: The collector-facing side of the application will be 
@@ -378,7 +378,7 @@ which have been plagued by corruption, broken promises, and inefficiency for dec
 the most valuable and scarcest currency. While competitors like LLR gained initial traction through 
 their grassroots, non-profit appeal (
 7
-), Zbeleh.ai, as a for-profit entity, must build trust through a 
+), BinDoc.AI, as a for-profit entity, must build trust through a 
 different mechanism: 
 radical, verifiable transparency. 
 The app's killer feature in this regard will be a "Trace Your Trash" function. After a pickup is 
@@ -390,7 +390,7 @@ recyclables are just dumped with regular trash. It makes the abstract act of rec
 verifiable, and rewarding, building a level of trust that no competitor can easily replicate. This 
 feature, combined with community-level engagement—sponsoring local school environmental clubs, 
 partnering with mukhtars, and maintaining a presence in neighborhood social media groups—will 
-position Zbeleh.ai not as a faceless tech company, but as a reliable community partner. 
+position BinDoc.AI not as a faceless tech company, but as a reliable community partner. 
  
 The AI Differentiator in Practice (Beyond the Buzzword) 
  
@@ -398,7 +398,7 @@ A skeptical Lebanese investor will rightly see "AI image recognition" as a poten
 6
 , p. 10). 
 The value of the AI must be demonstrated in practical, monetary terms. The informal market already 
-knows what plastic is; their challenge lies in inefficient logistics and opaque pricing. Zbeleh.ai's AI 
+knows what plastic is; their challenge lies in inefficient logistics and opaque pricing. BinDoc.AI's AI 
 provides the solution. 
 The AI is engineered to be a dynamic pricing and logistics engine. 
 • Dynamic Valuation: The computer vision model will be trained to go beyond simple 
@@ -429,7 +429,7 @@ value (e.g., aluminum, copper, e-waste, certain plastics), the platform will tak
 of 15-20% on the final transaction value paid to the collector (
 6
 , p. 13). This is a classic 
-marketplace model where Zbeleh.ai only earns when it successfully facilitates a valuable 
+marketplace model where BinDoc.AI only earns when it successfully facilitates a valuable 
 transaction. 
 • Fixed Convenience Fee (Pay-per-Pickup): Many recyclables, such as glass or mixed paper, 
 have low or even negative value in Lebanon, making a commission model unviable. To ensure 
@@ -441,7 +441,7 @@ will be charged to the user for the pickup service. This model, which LLR consid
 sustainable across all material types. 
 
 • Premium Subscriptions for SMEs: Small and medium-sized enterprises—such as 
-restaurants, offices, and retail shops—have regular and predictable waste streams. Zbeleh.ai 
+restaurants, offices, and retail shops—have regular and predictable waste streams. BinDoc.AI 
 will offer a monthly subscription service for these businesses, providing scheduled pickups, 
 dedicated support, and basic data reports on their recycling impact (
 6
@@ -461,13 +461,13 @@ district, Brand X's plastic water bottles constitute 15% of all collected plasti
 Brand Y's constitute 5%" provides invaluable, actionable intelligence for marketing, packaging 
 design, and corporate strategy. 
 • Sponsored Recycling Challenges: This model creates a direct B2B revenue stream through 
-the B2C platform. Zbeleh.ai will partner with major brands (e.g., PepsiCo, Nestlé, Unilever) to 
+the B2C platform. BinDoc.AI will partner with major brands (e.g., PepsiCo, Nestlé, Unilever) to 
 create and host in-app recycling challenges. For example, a campaign could offer users 
 rewards for recycling a certain number of a partner brand's products within a month. The 
-brand pays Zbeleh.ai a fee to run the campaign and provide the prizes, gaining a powerful 
+brand pays BinDoc.AI a fee to run the campaign and provide the prizes, gaining a powerful 
 marketing tool that associates their brand with positive environmental action while driving user 
 engagement on the app. 
-• B2B2C for Corporate ESG: Zbeleh.ai will package its B2C service and sell it to large 
+• B2B2C for Corporate ESG: BinDoc.AI will package its B2C service and sell it to large 
 corporations as an employee benefit and a turnkey CSR initiative. The corporation pays a bulk 
 subscription fee to subsidize or provide free at-home recycling pickups for its employees. In 
 return, the company receives an aggregated, anonymized report on the collective 
@@ -508,7 +508,7 @@ Commission/Fee rate of 15% of total transaction value.
  
 Section 1.4: The B2C Partnership Nexus – Beyond the Obvious 
  
-To accelerate growth, reduce acquisition costs, and embed Zbeleh.ai into the economic fabric of 
+To accelerate growth, reduce acquisition costs, and embed BinDoc.AI into the economic fabric of 
 Lebanon, a strategic partnership strategy is essential. This strategy must look beyond obvious 
 players like municipalities and recycling plants. 
  
@@ -518,21 +518,21 @@ Retail & FMCG Sector
 • Partnership: The most strategic partnership lies in collaborating with major supermarket 
 chains (e.g., Spinneys, Carrefour, TSC) and leading FMCG brands to create and manage 
 "take-back" and Extended Producer Responsibility (EPR) programs. 
-• Mechanism: When a user scans a product barcode from a partner brand within the Zbeleh.ai 
+• Mechanism: When a user scans a product barcode from a partner brand within the BinDoc.AI 
 app, it could unlock a "free" or "subsidized" pickup for that packaging. This service would be 
 funded by the brand as part of its CSR or marketing budget. This model aligns with emerging 
-global trends in producer responsibility, provides a powerful new revenue stream for Zbeleh.ai, 
+global trends in producer responsibility, provides a powerful new revenue stream for BinDoc.AI, 
 and offers immense value to consumers, directly incentivizing them to recycle specific 
 products. 
  
 Real Estate & Property Management 
  
  
-• Partnership: Zbeleh.ai will be positioned as a premium amenity for high-end residential 
+• Partnership: BinDoc.AI will be positioned as a premium amenity for high-end residential 
 compounds, commercial office buildings, and new real estate developments. 
 • Mechanism: The building's management or homeowners' association subscribes to a 
 building-wide plan. This provides residents with seamless, integrated, and potentially free 
-recycling services. In return, the building can market itself as a "Zbeleh.ai Certified Green 
+recycling services. In return, the building can market itself as a "BinDoc.AI Certified Green 
 Building," a tangible differentiator that can help attract environmentally conscious tenants and 
 potentially justify higher rental or sale prices. 
  
@@ -544,7 +544,7 @@ Telecom Operators (Alfa, Touch)
 telecom operators for co-branding, loyalty program integration, or even app pre-installation on 
 new devices. 
 • Mechanism: A simple integration could allow telecom users to redeem their loyalty points for 
-Zbeleh.ai pickup credits. Conversely, Zbeleh.ai could reward its most consistent recyclers with 
+BinDoc.AI pickup credits. Conversely, BinDoc.AI could reward its most consistent recyclers with 
 free mobile data, sponsored by the telecom partner. This creates a low-cost, high-visibility 
 user acquisition channel and adds value to the telecom operator's loyalty program. 
  
@@ -552,24 +552,24 @@ Universities & Schools
  
  
 • Partnership: The engagement with academic institutions must evolve beyond simple 
-awareness campaigns. Zbeleh.ai will forge deep partnerships with the environmental science, 
+awareness campaigns. BinDoc.AI will forge deep partnerships with the environmental science, 
 computer science, and business faculties of leading universities like the American University 
 of Beirut (AUB), the Lebanese American University (LAU), and Université Saint-Joseph (USJ). 
-• Mechanism: Zbeleh.ai will offer curated, anonymized datasets to students and researchers 
+• Mechanism: BinDoc.AI will offer curated, anonymized datasets to students and researchers 
 for academic projects on urban studies, consumer behavior, or waste management. The 
 company can co-host hackathons and case competitions, challenging students to develop new 
 AI features or business models for the platform. This strategy builds immense brand credibility 
 within the academic and youth communities, provides a source of low-cost R&D, and 
 establishes a direct pipeline for recruiting top-tier local talent. 
  
-Part II: The Zbeleh.ai B2B Enterprise Model: The 
+Part II: The BinDoc.AI B2B Enterprise Model: The 
 Irrefutable Case for Efficiency and Control 
  
 Section 2.1: The B2B Competitive Arena – Challenging Incumbents and 
 Foreign Giants 
  
 The B2B landscape is dominated by a few large, traditional contractors and the long shadow of past 
-failures. Zbeleh.ai's entry must be positioned as a paradigm shift from brute-force operations to data-
+failures. BinDoc.AI's entry must be positioned as a paradigm shift from brute-force operations to data-
 driven intelligence. 
  
 Analysis of Incumbent Contractors 
@@ -589,7 +589,7 @@ particularly for fuel, and a fundamental lack of data-driven efficiency and tran
 19
 ). This 
 
-makes them highly vulnerable to a technology partner like Zbeleh.ai that can demonstrably 
+makes them highly vulnerable to a technology partner like BinDoc.AI that can demonstrably 
 and significantly lower those costs. 
 • Sukleen/Averda Legacy: The ghost of Sukleen, now part of the international Averda group 
 (
@@ -600,8 +600,8 @@ opacity, and leveraging political patronage (
 1
 ). This history has created a deep-seated and 
 lasting public and official distrust of any single, large private entity aiming to control waste 
-management. Zbeleh.ai must strategically distance itself from this legacy. The core message 
-is clear: Zbeleh.ai is not another collection contractor seeking a monopoly. It is a technology 
+management. BinDoc.AI must strategically distance itself from this legacy. The core message 
+is clear: BinDoc.AI is not another collection contractor seeking a monopoly. It is a technology 
 provider that offers an intelligence layer to make 
 any collection operation—whether it's a municipality's own fleet or a third-party contractor like 
 Ramco—more efficient, transparent, and accountable. The pitch is one of empowerment and 
@@ -609,7 +609,7 @@ control, a direct antidote to the legacy of opacity.
  
 Benchmarking Against Global Precedents 
  
-International success stories validate the technical and financial viability of the Zbeleh.ai model and 
+International success stories validate the technical and financial viability of the BinDoc.AI model and 
 provide powerful benchmarks for investors. 
 • Compology (US): This is the most direct and compelling global precedent. Compology uses 
 bin-mounted cameras and AI-powered software to monitor fullness, location, and content, 
@@ -621,27 +621,27 @@ and slash contamination rates in recycling streams by as much as 80% (
 24
 ). Their business 
 model, which involves partnerships with waste haulers, Fortune 100 companies, and 
-government entities, is precisely what Zbeleh.ai aims to replicate. The pitch to investors will 
-frame Zbeleh.ai as "Compology, adapted for Lebanon"—emphasizing greater affordability 
+government entities, is precisely what BinDoc.AI aims to replicate. The pitch to investors will 
+frame BinDoc.AI as "Compology, adapted for Lebanon"—emphasizing greater affordability 
 through local partnerships for hardware, enhanced durability for the local environment, and a 
 feature set tailored to the specific pain points of Lebanese municipalities, such as fuel costs 
 and public pressure. 
-• Junker (Italy): The Junker app's business model provides strong validation for Zbeleh.ai's 
+• Junker (Italy): The Junker app's business model provides strong validation for BinDoc.AI's 
 proposed B2B2C integration. Junker's revenue comes from municipalities paying a 
 subscription fee to have their specific, localized recycling rules and collection point information 
 integrated into the consumer-facing app (
 25
 ). This proves that municipalities are willing to pay 
 for a digital tool that facilitates better citizen engagement and improves sorting-at-source, a 
-key component of the integrated Zbeleh.ai vision. 
+key component of the integrated BinDoc.AI vision. 
  
 Local Engineering & IoT Firms 
  
 Currently, there are no known local Lebanese firms offering a comprehensive, integrated smart 
 waste management platform. The local tech landscape consists of potential partners, not 
 competitors. Firms specializing in hardware assembly, IoT device installation, and field maintenance 
-can be integrated into Zbeleh.ai's supply chain. This presents a significant advantage, allowing 
-Zbeleh.ai to be framed not as a foreign tech importer but as a catalyst for growth and job creation 
+can be integrated into BinDoc.AI's supply chain. This presents a significant advantage, allowing 
+BinDoc.AI to be framed not as a foreign tech importer but as a catalyst for growth and job creation 
 within Lebanon's local tech and engineering sectors. 
  
 Section 2.2: Fortifying the B2B Proposition – The Case for Political and 
@@ -704,7 +704,7 @@ consumption and associated maintenance costs by up to 40%, with a payback period
 than 12 months." This pitch leverages the 40% efficiency gain benchmark set by global leaders like 
 Compology (
 24
-) and frames the Zbeleh.ai system not as an expense, but as a self-funding investment 
+) and frames the BinDoc.AI system not as an expense, but as a self-funding investment 
 in fiscal survival. The conversation starts with cost-cutting and budget relief; the significant 
 environmental and public health benefits are then presented as powerful co-benefits that enhance 
 the value proposition. 
@@ -754,7 +754,7 @@ DAWERR program
 ), as they are more likely to be open to innovation and have reporting 
 requirements that our platform can meet. The sole objective of the pilot is to generate an 
 undeniable, locally-validated case study that proves the ROI claims. 
-• Leveraging International Funding Channels: Zbeleh.ai will be actively positioned to align 
+• Leveraging International Funding Channels: BinDoc.AI will be actively positioned to align 
 with the objectives of major international aid programs, such as USAID's DAWERR project (
 33
 ) 
@@ -762,7 +762,7 @@ and World Bank environmental grants (
 30
 ). The platform can be pitched to these organizations 
 as the perfect technology backbone to ensure their funds are deployed efficiently and with 
-measurable, verifiable impact. The goal is to have Zbeleh.ai become a preferred or even 
+measurable, verifiable impact. The goal is to have BinDoc.AI become a preferred or even 
 required technology vendor for municipalities seeking to access these funds. 
 • Hardware Resilience and Security: The pitch must proactively address the valid concern of 
 hardware vandalism and theft (
@@ -802,31 +802,31 @@ Innovative & Hybrid Models (The Partnership Approach)
  
 Recognizing the severe financial constraints facing many Lebanese municipalities (
 5
-), Zbeleh.ai will 
+), BinDoc.AI will 
 offer innovative models that lower upfront risk and align financial incentives. 
-• Gain-Share Model: This is a powerful de-risking tool for hesitant clients. Zbeleh.ai charges a 
+• Gain-Share Model: This is a powerful de-risking tool for hesitant clients. BinDoc.AI charges a 
 significantly lower fixed monthly SaaS fee in exchange for a pre-agreed percentage (e.g., 30-
 50%) of the documented monthly cost savings generated by the system. Savings on fuel, 
 vehicle maintenance, and overtime pay would be tracked by the platform, and the "gain" would 
-be shared. This model means Zbeleh.ai only profits significantly when the client profits 
+be shared. This model means BinDoc.AI only profits significantly when the client profits 
 significantly. 
-• Recyclables Revenue Share: For municipalities that use the full suite of Zbeleh.ai tools 
+• Recyclables Revenue Share: For municipalities that use the full suite of BinDoc.AI tools 
 (including the citizen engagement app) to improve sorting-at-source, the platform can track the 
-improved quality and quantity of collected recyclables. Zbeleh.ai can then take a percentage of 
+improved quality and quantity of collected recyclables. BinDoc.AI can then take a percentage of 
 the additional revenue the municipality generates from selling these higher-value materials to 
 recycling facilities. 
-• Platform White-Labeling: This creates a highly scalable, indirect sales channel. Zbeleh.ai 
+• Platform White-Labeling: This creates a highly scalable, indirect sales channel. BinDoc.AI 
 can license its entire technology stack to large, private waste contractors (a more forward-
 thinking version of Ramco or even Averda for their regional operations). These contractors can 
 then offer the smart waste solution to their own municipal and corporate clients under their 
-own brand, paying Zbeleh.ai a licensing fee per end-user or sensor. 
+own brand, paying BinDoc.AI a licensing fee per end-user or sensor. 
  
 Value-Added Services 
  
  
 • ESG & Compliance-as-a-Service: Large corporate clients (malls, hospitals, industrial plants, 
 hotel chains) are increasingly under pressure to report on their environmental, social, and 
-governance (ESG) performance. Zbeleh.ai will offer a premium consulting service that uses 
+governance (ESG) performance. BinDoc.AI will offer a premium consulting service that uses 
 
 the rich data from the platform to generate automated, audit-ready ESG and sustainability 
 reports, saving clients significant time and consulting fees. 
@@ -848,16 +848,16 @@ accelerating sales cycles, and building an ecosystem of credibility.
 International Development & Funding Agencies (World Bank, UNDP, USAID) 
  
  
-• Partnership: Position Zbeleh.ai as a "Monitoring, Evaluation, and Learning (MEL)" Partner. 
+• Partnership: Position BinDoc.AI as a "Monitoring, Evaluation, and Learning (MEL)" Partner. 
 • Mechanism: International agencies invest millions in waste management projects across 
 Lebanon but often struggle to accurately measure their real-world impact and ensure funds 
 are used efficiently (
 30
-). The Zbeleh.ai platform provides the perfect solution: a real-time, data-
+). The BinDoc.AI platform provides the perfect solution: a real-time, data-
 driven tool for tracking every aspect of a waste management intervention, from collection 
-efficiency to recycling rates. By embedding the Zbeleh.ai platform into their grant requirements 
+efficiency to recycling rates. By embedding the BinDoc.AI platform into their grant requirements 
 as a mandatory MEL component, these agencies can ensure accountability and data-driven 
-results, while Zbeleh.ai gains unparalleled access to pre-qualified municipal clients and a de-
+results, while BinDoc.AI gains unparalleled access to pre-qualified municipal clients and a de-
 risked sales cycle. 
  
 Financial Institutions (Byblos Bank, Bank Audi, Fransabank, etc.) 
@@ -868,12 +868,12 @@ and large enterprises.
 • Mechanism: Lebanese banks are actively seeking credible CSR initiatives and green 
 financing opportunities to bolster their portfolios and public image (
 37
-). Zbeleh.ai will partner 
+). BinDoc.AI will partner 
 with these banks to offer favorable, low-interest loans specifically designed to cover the 
 upfront hardware and installation costs of its system. The loan repayment schedule can be 
 structured to be paid directly from the operational savings our system generates, effectively 
 making the project self-funding from the client's perspective and creating a win-win-win 
-scenario for the client, the bank, and Zbeleh.ai. 
+scenario for the client, the bank, and BinDoc.AI. 
  
 Insurance Companies (e.g., Medgulf, Allianz SNA, Bankers) 
  
@@ -882,18 +882,18 @@ Insurance Companies (e.g., Medgulf, Allianz SNA, Bankers)
 • Partnership: Develop a "Certified Green Risk" program that translates sustainable practices 
 into financial benefits. 
 • Mechanism: Improper waste management poses significant liabilities, including fire hazards 
-from overflowing bins, public health risks, and environmental contamination. Zbeleh.ai can 
+from overflowing bins, public health risks, and environmental contamination. BinDoc.AI can 
 work with insurers to demonstrate that a business or municipality using its platform has a 
 measurably lower risk profile. This data-backed risk reduction could qualify clients for lower 
 insurance premiums, creating another powerful and unique financial incentive for them to 
-adopt the Zbeleh.ai system. 
+adopt the BinDoc.AI system. 
  
 Local Manufacturing & Engineering Sector 
  
  
 • Partnership: Establish a local supply chain for hardware assembly, installation, and 
 maintenance. 
-• Mechanism: Instead of importing fully assembled and costly sensor units, Zbeleh.ai will 
+• Mechanism: Instead of importing fully assembled and costly sensor units, BinDoc.AI will 
 partner with a reputable local electronics or light manufacturing firm. This partner will handle 
 the final assembly of sensor components, quality assurance testing, and deployment. This 
 strategy significantly lowers hardware costs, reduces import dependencies, creates skilled 
@@ -903,10 +903,10 @@ the-ground response network for maintenance and support.
 Conclusion: The Winning Formula – A Synthesized, 
 Dual-Track Vision for a Cleaner Lebanon 
  
-The analysis of the Lebanese waste sector and the strategic fortification of the Zbeleh.ai concept 
+The analysis of the Lebanese waste sector and the strategic fortification of the BinDoc.AI concept 
 reveal a clear path to creating a winning investment formula. The key element, which elevates this 
 venture from a mere product to a defensible ecosystem, is the profound synergy between the B2C 
-and B2B models. Zbeleh.ai is not two separate business ideas operating in parallel; it is one 
+and B2B models. BinDoc.AI is not two separate business ideas operating in parallel; it is one 
 integrated, intelligent ecosystem designed to attack Lebanon's waste crisis from both the top-down 
 and the bottom-up. 
 This integrated vision directly addresses the final critical question: have we missed anything? The 
@@ -930,7 +930,7 @@ economy but empowers it. It does not require a functional central state but prov
 financial and political value to the decentralized authorities that hold de facto power. It creates a 
 virtuous cycle where data from one side of the platform strengthens the other, building a moat of 
 network effects and proprietary intelligence that will be difficult for any competitor to replicate. 
-An investment in Zbeleh.ai is not a speculative bet on a single product. It is an investment in a 
+An investment in BinDoc.AI is not a speculative bet on a single product. It is an investment in a 
 scalable, profitable, and deeply impactful solution to one of Lebanon's most persistent and visible 
 crises. It is an opportunity to build the foundational infrastructure for the country's emerging circular 
 economy. 
@@ -947,7 +947,7 @@ https://www.global-solutions-initiative.org/article/live-love-recycle/
 d'une décharge au Akkar - L'Orient-Le Jour, accessed July 21, 2025, 
 https://www.lorientlejour.com/article/1463289/-personne-ne-peut-resoudre-la-crise-
 des-dechets-sans-letat-alerte-la-responsable-dune-decharge-au-akkar.html 
-6. 20250718_Zbeleh_AI_Pitch_Deck_B2C+B2B.pdf 
+6. 20250718_BinDocAIh_AI_Pitch_Deck_B2C+B2B.pdf 
 7. Live, love, recycle initiative: an on-demand collection scheme, accessed July 21, 2025, 
 https://bestpractices-waste-med.net/live-love-recycle-initiative-an-on-demand-
 collection-scheme/ 

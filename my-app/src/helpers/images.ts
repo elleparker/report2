@@ -1,0 +1,25 @@
+export const galleryItems = [
+  { image: "/gallery/img-01.png", text: "Caption for image 1" },
+  { image: "/gallery/img-02.png", text: "Caption for image 2" },
+  { image: "/gallery/img-03.png", text: "Caption for image 3" },
+  { image: "/gallery/img-04.png", text: "Caption for image 4" },
+  { image: "/gallery/img-05.png", text: "Caption for image 5" },
+  { image: "/gallery/img-06.png", text: "Caption for image 6" },
+  { image: "/gallery/img-07.png", text: "Caption for image 7" },
+  { image: "/gallery/img-08.png", text: "Caption for image 8" },
+  { image: "/gallery/img-09.png", text: "Caption for image 9" },
+  { image: "/gallery/img-10.png", text: "Caption for image 10" },
+  { image: "/gallery/img-11.png", text: "Caption for image 11" },
+  { image: "/gallery/img-12.png", text: "Caption for image 12" },
+  { image: "/gallery/img-13.png", text: "Caption for image 13" },
+  { image: "/gallery/img-14.png", text: "Caption for image 14" },
+  { image: "/gallery/img-15.png", text: "Caption for image 15" },
+  { image: "/gallery/img-16.png", text: "Caption for image 16" },
+  { image: "/gallery/img-17.png", text: "Caption for image 17" },
+  { image: "/gallery/img-18.png", text: "Caption for image 18" },
+  { image: "/gallery/img-19.png", text: "Caption for image 19" },
+  { image: "/gallery/img-20.png", text: "Caption for image 20" },
+  { image: "/gallery/img-21.png", text: "Caption for image 21" },
+  { image: "/gallery/img-22.png", text: "Caption for image 22" }
+];
+
