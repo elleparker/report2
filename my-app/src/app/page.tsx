@@ -17,6 +17,7 @@ import {
 } from '../components/Charts';
 import { Cover } from '../components/ui/cover';
 import FAQAccordion from '../components/FAQAccordion';
+import ShinyText, { ShinyTextProps } from '../components/ShinyText';
 import ScrollStack, { ScrollStackItem } from '../components/ScrollStack';
 
 export default function Home() {
@@ -141,7 +142,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-3xl sm:text-4xl font-bold mb-12 sm:mb-16 gradient-text"
             >
-              BinDoc.AI: <Cover particleColor="#FACC15">Executive Summary</Cover>
+              <ShinyText text="BinDoc.AI: Executive Summary" />
             </motion.h1>
 
              <div className="space-y-16 sm:space-y-20 text-gray-300 leading-relaxed">
@@ -223,7 +224,7 @@ export default function Home() {
             className="section-wrapper space-y-8"
           >
             <div className="glass p-8">
-              <h1 className="mb-8 sm:mb-12">BinDoc.AI Strategic Investment <Cover particleColor="#FACC15">Report</Cover></h1>
+              <h1 className="mb-8 sm:mb-12">BinDoc.AI Strategic Investment Report</h1>
               <SectionTitle text="A Pragmatic, Technology-Driven Solution for Lebanon's Waste Crisis" level="h2" className="mb-8 sm:mb-12" />
               <div className="prose prose-invert max-w-none">
                 <p className="text-xl text-gray-300 leading-relaxed mb-12">
@@ -292,7 +293,7 @@ export default function Home() {
                 <span className="flex-shrink-0">
                   <Users className="w-8 h-8 text-yellow-400" />
                 </span>
-                <Cover particleColor="#FACC15">Part I: The BinDoc.AI B2C Consumer Model</Cover>
+               Part I: The BinDoc.AI B2C Consumer Model
               </h2>
               <p className="text-gray-300 text-lg leading-relaxed mb-8">
                 Organizing chaos and creating value through a grassroots network that tackles the problem from the bottom up, 
@@ -542,7 +543,7 @@ export default function Home() {
                 <span className="flex-shrink-0">
                   <BarChart3 className="w-8 h-8 text-yellow-400" />
                 </span>
-                <Cover particleColor="#FACC15">Part II: The BinDoc.AI B2B Enterprise Model</Cover>
+                Part II: The BinDoc.AI B2B Enterprise Model
               </h2>
               <p className="text-gray-300 text-lg leading-relaxed">
                 The irrefutable case for efficiency and control. A paradigm shift from brute-force operations to data-driven intelligence 
@@ -550,7 +551,7 @@ export default function Home() {
               </p>
             </div>
           </motion.section>
-
+P
           {/* B2B Competitive Analysis */}
           <motion.section
             id="b2b-competitive"
@@ -926,7 +927,7 @@ export default function Home() {
                 <span className="flex-shrink-0">
                   <HelpCircle className="w-8 h-8 text-yellow-400" />
                 </span>
-                <Cover particleColor="#FACC15">Investor FAQ</Cover>
+               Investor FAQ
               </motion.h2>
               <motion.p 
                 className="text-gray-300 text-lg leading-relaxed mb-8"

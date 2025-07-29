@@ -15,6 +15,7 @@ export const Cover = ({
   particleColor?: string;
 }) => {
   const [hovered, setHovered] = useState(false);
+  const [inViewport, setInViewport] = useState(false);
 
   const ref = useRef<HTMLDivElement>(null);
 
@@ -22,18 +23,51 @@ export const Cover = ({
   const [beamPositions, setBeamPositions] = useState<number[]>([]);
 
   useEffect(() => {
-    if (ref.current) {
-      setContainerWidth(ref.current?.clientWidth ?? 0);
+    if (!ref.current) return;
 
+    const updateSize = () => {
+      const width = ref.current?.clientWidth ?? 0;
       const height = ref.current?.clientHeight ?? 0;
-      const numberOfBeams = Math.floor(height / 10); // Adjust the divisor to control the spacing
+
+      setContainerWidth(width);
+
+      const numberOfBeams = Math.floor(height / 10);
       const positions = Array.from(
         { length: numberOfBeams },
         (_, i) => (i + 1) * (height / (numberOfBeams + 1))
       );
       setBeamPositions(positions);
+    };
+
+    const observer = new ResizeObserver(updateSize);
+    observer.observe(ref.current);
+
+    updateSize(); // Initial call
+
+    return () => {
+      if (ref.current) observer.unobserve(ref.current);
+    };
+  }, [ref]);
+
+  // Add intersection observer for viewport detection
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setInViewport(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
     }
-  }, [ref.current]);
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
 
   return (
     <div
@@ -43,7 +77,7 @@ export const Cover = ({
       className="relative hover:bg-neutral-900 group/cover inline-block bg-transparent dark:bg-transparent px-2 py-2 transition duration-200 rounded-sm"
     >
       <AnimatePresence>
-        {hovered && (
+        {(hovered || inViewport) && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -91,7 +125,7 @@ export const Cover = ({
       {beamPositions.map((position, index) => (
         <Beam
           key={index}
-          hovered={hovered}
+          hovered={hovered || inViewport}
           duration={Math.random() * 2 + 1}
           delay={Math.random() * 2 + 1}
           width={containerWidth}
@@ -103,9 +137,9 @@ export const Cover = ({
       <motion.span
         key={String(hovered)}
         animate={{
-          scale: hovered ? 0.8 : 1,
-          x: hovered ? [0, -30, 30, -30, 30, 0] : 0,
-          y: hovered ? [0, 30, -30, 30, -30, 0] : 0,
+          scale: (hovered || inViewport) ? 1.05 : 1,
+          x: (hovered || inViewport) ? [0, -5, 5, -5, 5, 0] : 0,
+          y: (hovered || inViewport) ? [0, 5, -5, 5, -5, 0] : 0,
         }}
         exit={{
           filter: "none",
@@ -133,7 +167,7 @@ export const Cover = ({
           },
         }}
         className={cn(
-          "dark:text-white inline-block text-neutral-900 relative z-20 group-hover/cover:text-white transition duration-200",
+          "dark:text-purple-500 text-purple-500 relative z-20 group-hover/cover:text-white transition duration-200",
           className
         )}
       >
@@ -176,6 +210,7 @@ export const Beam = ({
       <motion.path
         d={`M0 0.5H${width ?? "600"}`}
         stroke={`url(#svgGradient-${id})`}
+        strokeWidth={hovered ? "2px" : "1px"}
       />
 
       <defs>
