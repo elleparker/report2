@@ -18,64 +18,6 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 
-// Custom animated bar component
-interface AnimatedBarProps {
-  fill: string;
-  x: number;
-  y: number;
-  width: number;
-  height: number;
-  payload?: any;
-  index?: number;
-  datasetSize?: number;
-}
-
-const AnimatedBar = ({ fill, x, y, width, height, payload, index = 0, datasetSize = 10 }: AnimatedBarProps) => {
-  // Performance optimization: reduce animation complexity for large datasets
-  const shouldAnimate = datasetSize <= 100;
-  const staggerDelay = datasetSize <= 50 ? index * 0.05 : 0;
-  const duration = datasetSize <= 10 ? 0.8 : datasetSize <= 50 ? 0.6 : 0.4;
-  
-  if (!shouldAnimate) {
-    // For very large datasets, render static bars with simple hover
-    return (
-      <motion.rect
-        x={x}
-        y={y}
-        width={width}
-        height={height}
-        fill={fill}
-        whileHover={{
-          fill: "#fefefe",
-          transition: { duration: 0.15, ease: "easeInOut" }
-        }}
-      />
-    );
-  }
-  
-  return (
-    <motion.rect
-      x={x}
-      y={y}
-      width={width}
-      height={height}
-      fill={fill}
-      initial={{ height: 0, y: y + height }}
-      animate={{ height: height, y: y }}
-      transition={{ 
-        duration, 
-        delay: staggerDelay,
-        ease: "easeOut" 
-      }}
-      whileHover={{
-        fill: "#fefefe",
-        transition: { duration: 0.2, ease: "easeInOut" }
-      }}
-      onHoverStart={() => {}}
-      onHoverEnd={() => {}}
-    />
-  );
-};
 
 // Waste management data for Lebanon
 const wasteVolumeData = [
@@ -271,7 +213,7 @@ export function WasteCompositionChart() {
       <h3 className="text-xl font-bold mb-4 gradient-text relative z-20">Lebanon Waste Composition & Recycling Rates</h3>
       <div className="relative z-20">
         <ResponsiveContainer width="100%" height={400}>
-          <BarChart data={wasteCompositionData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+          <BarChart data={wasteCompositionData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }} barCategoryGap={20}>
             <CartesianGrid strokeDasharray="3 3" stroke="#374151" opacity={0.3} />
             <XAxis 
               dataKey="category" 
@@ -299,14 +241,16 @@ export function WasteCompositionChart() {
               fill="#fbbf24" 
               name="Waste Composition %" 
               radius={[4, 4, 0, 0]}
-              shape={(props: any) => <AnimatedBar {...props} />}
+              isAnimationActive={false}
+              barSize={30}
             />
             <Bar 
               dataKey="recycling_rate" 
               fill="#22c55e" 
               name="Current Recycling Rate %" 
               radius={[4, 4, 0, 0]}
-              shape={(props: any) => <AnimatedBar {...props} />}
+              isAnimationActive={false}
+              barSize={30}
             />
           </BarChart>
         </ResponsiveContainer>
@@ -326,7 +270,7 @@ export function RevenueProjectionChart() {
       <h3 className="text-xl font-bold mb-4 gradient-text relative z-20">BinDoc.AI Revenue Projections</h3>
       <div className="relative z-20">
         <ResponsiveContainer width="100%" height={400}>
-          <BarChart data={revenueProjectionData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+          <BarChart data={revenueProjectionData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }} barCategoryGap={20}>
             <CartesianGrid strokeDasharray="3 3" stroke="#374151" opacity={0.3} />
             <XAxis 
               dataKey="year" 
@@ -351,7 +295,8 @@ export function RevenueProjectionChart() {
               fill="#fbbf24"
               name="Commission/Fee Revenue ($K)"
               radius={[0, 0, 0, 0]}
-              shape={(props: any) => <AnimatedBar {...props} />}
+              isAnimationActive={false}
+              barSize={30}
             />
             <Bar
               dataKey="subscription"
@@ -359,7 +304,8 @@ export function RevenueProjectionChart() {
               fill="#3b82f6"
               name="SME Subscriptions ($K)"
               radius={[0, 0, 0, 0]}
-              shape={(props: any) => <AnimatedBar {...props} />}
+              isAnimationActive={false}
+              barSize={30}
             />
             <Bar
               dataKey="data"
@@ -367,7 +313,8 @@ export function RevenueProjectionChart() {
               fill="#22c55e"
               name="Data/Sponsorship ($K)"
               radius={[4, 4, 0, 0]}
-              shape={(props: any) => <AnimatedBar {...props} />}
+              isAnimationActive={false}
+              barSize={30}
             />
           </BarChart>
         </ResponsiveContainer>

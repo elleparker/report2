@@ -18,7 +18,7 @@ const AuroraTitle: React.FC = () => {
       }}
       className="relative flex flex-col gap-4 items-center justify-center px-4"
     >
-      <div className="text-2xl md:text-6xl font-bold text-center bg-gradient-to-r from-white via-yellow-300 via-yellow-500 via-yellow-300 to-white bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(255,255,0,0.7)]">
+      <div className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-center bg-gradient-to-r from-white via-yellow-300 via-yellow-500 via-yellow-300 to-white bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(255,255,0,0.7)]">
         <span className="glitch-text">Strategic Investment Report: "Waste Management Solutions for Lebanon"</span>
       </div>
     </motion.div>
@@ -31,25 +31,25 @@ export const Hero: React.FC = () => {
       {/* Artificial Hero Background - positioned absolute, z-0 */}
       <ArtificialHeroBackground />
       
-      {/* Main content - relative z-10 flex */}
-      <div className="relative z-10 flex w-full h-full">
-        {/* Left column - Logo */}
-        <div className="flex-1 flex items-center justify-center p-8">
-          <div className="max-w-[350px] w-full">
+      {/* Main content - centered layout */}
+      <div className="relative z-10 flex flex-col items-center justify-center w-full h-full gap-16 sm:gap-20 lg:gap-24">
+        {/* Hero Text - centered above image */}
+        <div className="flex items-center justify-center p-4 sm:p-8">
+          <AuroraTitle />
+        </div>
+        
+        {/* Hero Image - centered below text */}
+        <div className="flex items-center justify-center p-4 sm:p-8">
+          <div className="max-w-[420px] w-full"> {/* Increased from 350px by 20% */}
             <Image
               src="/bindoc-logo2.svg"
               alt="BinDoc Logo"
-              width={350}
-              height={200}
+              width={420}
+              height={240}
               className="w-full h-auto"
               priority
             />
           </div>
-        </div>
-        
-        {/* Right column - Aurora Title */}
-        <div className="flex-1 flex items-center justify-center p-8">
-          <AuroraTitle />
         </div>
       </div>
     </div>

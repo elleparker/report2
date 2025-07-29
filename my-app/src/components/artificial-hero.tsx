@@ -340,7 +340,7 @@ export const Component = () => {
       frameRef.current = requestAnimationFrame(render);
     }
 
-        render();
+    render();
 
     return () => {
       if (frameRef.current) {
@@ -352,7 +352,7 @@ export const Component = () => {
 
   return (
     <div ref={containerRef} style={{ width: '100%', height: '100%', background: '#000' }}>
-      {/* Navigation*/}
+      {/* Navigation */}
       <nav style={{
         position: 'fixed',
         top: 0,
@@ -381,136 +381,7 @@ export const Component = () => {
             background: '#000'
           }} />
         </div>
-        
-        <div style={{
-          display: 'flex',
-          gap: '2rem',
-          fontFamily: 'Arial, sans-serif',
-          fontSize: '11px',
-          fontWeight: '500',
-          letterSpacing: '1px',
-          textTransform: 'uppercase'
-        }}>
-          <a href="#" style={{ color: 'white', textDecoration: 'none', opacity: 0.9 }}>
-            Creative Journey
-          </a>
-          <a href="#" style={{ color: 'white', textDecoration: 'none', opacity: 0.9 }}>
-            About
-          </a>
-          <a href="#" style={{ color: 'white', textDecoration: 'none', opacity: 0.9 }}>
-            Sound
-          </a>
-        </div>
-        
-        <div style={{
-          fontFamily: 'Arial, sans-serif',
-          fontSize: '11px',
-          fontWeight: '500',
-          color: 'white',
-          opacity: 0.9,
-          letterSpacing: '1px',
-          textTransform: 'uppercase'
-        }}>
-        </div>
       </nav>
-
-      {/* Large text*/}
-      <div style={{
-        position: 'fixed',
-        bottom: '15%',
-        left: 0,
-        right: 0,
-        zIndex: 50,
-        transform: `translateY(${scrollProgressRef.current * 100}px)`,
-        opacity: Math.max(0, 1 - scrollProgressRef.current * 1.5),
-        transition: 'transform 0.1s ease-out',
-        pointerEvents: 'none'
-      }}>
-        <div style={{
-          fontFamily: 'Arial Black, Arial, sans-serif',
-          fontSize: 'clamp(4rem, 15vw, 12rem)',
-          fontWeight: '900',
-          color: 'white',
-          textAlign: 'center',
-          lineHeight: 0.8,
-          letterSpacing: '-0.02em',
-          textShadow: '0 0 50px rgba(255, 255, 255, 0.3)',
-          filter: 'contrast(1.2)'
-        }}>
-        
-        </div>
-      </div>
-
-      {/* Left side text */}
-      <div style={{
-        position: 'fixed',
-        left: '2rem',
-        top: '40%',
-        zIndex: 50,
-        transform: `translateX(${-scrollProgressRef.current * 200}px)`,
-        opacity: Math.max(0, 1 - scrollProgressRef.current * 2),
-        transition: 'transform 0.1s ease-out'
-      }}>
-        <div style={{
-          fontFamily: 'Arial, sans-serif',
-          fontSize: '11px',
-          color: 'white',
-          lineHeight: 1.4,
-          letterSpacing: '0.5px',
-          textTransform: 'uppercase',
-          opacity: 0.8,
-          maxWidth: '150px'
-        }}>
-
-        </div>
-      </div>
-
-      {/* Right side text */}
-      <div style={{
-        position: 'fixed',
-        right: '2rem',
-        top: '40%',
-        zIndex: 50,
-        transform: `translateX(${scrollProgressRef.current * 200}px)`,
-        opacity: Math.max(0, 1 - scrollProgressRef.current * 2),
-        transition: 'transform 0.1s ease-out'
-      }}>
-        <div style={{
-          fontFamily: 'Arial, sans-serif',
-          fontSize: '11px',
-          color: 'white',
-          lineHeight: 1.4,
-          letterSpacing: '0.5px',
-          textTransform: 'uppercase',
-          opacity: 0.8,
-          maxWidth: '150px',
-          textAlign: 'right'
-        }}>
-    
-        </div>
-      </div>
-
-      {/* Bottom text*/}
-      <div style={{
-        position: 'fixed',
-        bottom: '8%',
-        left: '2rem',
-        zIndex: 50,
-        transform: `translateY(${scrollProgressRef.current * 50}px)`,
-        opacity: Math.max(0, 1 - scrollProgressRef.current * 1.5),
-        transition: 'transform 0.1s ease-out'
-      }}>
-        <div style={{
-          fontFamily: 'Arial, sans-serif',
-          fontSize: '10px',
-          color: 'white',
-          letterSpacing: '1px',
-          textTransform: 'uppercase',
-          opacity: 0.7
-        }}>
-
-        </div>
-      </div>
 
       {/* Canvas Container */}
       <div style={{ position: 'sticky', top: 0, width: '100%', height: '100vh' }}>

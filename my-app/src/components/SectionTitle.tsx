@@ -48,7 +48,6 @@ export default function SectionTitle({
           level === "h3" && "text-yellow-400",
           level === "h4" && "text-white"
         )}
-        animateOnLoad={true}
       />
     </Component>
   );

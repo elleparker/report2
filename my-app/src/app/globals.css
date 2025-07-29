@@ -88,41 +88,6 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-const ShinyText = ({ text, disabled = false, speed = 5, className = '' }) => {
-
-  const animationDuration = `${speed}s`;
-
-
-  return (
-
-    <div
-
-      className={`text-[#b5b5b5a4] bg-clip-text inline-block ${disabled ? '' : 'animate-shine'} ${className}`}
-
-      style={{
-
-        backgroundImage: 'linear-gradient(120deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 60%)',
-
-        backgroundSize: '200% 100%',
-
-        WebkitBackgroundClip: 'text',
-
-        animationDuration: animationDuration,
-
-      }}
-
-    >
-
-      {text}
-
-    </div>
-
-  );
-
-};
-
-
-export default ShinyText;
 * {
   margin: 0;
   padding: 0;
@@ -285,6 +250,7 @@ body {
   overflow: hidden;
 }
 
+/* Rotating gradient removed to clean up chart appearance
 .chart-container::before {
   content: '';
   position: absolute;
@@ -300,6 +266,7 @@ body {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+*/
 
 /* Professional typography */
 h1, h2, h3, h4, h5, h6 {
@@ -364,83 +331,6 @@ p {
   display: none;  /* Safari and Chrome */
 }
 
-/* NUCLEAR OPTION: Completely disable hover effects on ALL chart elements */
-.recharts-bar-rectangle,
-.recharts-rectangle {
-  transition: none !important;
-  filter: none !important;
-}
-
-.recharts-bar-rectangle:hover,
-.recharts-rectangle:hover,
-.recharts-bar:hover .recharts-rectangle,
-.recharts-active-bar .recharts-rectangle,
-.recharts-bar:hover .recharts-bar-rectangle {
-  fill: currentColor !important;
-  transition: none !important;
-  filter: none !important;
-  opacity: 1 !important;
-  stroke: none !important;
-  stroke-width: 0 !important;
-}
-
-/* Override Recharts internal hover styles completely */
-.recharts-bar {
-  pointer-events: none !important;
-}
-
-.recharts-bar:hover {
-  filter: none !important;
-  opacity: 1 !important;
-}
-
-/* Re-enable pointer events only for tooltip functionality */
-.recharts-wrapper {
-  pointer-events: all !important;
-}
-
-.recharts-surface {
-  pointer-events: all !important;
-}
-
-/* Force each color to stay exactly the same */
-rect[fill="#fbbf24"],
-rect[fill="#22c55e"], 
-rect[fill="#3b82f6"] {
-  transition: none !important;
-}
-
-rect[fill="#fbbf24"]:hover {
-  fill: #fbbf24 !important;
-}
-
-rect[fill="#22c55e"]:hover {
-  fill: #22c55e !important;
-}
-
-rect[fill="#3b82f6"]:hover {
-  fill: #3b82f6 !important;
-}
-
-/* Specific targeting for charts with disable-hover class */
-.disable-hover .recharts-bar-rectangle,
-.disable-hover .recharts-rectangle {
-  pointer-events: none !important;
-}
-
-.disable-hover .recharts-bar-rectangle:hover,
-.disable-hover .recharts-rectangle:hover {
-  fill: inherit !important;
-  filter: none !important;
-  opacity: 1 !important;
-}
-
-/* Ensure tooltips still work by enabling pointer events on parent */
-.disable-hover .recharts-wrapper,
-.disable-hover .recharts-surface,
-.disable-hover .recharts-layer {
-  pointer-events: all !important;
-}
 
 /* Enhanced glass and gradient effects */
 .glass-enhanced {

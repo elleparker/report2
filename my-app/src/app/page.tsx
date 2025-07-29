@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { TrendingUp, Users, DollarSign, Target, BarChart3, AlertCircle, Lightbulb, HelpCircle } from 'lucide-react';
+import { TrendingUp, Users, DollarSign, Target, BarChart3, AlertCircle, HelpCircle } from 'lucide-react';
 
 import BinDocNavBar from '../components/NavBar';
 import BeleLogo from '../components/BeleLogo';
@@ -15,10 +15,8 @@ import {
   RevenueProjectionChart,
   AnimatedMetricCard 
 } from '../components/Charts';
-import { Cover } from '../components/ui/cover';
 import FAQAccordion from '../components/FAQAccordion';
-import ShinyText, { ShinyTextProps } from '../components/ShinyText';
-import ScrollStack, { ScrollStackItem } from '../components/ScrollStack';
+import ShinyText from '../components/ShinyText';
 
 export default function Home() {
   const [, setActiveSection] = useState('executive-summary');
@@ -75,6 +73,7 @@ export default function Home() {
       'b2b-proposition',
       'b2b-monetization',
       'b2b-partnerships',
+      'technology',
       'financial-overview',
       'conclusion',
       'faq',
@@ -160,11 +159,9 @@ export default function Home() {
                  </p>
                  
                  <div className="grid md:grid-cols-2 gap-8 mb-8">
-                   <motion.div 
-                     whileHover={{ scale: 1.02, y: -5 }}
-                     transition={{ duration: 0.3 }}
-                     className="bg-gradient-to-br from-black/40 to-black/20 p-6 rounded-lg border border-yellow-400/30 hover:border-yellow-400/50 transition-all duration-300 group cursor-pointer"
-                   >
+                  <motion.div 
+                    className="bg-gradient-to-br from-black/40 to-black/20 p-6 rounded-lg border border-yellow-400/30 hover:border-yellow-400/50 transition-all duration-300 group cursor-pointer"
+                  >
                      <h4 className="text-white font-semibold mb-3 flex items-center gap-2">
                        <Users className="w-5 h-5 text-yellow-400 group-hover:text-yellow-300 transition-colors" />
                        1. B2C Consumer Model:
@@ -175,11 +172,9 @@ export default function Home() {
                      <div className="text-xs text-yellow-400/70 font-medium">💡 Consumer-Focused • AI-Powered • Scalable</div>
                    </motion.div>
                    
-                   <motion.div 
-                     whileHover={{ scale: 1.02, y: -5 }}
-                     transition={{ duration: 0.3 }}
-                     className="bg-gradient-to-br from-black/40 to-black/20 p-6 rounded-lg border border-green-400/30 hover:border-green-400/50 transition-all duration-300 group cursor-pointer"
-                   >
+                  <motion.div 
+                    className="bg-gradient-to-br from-black/40 to-black/20 p-6 rounded-lg border border-green-400/30 hover:border-green-400/50 transition-all duration-300 group cursor-pointer"
+                  >
                      <h4 className="text-white font-semibold mb-3 flex items-center gap-2">
                        <BarChart3 className="w-5 h-5 text-green-400 group-hover:text-green-300 transition-colors" />
                        2. B2B Enterprise Model:
@@ -551,7 +546,7 @@ export default function Home() {
               </p>
             </div>
           </motion.section>
-P
+
           {/* B2B Competitive Analysis */}
           <motion.section
             id="b2b-competitive"
@@ -703,47 +698,6 @@ P
             className="section-wrapper space-y-8"
           >
 
-          {/* AI Technology */}
-          <motion.section
-            id="ai-technology"
-            {...fadeInUp}
-            className="section-wrapper space-y-8"
-          >
-            <div className="glass p-8 border border-yellow-400">
-              <SectionTitle text="AI Technology" level="h2" className="mb-6" />
-              <div className="space-y-6">
-                <ScrollStackItem itemClassName="glass p-4 rounded-lg border border-yellow-400">
-                  <h4 className="text-xl font-bold mb-2 text-white">Sensor Layer</h4>
-                  <p className="text-gray-300">Smart IoT sensors deployed in dumpsters monitor fill levels, temperature, and contamination in real-time.</p>
-                </ScrollStackItem>
-                
-                <ScrollStackItem itemClassName="glass p-4 rounded-lg border border-yellow-400">
-                  <h4 className="text-xl font-bold mb-2 text-white">Edge AI</h4>
-                  <p className="text-gray-300">Local processing units analyze waste composition and optimize collection routes without relying on cloud connectivity.</p>
-                </ScrollStackItem>
-                
-                <ScrollStackItem itemClassName="glass p-4 rounded-lg border border-yellow-400">
-                  <h4 className="text-xl font-bold mb-2 text-white">Cloud Optimizer</h4>
-                  <p className="text-gray-300">Central intelligence platform that aggregates data from all sensors to provide city-wide optimization insights.</p>
-                </ScrollStackItem>
-                
-                <ScrollStackItem itemClassName="glass p-4 rounded-lg border border-yellow-400">
-                  <h4 className="text-xl font-bold mb-2 text-white">Marketplace API</h4>
-                  <p className="text-gray-300">Connects formal and informal waste collectors with real-time demand data and pricing intelligence.</p>
-                </ScrollStackItem>
-                
-                <ScrollStackItem itemClassName="glass p-4 rounded-lg border border-yellow-400">
-                  <h4 className="text-xl font-bold mb-2 text-white">Transparency Ledger</h4>
-                  <p className="text-gray-300">Blockchain-based tracking system that enables citizens to trace their waste from collection to final processing.</p>
-                </ScrollStackItem>
-                
-                <ScrollStackItem itemClassName="glass p-4 rounded-lg border border-yellow-400">
-                  <h4 className="text-xl font-bold mb-2 text-white">Data Science Portal</h4>
-                  <p className="text-gray-300">Advanced analytics dashboard for municipalities to make data-driven decisions and demonstrate compliance.</p>
-                </ScrollStackItem>
-              </div>
-            </div>
-          </motion.section>
             <div className="glass p-8">
               <h3 className="mb-6">B2B Partnership Nexus: Ecosystem of Credibility</h3>
               
@@ -908,43 +862,6 @@ P
                   </p>
                 </div>
               </div>
-            </div>
-          </motion.section>
-
-          {/* FAQ Section */}
-          <motion.section
-            id="faq"
-            {...fadeInUp}
-            className="section-wrapper space-y-8"
-          >
-            <div className="glass p-8">
-              <motion.h2 
-                className="text-2xl sm:text-3xl font-bold text-white mb-8 flex items-center gap-3"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-              >
-                <span className="flex-shrink-0">
-                  <HelpCircle className="w-8 h-8 text-yellow-400" />
-                </span>
-               Investor FAQ
-              </motion.h2>
-              <motion.p 
-                className="text-gray-300 text-lg leading-relaxed mb-8"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-              >
-                Common questions from investors about BinDoc.AI's business model, market opportunity, and growth strategy.
-              </motion.p>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-              >
-                <FAQAccordion />
-              </motion.div>
             </div>
           </motion.section>
 

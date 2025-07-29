@@ -45,10 +45,6 @@ const TestAnimatedBar = ({ fill, x, y, width, height, payload, index = 0, datase
         width={width}
         height={height}
         fill={fill}
-        whileHover={{
-          fill: "#fefefe",
-          transition: { duration: 0.15, ease: "easeInOut" }
-        }}
       />
     );
   }
@@ -66,10 +62,6 @@ const TestAnimatedBar = ({ fill, x, y, width, height, payload, index = 0, datase
         duration, 
         delay: staggerDelay,
         ease: "easeOut" 
-      }}
-      whileHover={{
-        fill: "#fefefe",
-        transition: { duration: 0.2, ease: "easeInOut" }
       }}
     />
   );
