@@ -1,4 +1,11 @@
 # Cloudflare ignore file - exclude everything except the out/ directory
 *
 !out/
-!out/** 
+!out/**
+
+# Explicitly exclude build and cache directories
+cache/
+.next/
+node_modules/
+build/
+dist/

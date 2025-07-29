@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "rm -rf .next out cache && next build",
+    "build": "rm -rf .next out cache && next build && rm -rf cache .next",
     "export": "next export",
     "start": "next start",
     "lint": "next lint",
